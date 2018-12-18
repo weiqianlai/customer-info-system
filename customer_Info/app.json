@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/login/login",
+    "src/example/button/button",
+    "pages/regist/regist",
+    "pages/user/index/index",
+    "pages/admin/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle":"black"
+  }
+}

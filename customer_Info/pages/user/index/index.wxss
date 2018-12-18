@@ -1,0 +1,70 @@
+/* pages/user/index/index.wxss */
+.mian-box{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  overflow: hidden;
+}
+.label{
+  width: 100%;
+  display: inline-flex;
+  margin-top: 5rpx;
+  border-bottom: #ccc 1px solid;
+  position: relative;
+}
+.label text{
+  width: 180rpx;
+  text-align: center;
+}
+.honor-scroll{
+    height: 100%;
+    background: white;
+    position: relative;
+    left:0;
+    top:0;
+    z-index: 99;
+    display: flex;
+}
+
+.content{
+  width: 750rpx;
+  display: inline-flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top:8rpx;
+  position: relative;
+}
+.content text{
+  width: 180rpx;
+}
+.content button{
+  
+  padding: 0 10rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+}
+.del{
+  background-color: red;
+  border: 1rpx solid red;
+}
+.update{
+  margin-left: 5rpx;
+  background-color: #1aad16;
+}
+.add{
+  position: fixed;
+  width: 750rpx;
+  height: 120rpx;
+  bottom: 0;
+}
+.add button{
+  margin: 0 10rpx;
+  border-radius: 14rpx 15rpx;
+  background-color:  #1aad16;
+  color: #ffffff;
+}
+

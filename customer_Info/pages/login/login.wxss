@@ -1,0 +1,33 @@
+/* pages/login/login.wxss */
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+.mini-btn{
+    margin-right: 5px;
+}
+.userLogin{
+  margin-top:150rpx;
+  text-align: center;
+  margin-bottom: 80rpx;
+  font-size: 60rpx;
+  font-family: "黑体";
+  color: #666;
+}
+
+.weui-footer{
+    margin-bottom: 50px;
+}
+.weui-footer_fixed-bottom{
+    margin-bottom: 0;
+}
+.weui-btn{
+  width: 80%;
+}
+.btn1{
+  margin-top:150rpx;
+}
+.weui-cells{
+  margin-bottom:100rpx;
+}
