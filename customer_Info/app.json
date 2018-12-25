@@ -1,15 +1,55 @@
 {
   "pages":[
     "pages/login/login",
+    "pages/user/index/index",
+    "pages/user/index/special-promotiom/special-promotiom",
+    "pages/user/index/undergraduate/undergraduate",
+    "pages/user/index/part-time-postgraduate/part-time-postgraduate",
+    "pages/user/index/mandarin/mandarin",
+    "pages/user/index/teacher-certification/teacher-certification",
+    "pages/user/index/architect/architect",
+    "pages/user/index/professional/professional",
+    "pages/user/index/medical-science/medical-science",
+    "pages/user/index/foreign-language/foreign-language",
+    "pages/user/index/accounting/accounting",
+    "pages/user/addcustomer/addcustomer",
+    "pages/user-info/user-info",
     "src/example/button/button",
     "pages/regist/regist",
-    "pages/user/index/index",
     "pages/admin/index/index"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小程序",
     "navigationBarTextStyle":"black"
-  }
+  },
+      "tabBar": {
+        "borderStyle": "white",
+        "selectedColor": "#4A6141",
+        "color": "#333",
+        "backgroundColor": "#CCEEFF",
+        "position": "bottom",
+        "list": [
+          {
+            "pagePath": "pages/user/index/index",
+            "text": "首页",
+            "iconPath": "/images/icon/add_customer.png",
+            "selectedIconPath": "/images/icon/add_customer.png"
+          },
+          {
+            "pagePath": "pages/user-info/user-info",
+            "text": "个人中心",
+            "iconPath": "/images/icon/add_customer.png",
+            "selectedIconPath": "/images/icon/add_customer.png"
+          }
+        ]
+      },
+      "networkTimeout": {
+        "request": 20000,
+        "connectSocket": 20000,
+        "uploadFile": 20000,
+        "downloadFile": 20000
+      }
 }

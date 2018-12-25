@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.1.1",
 	"appid": "wx13acb26409a8bb15",
-	"projectname": "yun_cehis",
+	"projectname": "customer_Info",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -33,12 +33,18 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "user",
-					"pathName": "pages/user/index/index"
+					"pathName": "pages/user/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "info",
+					"pathName": "pages/user-info/user-info"
 				}
 			]
 		}

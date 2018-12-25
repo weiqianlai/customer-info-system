@@ -1,0 +1,49 @@
+<!--pages/user-info/user-info.wxml-->
+<view class='main-box'>
+    <view class='user-info'>
+        <view class='user-name'>李四</view>
+        <view class='grade'>我的会员等级：2级</view>
+    </view>
+  <view class="li" data-index="1" bindtap='changeToggle'>
+    <view class="left">>我的会员</view>
+    <view class="right red">
+      <text class="iconfont {{selectedFlag[1]?'icon-shangjiantou':'icon-xiala'}}"> </text>
+    </view>
+  </view>
+  <view hidden="{{!selectedFlag[1]}}">
+    <block wx:for="{{list01}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class="li bg-gray">
+        <view>展开</view>
+
+      </view>
+    </block>
+  </view>
+  <view class="li" data-index="3" bindtap='changeToggle'>
+    <view class="left">>我的成交</view>
+    <view class="right red">
+      <text class="iconfont {{selectedFlag[3]?'icon-shangjiantou':'icon-xiala'}}"> </text>
+    </view>
+  </view>
+ <view hidden="{{!selectedFlag[3]}}">
+    <block wx:for="{{list04}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class="li bg-gray">
+        <view>展开4</view>
+        <view class="red">展开4右边</view>
+      </view>
+    </block>
+  </view>
+  <view class="li" data-index="4" bindtap='changeToggle'>
+    <view class="left">>我的团队</view>
+    <view class="right red">
+      <text class="iconfont {{selectedFlag[4]?'icon-shangjiantou':'icon-xiala'}}"> </text>
+    </view>
+  </view>
+ <view hidden="{{!selectedFlag[4]}}">
+    <block wx:for="{{list04}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class="li bg-gray">
+        <view>展开4</view>
+        <view class="red">展开4右边</view>
+      </view>
+    </block>
+  </view>
+</view>

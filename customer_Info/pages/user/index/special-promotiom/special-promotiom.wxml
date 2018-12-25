@@ -1,0 +1,24 @@
+<view class='main-box'>
+   <view class='header'>
+      <view class='my-customer'>我的客户</view>
+      <view class='separator'>|</view>
+      <view class='add-customer' bindtap='addCustomer'>+</view>
+   </view>
+   <view class='label'>
+          <text>姓名</text>
+          <text>性别</text>
+          <text>电话</text>
+          <text>操作</text>
+    </view>
+    <scroll-view class='honor-scroll' scroll-y="true">
+      <block wx:for="{{customer_list}}" wx:key="">
+            <view class='content' bindtap=''>
+              <text>{{item.name}}</text>
+              <text>{{item.sex}}</text>
+              <text>{{item.phone}}</text>
+              <button class='del' data-customer-id='{{item.customerId}}' bindtap='onDel'>删除</button>
+              <button class='update'  data-customer-id='{{item.customerId}}' bindtap='onUpdate'>修改</button>
+          </view>
+      </block>
+    </scroll-view>
+</view>

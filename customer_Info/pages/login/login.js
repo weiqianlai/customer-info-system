@@ -1,136 +1,59 @@
 // pages/login/login.js
 //获取应用实例
-const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    loginName: '',
-    password: ' '
+    account: '',
+    password: ''
   },
-  goregist: function (e) {
-    wx.redirectTo({
-      url: '/pages/regist/regist',
-    })
-  },
+
+  // 获取输入账号
   getLoginName: function (e) {
-    console.log(e.detail.value)
     this.setData({
-      loginName: e.detail.value
+      account: e.detail.value
     })
   },
+
+  // 获取输入密码
   getPassword: function (e) {
-    console.log(e.detail.value)
     this.setData({
       password: e.detail.value
     })
   },
-  login: function (e) {
-    if (this.data.loginName && this.data.password) {
-      wx.setStorageSync("username", this.data.loginName)
-      wx.request({   
-        url: app.addressUrl + '/login?loginName=' + this.data.loginName + "&password=" + this.data.password,
-        method: 'POST', 
-        success: function (res) {
-          var result = res.data.resultObj;
-          console.log(res.data);
-          //result=1表示登录成功
-          if (this.data.loginName == 'user' && this.data.password =='000') {
-            //存储用户名
-            wx.redirectTo({
-              url: '/pages/user/index/index',
-            })
-            wx.set
-          }
-          if (this.data.loginName == 'admin' && this.data.password == '111'){
-              wx.redirectTo({
-                url: '/pages/admin/index/index',
-              })
-          }
-           else {
-            wx.showModal({
-              title: '温馨提示',
-              content: '用户名密码错误',
-              showCancel: false,
-              success: function (res) {
 
-              }
-            })
-          }
-          console.log('submit success');
-        },
-        fail: function (res) {
-          wx.showToast({
-            title: '您的网络开小差啦~~~',
-            icon: "none"
-          })
-        },
-        complete: function (res) {
-          console.log('submit complete');
-        }
+  // 登录
+  login: function () {
+    var account = this.data.account
+    var passwd = this.data.password
+    //TODO 账号和密码的规范化
+    if (account.length == 0 || passwd.length == 0) {
+      wx.showToast({
+        title: '非法输入',
+        icon: 'loading',
+        duration: 2000
       })
     } else {
+      // 这里修改成跳转的页面
       wx.showToast({
-        title: '请将信息填写完整后登录',
-        icon: "none"
+        title: '登录成功',
+        icon: 'success',
+        duration: 2000
       })
+      //TODO：这里太丑了，要改,初步设想是：通过account在后台数据库中的搜寻，由服务器
+      //      段返回一个类型码：学生、教师、主管（且有的教师和主管还有兼职的情况），
+      //      由对应的类型码加载指定界面和数据，学生的最简单，所以先做学生的。
+      //      有的主管（领导）比较关心各种统计数据，所以单独拎出来作一个UI
+      if (account == 'user' && passwd == '0000') {
+        console.log("登录用户界面");
+        wx.switchTab({
+          url: '../user/index/index',
+        })
+      }
+      if (account == 'admin' && passwd == '111') {
+        console.log("登录管理员界面");
+        wx.redirectTo({
+          url: '../admin/index/index',
+        })
+      }
     }
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
 })
