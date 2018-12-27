@@ -35,14 +35,14 @@
           {
             "pagePath": "pages/user/index/index",
             "text": "首页",
-            "iconPath": "/images/icon/add_customer.png",
-            "selectedIconPath": "/images/icon/add_customer.png"
+            "iconPath": "/images/icon/home_1.png",
+            "selectedIconPath": "/images/icon/home_1.png"
           },
           {
             "pagePath": "pages/user-info/user-info",
             "text": "个人中心",
-            "iconPath": "/images/icon/add_customer.png",
-            "selectedIconPath": "/images/icon/add_customer.png"
+            "iconPath": "/images/icon/setting.png",
+            "selectedIconPath": "/images/icon/setting.png"
           }
         ]
       },

@@ -1,1 +1,1 @@
-/* pages/user/index/architect/architect.wxss */
+@import "../../template/customer.wxss";

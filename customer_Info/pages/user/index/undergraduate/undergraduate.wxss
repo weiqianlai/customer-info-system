@@ -1,1 +1,1 @@
-/* pages/user/index/undergraduate/undergraduate.wxss */
+@import "../../template/customer.wxss";

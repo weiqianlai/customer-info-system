@@ -8,7 +8,7 @@ Page({
   data: {
      userName:undefined,
      loginName:undefined,
-     email:undefined,
+     phone_no:undefined,
      password:undefined,
      ensurepassword:undefined,
      passwordFlag:undefined,
@@ -16,7 +16,7 @@ Page({
      flag:undefined
   },
   regist:function(){ 
-     if(this.data.userName&&this.data.loginName&&this.data.email&&this.data.password&&this.data.ensurepassword){
+    if (this.data.userName && this.data.loginName && this.data.phone_no&&this.data.password&&this.data.ensurepassword){
        if(!this.data.flag){          //这里的判断不太清楚
           wx.showToast({
             title: '用户名已经被占用，请修改',

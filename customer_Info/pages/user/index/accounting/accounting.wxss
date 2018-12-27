@@ -1,1 +1,1 @@
-/* pages/user/index/accounting/accounting.wxss */
+@import "../../template/customer.wxss";

@@ -1,1 +1,1 @@
-/* pages/user/index/foreign-language/foreign-language.wxss */
+@import "../../template/customer.wxss";

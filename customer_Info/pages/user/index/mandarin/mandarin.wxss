@@ -1,1 +1,1 @@
-/* pages/user/index/mandarin/mandarin.wxss */
+@import "../../template/customer.wxss";

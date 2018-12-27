@@ -1,10 +1,9 @@
 // pages/user-info/user-info.js
 Page({ 
   data:  { 
-    list01: [{ item_id: 1 }, { item_id: 11 },{ item_id: 11 },],
-    list02: [],  
-    list03: [{ item_id: 11 }, { item_id: 11 }],
-    list04: [{ item_id: 11 },{ item_id: 11 },{ item_id: 11 }], 
+    list01: [{ item_id: 1 }, { item_id: 11 },{ item_id: 11 },], 
+    list02: [{ item_id: 11 }, { item_id: 11 }],
+    list03: [{ item_id: 11 },{ item_id: 11 },{ item_id: 11 }], 
              // 展开折叠 
     selectedFlag: [false, false, false, false], },
     // 展开折叠选择  

@@ -1,1 +1,1 @@
-/* pages/user/index/teacher-certification/teacher-certification.wxss */
+@import "../../template/customer.wxss";
