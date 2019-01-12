@@ -4,6 +4,7 @@
     <view class="page__title"></view>
   </view>
   <!--页头-->
+  <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="page__bd page__bd_spacing">
     <view class="userLogin">客户信息管理系统</view>
     <view class="weui-cells weui-cells_after-title">
@@ -12,7 +13,7 @@
           <view class="weui-label">用户名</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" name="loginName" bindblur='getLoginName' placeholder="请输入用户名" />
+          <input class="weui-input"   name="user_name" placeholder="请输入用户名" />
         </view>
       </view>
       <view class="weui-cell weui-cell_input weui-cell_vcode">
@@ -20,11 +21,11 @@
           <view class="weui-label">密码</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input" type="password" name="password" bindblur='getPassword' placeholder="请输入密码" />
+          <input class="weui-input" type="loginPassword" name="user_password"  placeholder="请输入密码" />
         </view>
       </view>
     </view>
-    <button class="weui-btn" type="primary" bindtap='login'>直接登录</button>
+    <button class="weui-btn" type="primary" formType="submit">直接登录</button>
     <button class="weui-btn" type="primary" bindtap='goregist'>没有账号，去注册</button>
   </view>
 
@@ -36,4 +37,5 @@
       <view class="weui-footer__text">法律信息 © 2018-2018 wql</view>
     </view>
   </view>
-</view> 
+  </form>
+</view>

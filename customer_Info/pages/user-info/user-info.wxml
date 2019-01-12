@@ -1,8 +1,8 @@
 <!--pages/user-info/user-info.wxml-->
 <view class='main-box'>
-    <view class='user-info'>
-        <view class='user-name'>李四</view>
-        <view class='grade'>我的会员等级：2级</view>
+    <view class='user-info' wx:for="{{post}}" wx:key>
+        <view class='user-name'>{{post.user_name}}</view>
+        <view class='grade'>我的会员：{{post.vip_grade}}级</view>
     </view>
   <view class="li" data-index="1" bindtap='changeToggle'>
     <view class="left">>待处理信息</view>

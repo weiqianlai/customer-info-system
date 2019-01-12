@@ -30,3 +30,14 @@ background:#888;
 .weui-grids{
   margin-top: 50rpx;
 }
+.weui-grid__icon {
+  width: 42px;
+  height: 32px;
+  margin: 0 auto;
+}
+
+.weui-grid__icon image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

@@ -4,53 +4,56 @@
     <view class="page__title"></view>
   </view>
   <!--页头-->
-  <view class="page__bd page__bd_spacing">
-    <view class="userRegist">注册</view>
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">昵称</view>
-        </view> 
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入昵称" bindblur='getUsername' />
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd page__bd_spacing">
+      <view class="userRegist">注册</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">用户名</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入用户名" type="text" name="user_name" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          性别：
+          <radio-group name="user_sex">
+            <label>
+              <radio value="女" />女</label>
+            <label>
+              <radio value="男" />男</label>
+          </radio-group>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入您的手机号" type="text" name="phone_no" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">登录密码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="password" placeholder="请输入密码" name="user_password" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">确认密码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="password" bindblur='getEnsurePassword' placeholder="请输入确认密码" />
+          </view>
         </view>
       </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">登录名</view>
-        </view> 
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入登录名" bindblur='getLoginName' />
-        </view>
-      </view> 
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">号码</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入您的手机号" bindblur='getEmail' />
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input weui-cell_vcode">
-        <view class="weui-cell__hd">
-          <view class="weui-label">登录密码</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" type="password" placeholder="请输入密码" bindblur='getPassword' />
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input weui-cell_vcode">
-        <view class="weui-cell__hd">
-          <view class="weui-label">确认密码</view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" type="password" bindblur='getEnsurePassword' placeholder="请输入确认密码" />
-        </view>
-      </view>
+      <button class="weui-btn btn1" type="primary" formType="submit">注册</button>
+      <button class="weui-btn" type="primary" bindtap='goLogin'>已有账号，直接登录</button>
     </view>
-    <button class="weui-btn btn1" type="primary" bindtap='regist'>注册</button>
-    <button class="weui-btn" type="primary" bindtap='goLogin'>已有账号，直接登录</button>
-  </view> 
+  </form>
 
   <view class="page__bd page__bd_spacing">
     <view class="weui-footer weui-footer_fixed-bottom">
@@ -60,4 +63,5 @@
       <view class="weui-footer__text">Copyright © 2018-2018 ZYJ</view>
     </view>
   </view>
+
 </view>

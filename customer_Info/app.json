@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/login/login",
     "pages/user/index/index",
     "pages/user/index/special-promotiom/special-promotiom",
@@ -12,44 +12,44 @@
     "pages/user/index/medical-science/medical-science",
     "pages/user/index/foreign-language/foreign-language",
     "pages/user/index/accounting/accounting",
-    "pages/user/addcustomer/addcustomer",
+    "pages/user/index/addcustomer/addcustomer",
     "pages/user-info/user-info",
     "src/example/button/button",
     "pages/regist/regist",
-    "pages/admin/index/index"
-    
+    "pages/admin/index/index",
+    "pages/user/index/court-clerk/court-clerk"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小程序",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-      "tabBar": {
-        "borderStyle": "white",
-        "selectedColor": "#4A6141",
-        "color": "#333",
-        "backgroundColor": "#CCEEFF",
-        "position": "bottom",
-        "list": [
-          {
-            "pagePath": "pages/user/index/index",
-            "text": "首页",
-            "iconPath": "/images/icon/home_1.png",
-            "selectedIconPath": "/images/icon/home_1.png"
-          },
-          {
-            "pagePath": "pages/user-info/user-info",
-            "text": "个人中心",
-            "iconPath": "/images/icon/setting.png",
-            "selectedIconPath": "/images/icon/setting.png"
-          }
-        ]
+  "tabBar": {
+    "borderStyle": "white",
+    "selectedColor": "#4A6141",
+    "color": "#333",
+    "backgroundColor": "#CCEEFF",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/user/index/index",
+        "text": "首页",
+        "iconPath": "/images/icon/home_2.png",
+        "selectedIconPath": "/images/icon/home_1.png"
       },
-      "networkTimeout": {
-        "request": 20000,
-        "connectSocket": 20000,
-        "uploadFile": 20000,
-        "downloadFile": 20000
+      {
+        "pagePath": "pages/user-info/user-info",
+        "text": "个人中心",
+        "iconPath": "/images/icon/mine_2.png",
+        "selectedIconPath": "/images/icon/mine_1.png"
       }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  }
 }

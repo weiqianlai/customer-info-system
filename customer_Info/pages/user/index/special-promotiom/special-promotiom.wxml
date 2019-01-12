@@ -1,18 +1,27 @@
-<import src="../../template/customer-list.wxml" />
-  <view class='main-box'>
-    <view class='header'>
-        <view class='my-customer'>我的客户</view>
-        <view class='separator'>|</view>
-        <view class='add-customer' bindtap='addCustomer'>+</view>
-    </view>
-    <view class='label'>
-            <text>姓名</text>
-            <text>性别</text>
-            <text>电话</text>
-            <text>操作</text>
-      </view>
-    
-    <block wx:for="{{customer_list}}" wx:key>
-        <template is="customer_list" data="{{...item}}" />
-    </block>
+<view wx:if="{{customer_list}}" class='container'>
+       <view class='title'>
+          <text>客户列表</text>
+       </view>
+       <view class='label'>
+          <text>姓名</text>
+          <text>性别</text>
+          <text>电话</text>
+          <text>操作</text>
+       </view>
+      <block wx:for="{{post}}" wx:key="">
+            <view class='content'>
+              <text>{{post.name}}</text>
+              <text>{{post.sex}}</text>
+              <text>{{post.phone}}</text>
+              <button class='del' data-id='{{item._id}}' bindtap='onDel'>删除</button>
+              <button class='update'  data-id='{{item._id}}' bindtap='onUpdate'>修改</button>
+          </view>
+      </block>
+</view>
+<view wx:else="{{customer_list}}" class='none'>
+      <text >暂时没有客户信息！</text>
+</view>
+
+<view class='add'>
+    <button  bindtap='addCustomer'>添加客户</button>
 </view>

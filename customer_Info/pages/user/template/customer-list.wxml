@@ -1,9 +1,0 @@
-<template name='customer_list'>
-              <view class='content'>
-                <text>{{name}}</text>
-                <text>{{sex}}</text>
-                <text>{{phone}}</text>
-                <button class='del' data-customer-id='{{item.customerId}}' bindtap='onDel'>删除</button>
-                <button class='update'  data-customer-id='{{item.customerId}}' bindtap='onUpdate'>修改</button>
-            </view>
-</template>

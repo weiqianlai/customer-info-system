@@ -1,4 +1,4 @@
-// pages/user/addcustomer/addcustomer.js
+// pages/user/court-clerk/court-clerk.js
 Page({
 
   /**

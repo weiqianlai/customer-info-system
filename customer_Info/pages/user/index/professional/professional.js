@@ -1,19 +1,27 @@
-// pages/user/index/professional/professional.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    customer_list: [{
+      name: "张三",
+      sex: '男',
+      phone: "54656456456"
+    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
   },
+  addCustomer: function () {
+    wx.navigateTo({
+      url: '../addcustomer/addcustomer',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

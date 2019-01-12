@@ -36,4 +36,4 @@
   globalData: {
     userInfo: null
   }
-})  */
+}) */

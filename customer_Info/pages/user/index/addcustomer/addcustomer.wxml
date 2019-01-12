@@ -1,0 +1,77 @@
+<!--<view class='container'>
+  <form bindsubmit='formSubmit'>
+    <view class='input-container'>
+      <label>姓名：</label>
+      <input type="text" name="name" placeholder="请输入昵称" confirm-type="done" />
+    </view>
+    <view class='input-container'>
+      <label>性别：</label>
+      <input style='display:none' data-value='{{id}}' name="id" value='{{name}}'></input>
+      <input data-value='{{name}}' name="name" value='{{book.name}}'></input>
+    </view>
+    
+    <view class='input-container'>
+      <label>电话：</label>
+      <input data-value='{{price}}' name="price" value='{{tel_no}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>姓名：</label>
+      <input style='display:none' data-value='{{id}}' name="id" value='{{name}}'></input>
+      <input data-value='{{name}}' name="name" value='{{book.name}}'></input>
+    </view>
+    <view class='input-container'>
+      <label>年龄：</label>
+      <input data-value='{{price}}' name="price" value='{{book.price}}' placeholder="选填"></input>
+    </view>
+    <view class='input-container'>
+      <label>民族：</label>
+      <input data-value='{{price}}' name="price" value='{{book.price}}' placeholder="选填"></input>
+    </view>
+    <view class='input-container'>
+      <label>工作地址：</label>
+      <input data-value='{{price}}' name="price" value='{{book.price}}' placeholder="选填"></input>
+    </view>
+    <view class='input-container'>
+      <label>备注：</label>
+      <textarea data-value='{{price}}' name="price" value='{{book.price}}'> </textarea> 
+    </view>
+    <view class='comfirm'>
+      <button form-type='formSubmit'>保存</button>
+    </view>
+  </form>
+</view> -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view>
+    姓名：
+    <input type="text" name="name" placeholder="请输入客户姓名" confirm-type="done" value='张三'/> 
+    电话：
+    <input tel_no type="number" name="tel_no" placeholder="请输入电话号码" maxlength="11"  value='18224995161'/>
+    性别：
+    <radio-group name="sex">
+      <label>
+        <radio value="女" />女</label>
+      <label>
+        <radio value="男" />男</label>
+    </radio-group>
+    是否透漏录入人信息：
+    <checkbox-group name="disclose" >
+      <label>
+        <checkbox value="是" />是</label>
+      <label>
+        <checkbox value="否" />否</label>
+    </checkbox-group>
+    年龄：
+    <input type="number" name="age" placeholder="请输入客户年龄" value='55' /> 
+    工作地址：
+    <input type="text" name="work_address" placeholder="请输入客户工作地址" value='凯里市' />
+    备注：
+    <input type="text" name="comments" placeholder="请备注"  value=' '/> 
+    录入信息类型：
+    <input type="text" name="type" placeholder="请输入类型" value='001' />  
+  </view>
+
+  <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">重置</button>
+  </view>
+</form>

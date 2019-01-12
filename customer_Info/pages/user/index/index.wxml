@@ -1,19 +1,22 @@
 <!--pages/user/index/index.wxml-->
 <view class='main-box'>
-    <scroll-view class='nav-scroll' scroll-y="true">
-        <view class='nav-box'>
-            <view class='title-box'>
-              <view class='line-css'></view>
-              <text class='title-word'>请选择客户意向</text>
-              <view class='line-css'></view>
-            </view>
-            <view class="weui-grids" >
-                <view class="weui-grid" wx:for="{{routers}}" wx:key="name">
-                  <navigator url="{{item.url}}">
-                    <text class="weui-grid__label">{{item.name}}</text>
-                  </navigator>
-                </view>
-            </view>
-        </view>
-    </scroll-view>
+  <scroll-view class='nav-scroll' scroll-y="true">
+    <view class='nav-box'>
+      <view class='title-box'>
+        <view class='line-css'></view>
+        <text class='title-word'>请选择客户意向</text>
+        <view class='line-css'></view>
+      </view>
+    </view>
+    <view class="weui-grids">
+      <view class="weui-grid" wx:for="{{routers}}" wx:key="name" data-id="{{routers.id}}">
+        <navigator url="{{item.url}}?routersid={{item.id}}">
+          <view class="weui-grid__icon">
+            <image src=" {{item.icon}}" mode="scaleToFill" />
+          </view>
+          <text class="weui-grid__label">{{item.name}}</text>
+        </navigator>
+      </view>
+    </view>
+  </scroll-view>
 </view>
