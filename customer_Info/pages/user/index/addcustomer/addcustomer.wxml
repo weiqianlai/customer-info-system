@@ -40,12 +40,13 @@
     </view>
   </form>
 </view> -->
-<form bindsubmit="formSubmit" bindreset="formReset">
+<form bindsubmit="formSubmit" bindreset="formReset" >
   <view>
     姓名：
-    <input type="text" name="name" placeholder="请输入客户姓名" confirm-type="done" value='张三'/> 
+    <input style='display:none' data-value='{{id}}'  name="id" value='{{post._id}}'></input>
+    <input type="text" data-value='{{name}}'  name="name" placeholder="请输入客户姓名" confirm-type="done" value='{{post.name}}'/> 
     电话：
-    <input tel_no type="number" name="tel_no" placeholder="请输入电话号码" maxlength="11"  value='18224995161'/>
+    <input tel_no type="number" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11"  value='{{post.tel_no}}'/>
     性别：
     <radio-group name="sex">
       <label>
@@ -61,17 +62,17 @@
         <checkbox value="否" />否</label>
     </checkbox-group>
     年龄：
-    <input type="number" name="age" placeholder="请输入客户年龄" value='55' /> 
+    <input type="number" name="age" placeholder="请输入客户年龄" value='' /> 
     工作地址：
-    <input type="text" name="work_address" placeholder="请输入客户工作地址" value='凯里市' />
+    <input type="text" name="work_address" placeholder="请输入客户工作地址" value='' />
     备注：
-    <input type="text" name="comments" placeholder="请备注"  value=' '/> 
+    <input type="text" name="comments" placeholder="请备注"  value=''/> 
     录入信息类型：
-    <input type="text" name="type" placeholder="请输入类型" value='001' />  
+    <input type="text" name="phone_no" placeholder="请输入类型" value='' />  
   </view>
 
   <view class="btn-area">
-    <button formType="submit">提交</button>
+    <button formType="submit" bindtap='goSP'>提交</button>
     <button formType="reset">重置</button>
   </view>
 </form>

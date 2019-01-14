@@ -10,7 +10,7 @@ Page({
         'age': e.detail.value.age,
         'work_address': e.detail.value.work_address,
         'comments': e.detail.value.comments,
-        'type': e.detail.value.type,
+        'phone_no': e.detail.value.phone_no,
       },
       method: 'POST',
       header: {
@@ -21,5 +21,9 @@ Page({
       }
     })
   },
-  
+  goSP:function() {
+    wx.redirectTo({
+      url: '../special-promotiom/special-promotiom',
+    })
+  }
 }) 

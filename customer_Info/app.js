@@ -1,6 +1,6 @@
 //app.js
-/*App({
-  addressUrl:"https://52yanjie.cn/LRSystem/",
+App({
+  addressUrl:"http://localhost:8080/wudi/userLogin",
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -36,4 +36,4 @@
   globalData: {
     userInfo: null
   }
-}) */
+})

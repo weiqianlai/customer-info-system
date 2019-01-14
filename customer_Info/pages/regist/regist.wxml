@@ -10,27 +10,29 @@
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
-            <view class="weui-label">用户名</view>
+            <view class="weui-label">姓名</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入用户名" type="text" name="user_name" />
+            <input class="weui-input" placeholder="请输入您的姓名" type="text" name="user_name" bindinput='getUserName' />
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
-          性别：
-          <radio-group name="user_sex">
+          <view class="weui-label sex_choose">性别</view>
+           <view class="weui-cell__bd">
+          <radio-group name="user_sex" bindinput='getUserSex'>
             <label>
-              <radio value="女" />女</label>
+              <radio value="0" />男</label>
             <label>
-              <radio value="男" />男</label>
+              <radio value="1" />女</label>
           </radio-group>
+          </view>
         </view>
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
             <view class="weui-label">号码</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入您的手机号" type="text" name="phone_no" />
+            <input class="weui-input" placeholder="请输入您的手机号" type="text" name="phone_no" bindinput='getPhoneNo' />
           </view>
         </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">
@@ -38,7 +40,7 @@
             <view class="weui-label">登录密码</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="password" placeholder="请输入密码" name="user_password" />
+            <input class="weui-input" type="password" placeholder="请输入至少六位密码" name="user_password" bindinput='getUserPassword' />
           </view>
         </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">
@@ -46,7 +48,7 @@
             <view class="weui-label">确认密码</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="password" bindblur='getEnsurePassword' placeholder="请输入确认密码" />
+            <input class="weui-input" type="password" bindinput='getEnsurePassword' name="ensurePassword" placeholder="请输入确认密码" />
           </view>
         </view>
       </view>
@@ -60,8 +62,7 @@
       <view class="weui-footer__links">
         <navigator url="" class="weui-footer__link">首页</navigator>
       </view>
-      <view class="weui-footer__text">Copyright © 2018-2018 ZYJ</view>
+      <view class="weui-footer__text">Copyright © 2018-2018 WQL</view>
     </view>
   </view>
-
 </view>
