@@ -1,53 +1,87 @@
-/* pages/set/set.wxss */
-.container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top: -200rpx;
-}
-.input-container{
-  width: 750rpx;
-  display: inline-flex;
-  margin-top: 20rpx;
-  justify-content: center;
-}
-.input-container input{
-  border:1rpx solid #ddd;
-  border-radius: 14rpx;
-  padding: 10rpx;
-}
-.comfirm {
-    position: fixed;
-    width: 750rpx;
-    height: 120rpx;
-    bottom: 0;
-}
-.comfirm button{
-  margin: 0 10rpx;
-  border-radius: 14rpx 15rpx;
-  background-color: #1aad16;
-  color: #ffffff;
+.main-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
-radio{
+.form-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 10rpx 0rpx 10rpx;
+  border: 1px #2facff dashed;
+  border-radius: 5%;
+}
+
+.input-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding-left: 30rpx;
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-family: "Microsoft YaHei";
+}
+
+
+.placeholderStyle{
+  color:#ccc;
+  font-size: 26rpx;
+  margin-top: 5rpx;
+}
+.tn-area {
+    width: 100%;
+    position: fixed;
+    bottom: 30rpx;
+}
+.text-area{
+   padding-top: 0rpx;
+}
+.text-areaStyle{
+  color:#ccc;
+  font-size: 26rpx;
+  margin-top: 5rpx;
+  height: 500rpx;
+}
+.btn-area{
+  margin-top: 100rpx;
+  position: relative;
+  border-bottom: 0rpx;
+  
+}
+.btn{
+    margin-top: 15rpx;
+    width: 450rpx;
+    background: #14a1fd;
+    color: #fff;
+    border-radius: 70rpx;
+}
+
+  radio {
     width: 38rpx;
 }
- 
-radio .wx-radio-input{
-    border-radius: 50%; 
-    width: 28rpx;
-    height: 28rpx;
+
+radio {
+  width: 38rpx;
 }
- 
+
+radio .wx-radio-input {
+  border-radius: 50%;
+  width: 28rpx;
+  height: 28rpx;
+}
+
 /* 选中后的样式 （可根据设计稿需求自己修改） */
-radio .wx-radio-input.wx-radio-input-checked::before{
-    border-radius: 50%;
-    width: 44rpx; 
-    height: 44rpx; 
-    line-height: 44rpx;
-    text-align: center;
-    font-size: 26rpx; /* 对勾大小 26rpx */
-    color:#fff; /* 对勾颜色 */
-    background: #2facff;
-    border-color: #2facff;
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  font-size: 26rpx; /* 对勾大小 26rpx */
+  color: #fff; /* 对勾颜色 */
+  background: #2facff;
+  border-color: #2facff;
 }

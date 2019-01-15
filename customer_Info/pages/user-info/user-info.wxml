@@ -1,7 +1,7 @@
 <!--pages/user-info/user-info.wxml-->
 <view class='main-box'>
     <view class='user-info' wx:for="{{post}}" wx:key>
-        <view class='user-name'>{{post.user_name}}</view>
+        <view class='user-name'>{{post.result}}</view>
         <view class='grade'>我的会员：{{post.vip_grade}}级</view>
     </view>
   <view class="li" data-index="1" bindtap='changeToggle'>

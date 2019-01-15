@@ -25,7 +25,5 @@
 <view class='add'>
     <button  bindtap='addCustomer'>添加客户</button>
 </view>
-<view class='add'>
-    <button  bindtap='addCustomer'>添加客户</button>
-</view>
+
 

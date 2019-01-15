@@ -1,78 +1,58 @@
-<!--<view class='container'>
-  <form bindsubmit='formSubmit'>
-    <view class='input-container'>
-      <label>姓名：</label>
-      <input type="text" name="name" placeholder="请输入昵称" confirm-type="done" />
-    </view>
-    <view class='input-container'>
-      <label>性别：</label>
-      <input style='display:none' data-value='{{id}}' name="id" value='{{name}}'></input>
-      <input data-value='{{name}}' name="name" value='{{book.name}}'></input>
-    </view>
-    
-    <view class='input-container'>
-      <label>电话：</label>
-      <input data-value='{{price}}' name="price" value='{{tel_no}}'></input>
-    </view>
-    <view class='input-container'>
-      <label>姓名：</label>
-      <input style='display:none' data-value='{{id}}' name="id" value='{{name}}'></input>
-      <input data-value='{{name}}' name="name" value='{{book.name}}'></input>
-    </view>
-    <view class='input-container'>
-      <label>年龄：</label>
-      <input data-value='{{price}}' name="price" value='{{book.price}}' placeholder="选填"></input>
-    </view>
-    <view class='input-container'>
-      <label>民族：</label>
-      <input data-value='{{price}}' name="price" value='{{book.price}}' placeholder="选填"></input>
-    </view>
-    <view class='input-container'>
-      <label>工作地址：</label>
-      <input data-value='{{price}}' name="price" value='{{book.price}}' placeholder="选填"></input>
-    </view>
-    <view class='input-container'>
-      <label>备注：</label>
-      <textarea data-value='{{price}}' name="price" value='{{book.price}}'> </textarea> 
-    </view>
-    <view class='comfirm'>
-      <button form-type='formSubmit'>保存</button>
-    </view>
-  </form>
-</view> -->
-<form bindsubmit="formSubmit" bindreset="formReset" >
-  <view>
-    姓名：
-    <input style='display:none' data-value='{{id}}'  name="id" value='{{post._id}}'></input>
-    <input type="text" data-value='{{name}}'  name="name" placeholder="请输入客户姓名" confirm-type="done" value='{{post.name}}'/> 
-    电话：
-    <input tel_no type="number" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11"  value='{{post.tel_no}}'/>
-    性别：
-    <radio-group name="sex">
-      <label>
-        <radio value="女" />女</label>
-      <label>
-        <radio value="男" />男</label>
-    </radio-group>
-    是否透漏录入人信息：
-    <checkbox-group name="disclose" >
-      <label>
-        <checkbox value="是" />是</label>
-      <label>
-        <checkbox value="否" />否</label>
-    </checkbox-group>
-    年龄：
-    <input type="number" name="age" placeholder="请输入客户年龄" value='' /> 
-    工作地址：
-    <input type="text" name="work_address" placeholder="请输入客户工作地址" value='' />
-    备注：
-    <input type="text" name="comments" placeholder="请备注"  value=''/> 
-    录入信息类型：
-    <input type="text" name="phone_no" placeholder="请输入类型" value='' />  
-  </view>
+<view class='main-box'>
+  <view class='form-box'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class='input-box'>
+        <text>姓名：</text>
+        <input style='display:none' data-value='{{id}}' name="id" value='{{post._id}}'></input>
+        <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入客户姓名" type="text" data-value='{{name}}' name="name" confirm-type="done" value='{{post.name}}' />
+      </view>
+      <view class='input-box'>
+        <text>电话：</text>
+        <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}' />
+      </view>
+      <view class='input-box'>
+        <text>性别：</text>
+        <radio-group name="sex">
+          <label>
+            <radio value="男" />男</label>
+          <label>
+            <radio value="女" />女</label>
+        </radio-group>
+      </view>
+      <view class='input-box'>
+        <text>是否透漏录入人信息：</text>
+        <radio-group name="disclose">
+          <label>
+            <radio value="是" />是</label>
+          <label>
+            <radio value="否" />否</label>
+        </radio-group>
+      </view>
+      <view class='input-box'>
+        <text>年龄：</text>
+        <input type="text" class='input-content' placeholder-class="placeholderStyle" name="age" placeholder="请输入客户年龄" value='' />
+      </view>
+      <view class='input-box'>
+        <text>民族：</text>
+        <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户年龄" value='' />
+      </view>
+      <view class='input-box'>
+        <text>工作地址：</text>
+        <input type="text" class='input-content' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" value='' />
+      </view>
+      <view class='input-box'>
+        <text>录入信息类型：</text>
+        <input type="text" class='input-content' placeholder-class="placeholderStyle" name="phone_no" placeholder="请输入类型" value='' />
+      </view>
+      <view class='input-box'>
+        <text>备注：</text>
+        <textarea type="text" class='text-area' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='' maxlength="1200" />  
+      </view>
 
-  <view class="btn-area">
-    <button formType="submit" bindtap='goSP'>提交</button>
-    <button formType="reset">重置</button>
+      <view class="btn-area">
+        <button formType="submit" bindtap='goSP' class='btn'>提 交</button>
+        <button formType="reset" class='btn'>重 置</button>
+      </view>
+    </form>
   </view>
-</form>
+</view>

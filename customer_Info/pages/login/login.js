@@ -44,7 +44,7 @@ Page({
         title: "信息提示",
         content: "密码至少为六位!"
       })
-    } else if (phone) {
+    } else if (phone) {//TODO
 
       console.log("手机号：" + phone + "密码：" + pwd)
       //发送ajax请求到服务器-登录
@@ -58,7 +58,7 @@ Page({
         header: {
           'content-type': 'application/x-www-form-urlencoded' // 默认值
         },
-        method: 'POST',
+        method: 'POST', //TODO
         dataType: 'json',
         success: function(res) {
           console.log(res.data)
