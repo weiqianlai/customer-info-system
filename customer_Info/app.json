@@ -17,7 +17,8 @@
     "src/example/button/button",
     "pages/regist/regist",
     "pages/admin/index/index",
-    "pages/user/index/court-clerk/court-clerk"
+    "pages/user/index/court-clerk/court-clerk",
+    "pages/user/my-team/my-team"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,6 +36,12 @@
       {
         "pagePath": "pages/user/index/index",
         "text": "首页",
+        "iconPath": "/images/icon/home_2.png",
+        "selectedIconPath": "/images/icon/home_1.png"
+      },
+      {
+        "pagePath": "pages/user/my-team/my-team",
+        "text": "我的团队",
         "iconPath": "/images/icon/home_2.png",
         "selectedIconPath": "/images/icon/home_1.png"
       },

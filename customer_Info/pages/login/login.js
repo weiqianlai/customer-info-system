@@ -32,7 +32,7 @@ Page({
       wx.showModal({
         title: "信息提示",
         content: "手机号有误"
-      })
+      })  
     } else if (that.data.user_password == "") {
       wx.showModal({
         title: "信息提示",

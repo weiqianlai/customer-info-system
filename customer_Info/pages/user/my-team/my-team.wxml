@@ -1,0 +1,29 @@
+<!--pages/user/my-team/my-team.wxml-->
+<view class='mian-box'>
+  <view class='nav-box'>
+    <view class='title-box'>
+      <view class='line-css'></view>
+      <text class='title-word'>我的团队</text>
+      <view class='line-css'></view>
+    </view>
+  </view>
+  <view class='container'>
+    <view class='title'>
+      <!-- <text>队员信息</text> -->
+    </view>
+    <view class='label'>
+      <text>姓名</text>
+      <text>性别</text>
+      <text>电话</text>
+      <text>操作</text>
+    </view>
+    <block wx:for="{{team_list}}" wx:key="{{item}}">
+      <view class='content' data-id="{{}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text>{{item.tel_no}}</text>
+        <button class='del' data-id='{{item.id}}' bindtap='onDel'>删除</button>
+      </view>
+    </block>
+  </view>
+</view>

@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -70,6 +70,12 @@
 					"id": -1,
 					"name": "admin",
 					"pathName": "pages/admin/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "my-team",
+					"pathName": "pages/user/my-team/my-team",
 					"query": ""
 				}
 			]

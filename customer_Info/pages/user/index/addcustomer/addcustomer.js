@@ -13,7 +13,7 @@ Page({
         'comments': e.detail.value.comments,
         'phone_no': phone_no,
         'nation': e.detail.value.nation,  
-        'type'  :"zhuanshengben"     //全部信息应传到后台
+        'type'  :"gaoshengzhuan"     //全部信息应传到后台
       },
       method: 'GET',
       header: {

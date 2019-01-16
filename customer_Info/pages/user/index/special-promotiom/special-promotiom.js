@@ -24,23 +24,21 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
-        //console.log(res.data)
-        var post_data = JSON.stringify(res.data);
-        console.log("special-onLoad" + post_data);
-        //var postId = res.currentTarget.item.id;
-        //console.log(postId);
+        console.log("special-onLoad");
+        console.log(res.data.data);
+         wx.setStorageSync("lalala", res.data.data)
+        console.log("lalala");
         //将获取到的json数据，存在名字叫list_data的这个数组中
         _this.setData({
           post: res.data.data //res.data后面需要加后台传过来的数组名
-          //res代表success函数的事件对，data是固定的，imgListData是上面json数据中imgListData
         })
-        wx.setStorageSync("lalala", res.data.data);
+        
       }
     })
   },
   onDel: function(e) {
     var id = e.target.dataset.id;
-    //console.log(id);
+    console.log("onDel" + id);
     var that = this;
     wx.request({
       url: 'http://localhost:8086/wudi/getSpecialPromotiom', //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
@@ -56,13 +54,17 @@ Page({
         that.setData({
           post: e.data.data
         }) //这里想写一个点击删除后自动更新页面的代码
-        //console.log(e)
+        
+        if (getCurrentPages().length != 0) {
+          //刷新当前页面的数据 //TODO这里需要改进
+          getCurrentPages()[getCurrentPages().length - 1].onLoad()
+        }
       }
     })
   },
   onUpdate: function(e) {
     var id = e.target.dataset.id;
-    console.log(id);
+    console.log("onUpdate" + id);
     wx.navigateTo({
       url: '../addcustomer/addcustomer?id=' + id,
     })
@@ -77,16 +79,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    console.log("onReady");
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function(res) {
-    // var post1 = wx.getStorageSync('lalala', res.data.data);
-    // console.log("onShow" + post1);
-    // //console.log(post1);
+    // var post1 = wx.getStorageSync('lalala', res);
+    // console.log("onShow")
     // this.setData({
     //   post: post1
     // })
@@ -96,14 +97,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    console.log("onHide");
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    console.log("onUnload");
   },
 
   /**
