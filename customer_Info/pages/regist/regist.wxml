@@ -21,7 +21,7 @@
            <view class="weui-cell__bd">
           <radio-group name="user_sex" bindinput='getUserSex'>
             <label>
-              <radio value="0" />男</label>
+              <radio value="0"  checked/>男</label>
             <label>
               <radio value="1" />女</label>
           </radio-group>

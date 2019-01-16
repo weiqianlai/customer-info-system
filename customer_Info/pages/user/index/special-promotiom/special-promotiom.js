@@ -11,15 +11,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var phone_no = wx.getStorageSync('phone_no');
+    console.log(phone_no);
     var _this = this;
     wx.request({
       url: 'http://localhost:8086/wudi/getSpecialPromotiom', //json数据地址
       method: "GET",
       data: {
-        phone_no: "11111"
+        "phone_no": phone_no
       },
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
         //console.log(res.data)

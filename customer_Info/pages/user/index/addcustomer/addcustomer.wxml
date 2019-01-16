@@ -40,10 +40,10 @@
         <text>工作地址：</text>
         <input type="text" class='input-content' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" value='' />
       </view>
-      <view class='input-box'>
+      <!-- <view class='input-box'>
         <text>录入信息类型：</text>
         <input type="text" class='input-content' placeholder-class="placeholderStyle" name="phone_no" placeholder="请输入类型" value='' />
-      </view>
+      </view> -->
       <view class='input-box'>
         <text>备注：</text>
         <textarea type="text" class='text-area' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='' maxlength="1200" />  

@@ -1,7 +1,6 @@
 Page({
   formSubmit: function(e) {
-    console.log("formSubmit");
-    
+    var phone_no = wx.getStorageSync('phone_no');//获取缓存的phone_no
     wx.request({
       url: 'http://localhost:8086/admin/saveSpecialPromotiom',
       data: {
@@ -12,8 +11,9 @@ Page({
         'age': e.detail.value.age,
         'work_address': e.detail.value.work_address,
         'comments': e.detail.value.comments,
-        'phone_no': e.detail.value.phone_no,
-        'nation': e.detail.value.nation,          //全部信息应传到后台
+        'phone_no': phone_no,
+        'nation': e.detail.value.nation,  
+        'type'  :"zhuanshengben"     //全部信息应传到后台
       },
       method: 'GET',
       header: {

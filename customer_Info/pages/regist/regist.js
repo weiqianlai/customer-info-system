@@ -52,7 +52,7 @@
        })
      } else if (name && phone && password && enpassword) {
        wx.request({
-         url: "http://localhost:8080/wudi/saveUserinfo",
+         url: "http://localhost:8086/wudi/saveUserinfo",
          data: {
            'user_name': e.detail.value.user_name,
            'user_sex': e.detail.value.user_sex,

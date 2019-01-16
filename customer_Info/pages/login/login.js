@@ -14,8 +14,7 @@ Page({
       user_password: e.detail.value
     })
   },
-  onLoad: function(options) {
-  },
+  onLoad: function(options) {},
   //点击登陆的时候触发的事件
   signin: function() {
     var that = this;
@@ -44,13 +43,13 @@ Page({
         title: "信息提示",
         content: "密码至少为六位!"
       })
-    } else if (phone) {//TODO
+    } else{ //TODO
 
       console.log("手机号：" + phone + "密码：" + pwd)
       //发送ajax请求到服务器-登录
       wx.request({
-        url: 'http://localhost:8080/wudi/userLogin',
-        method:"GET",
+        url: 'http://localhost:8086/wudi/userLogin',
+        method: "GET",
         data: {
           phone_no: phone,
           user_password: pwd,
@@ -66,27 +65,41 @@ Page({
           // console.log("返回的结果" + JSON.stringify(res.data.status))
           var msg = JSON.stringify(res.data.code);
           var type = JSON.stringify(res.data.type);
-          //弹出提示
-          /*wx.showToast({
-            title: '登录成功',
-            icon: 'loading',
-            duration: 3000
-          }) */
+          var info = JSON.stringify(res.data.info);
+          wx.setStorageSync("phone_no", phone); //缓存用户电话，首页接后便于读取后台数据
+
+
+
           if (msg == 1 && type == 2) {
+            wx.showToast({
+              title: '登录成功',
+              icon: 'loading',
+              duration: 3000
+            })
             // console.log(status)
             //跳转到index页面
             wx.switchTab({
               url: '../user/index/index',
             })
-          } else if(msg==1 && type == 1){ 
+          } else if (msg == 1 && type == 1) {
+            wx.showToast({
+              title: '登录成功',
+              icon: 'loading',
+              duration: 3000
+            })
             //跳转到index页面
             wx.redirectTo({
               url: '../admin/index/index',
             })
+          } else if (msg == 2 && type == 0) {
+            wx.showModal({
+              title: "信息提示",
+              content: info + ""
+            })
           } else {
             wx.showModal({
               title: "信息提示",
-              content: "异常"
+              content: "密码错误"
             })
           }
         },
@@ -106,11 +119,6 @@ Page({
         },
       })
     }
-    var user_phone_no = {
-      user_phone_no: phone
-    }
-    wx.setStorageSync('user_phone_no', user_phone_no); //缓存用户电话，首页接后便于读取后台数据
-    console.log(user_phone_no);
 
   },
   //点击注册的时候触发的事件
