@@ -14,11 +14,13 @@
     "pages/user/index/accounting/accounting",
     "pages/user/index/addcustomer/addcustomer",
     "pages/user-info/user-info",
-    "src/example/button/button",
     "pages/regist/regist",
     "pages/admin/index/index",
     "pages/user/index/court-clerk/court-clerk",
-    "pages/user/my-team/my-team"
+    "pages/user/my-team/my-team",
+    "pages/user/addteam/addteam",
+    "pages/user/addplayer/addplayer"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -36,20 +38,20 @@
       {
         "pagePath": "pages/user/index/index",
         "text": "首页",
-        "iconPath": "/images/icon/home_2.png",
-        "selectedIconPath": "/images/icon/home_1.png"
+        "iconPath": "/images/icon/shouye.png",
+        "selectedIconPath": "/images/icon/shouye1.png"
       },
       {
         "pagePath": "pages/user/my-team/my-team",
         "text": "我的团队",
-        "iconPath": "/images/icon/home_2.png",
-        "selectedIconPath": "/images/icon/home_1.png"
+        "iconPath": "/images/icon/wode.png",
+        "selectedIconPath": "/images/icon/wode1.png"
       },
       {
         "pagePath": "pages/user-info/user-info",
         "text": "个人中心",
-        "iconPath": "/images/icon/mine_2.png",
-        "selectedIconPath": "/images/icon/mine_1.png"
+        "iconPath": "/images/icon/wode.png",
+        "selectedIconPath": "/images/icon/wode1.png"
       }
     ]
   },

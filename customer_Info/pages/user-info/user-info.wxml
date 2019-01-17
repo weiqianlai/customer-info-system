@@ -41,8 +41,7 @@
   <view hidden="{{!selectedFlag[4]}}">
     <block wx:for="{{list03}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class="li bg-gray">
-        <view>展开4</view>
-        <view class="red">展开4右边</view>
+        <view bindtap='goAddTean'>创建团队</view>
       </view>
     </block>
   </view>

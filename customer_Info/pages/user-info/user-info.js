@@ -7,7 +7,7 @@ Page({
     }], 
     list01: [{ item_id: 1 }, { item_id: 11 },{ item_id: 11 },], 
     list02: [{ item_id: 11 }, { item_id: 11 }],
-    list03: [{ item_id: 11 },{ item_id: 11 },{ item_id: 11 }], 
+    list03: [{ item_id: 11 }],
              // 展开折叠 
     selectedFlag: [false, false, false, false], },
     // 展开折叠选择  
@@ -43,6 +43,14 @@ Page({
       fail:function(res) {
         console.log("啊嗷...获取数据失败了")
       }
+    })
+  },
+  goAddTean:function(event) {
+    wx.navigateTo({
+      url: '../user/addteam/addteam',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
   }
 })  

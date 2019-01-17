@@ -3,7 +3,7 @@
   <view class='nav-box'>
     <view class='title-box'>
       <text class='my-team-word'>我的团队</text>
-      <text class='my-team-word'>添加队员</text>
+      <text class='my-team-word' bindtap='goAddPlayer'>添加队员</text>
     </view>
   </view>
   <view class='container'>

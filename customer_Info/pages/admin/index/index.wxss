@@ -1,43 +1,66 @@
 /* pages/user/index/index.wxss */
-.main-box{
+
+.main-box {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.title-box{
+
+.title-box {
   width: 100%;
   display: flex;
   flex-direction: row;
 }
-.nav-box{
+
+.nav-box {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  margin-top: 80rpx;
+  margin-top: 50rpx;
 }
+
 .line-css {
-width: 30%;
-height:1px;
-background:#888;
+  width: 30%;
+  height: 1px;
+  background: #888;
 }
-.title-word{
+
+.title-word {
   width: 40%;
   font-size: 36rpx;
   color: #ccc;
   text-align: center;
   line-height: 1%;
 }
-.weui-grids{
-  margin-top: 50rpx;
-}
-.weui-grid__icon {
-  width: 42px;
-  height: 32px;
-  margin: 0 auto;
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 20px;
 }
 
-.weui-grid__icon image {
-  display: block;
-  width: 100%;
-  height: 100%;
-}/* pages/admin/index/index.wxss */
+.item_size {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 200rpx;
+}
+
+.img {
+  height: 80px;
+  width: 80%;
+  border-radius: 80px;
+  border: 1px solid rgb(203, 212, 226);
+}
+
+.text {
+  font-size: 12px;
+  align-content: flex-end;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}

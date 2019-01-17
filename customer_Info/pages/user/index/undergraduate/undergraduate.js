@@ -13,7 +13,7 @@ Page({
   onLoad: function (options) {
     var _this = this;
     wx.request({
-      url: 'http://localhost:8086/wudi/getSpecialPromotiom', //json数据地址
+      url: 'http://localhost:8080/wudi/getSpecialPromotiom', //json数据地址
       method: "GET",
       data: {
         phone_no: "11111"

@@ -48,7 +48,7 @@ Page({
       console.log("手机号：" + phone + "密码：" + pwd)
       //发送ajax请求到服务器-登录
       wx.request({
-        url: 'http://localhost:8086/wudi/userLogin',
+        url: 'http://localhost:8080/wudi/userLogin',
         method: "GET",
         data: {
           phone_no: phone,

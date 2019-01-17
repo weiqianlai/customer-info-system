@@ -1,0 +1,58 @@
+/* pages/user/addteam/addteam.wxss */
+/* pages/regist/regist.wxss */
+.button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+}
+.mini-btn{
+    margin-right: 5px;
+}
+.userRegist{
+  margin-top:130rpx;
+  text-align: center;
+  margin-bottom: 80rpx;
+  font-size: 60rpx;
+  font-family: "黑体";
+  color: #666;
+}
+
+.weui-footer{
+    margin-bottom: 50px;
+}
+.weui-footer_fixed-bottom{
+    margin-bottom: 0;
+}
+.weui-label{
+  margin-left:20rpx;
+}
+.weui-btn{
+  width: 80%;
+}
+radio{
+    width: 38rpx;
+}
+ 
+radio .wx-radio-input{
+    border-radius: 50%; 
+    width: 28rpx;
+    height: 28rpx;
+}
+ 
+/* 选中后的样式 （可根据设计稿需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+    border-radius: 50%;
+    width: 44rpx; 
+    height: 44rpx; 
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 26rpx; /* 对勾大小 26rpx */
+    color:#fff; /* 对勾颜色 */
+    background: #2facff;
+    border-color: #2facff;
+}
+.sex_choose{
+  font-size: 36rpx;
+  margin-top: 17rpx;
+  margin-bottom: 17rpx;
+}

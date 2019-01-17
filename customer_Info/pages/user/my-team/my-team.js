@@ -5,11 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    team_list:[{
-      name:"李四",
-      sex:"女",
-      tel_no:"18224995161"
-    }]
   },
 
   /**
@@ -17,6 +12,11 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  goAddPlayer:function(event) {
+    wx.navigateTo({
+      url: '../addplayer/addplayer',
+    })
   },
 
   /**

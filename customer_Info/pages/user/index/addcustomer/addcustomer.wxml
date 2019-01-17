@@ -1,14 +1,14 @@
 <view class='main-box'>
-  <view class='form-box'>
+  <view class='form-box' wx:for="{{post}}" >
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class='input-box'>
         <text>姓名：</text>
-        <input style='display:none' data-value='{{id}}' name="id" value='{{post._id}}'></input>
-        <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入客户姓名" type="text" data-value='{{name}}' name="name" confirm-type="done" value='{{post.name}}' />
+        <input style='display:none' data-value='{{id}}' name="id" value='{{post.id}}'></input>
+        <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入客户姓名" type="text" data-value='{{name}}' name="name" confirm-type="done" value='{{post.name}}' >{{item.name}}</input>
       </view>
       <view class='input-box'>
         <text>电话：</text>
-        <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}' />
+        <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}' >{{item.tel_no}}</input>
       </view>
       <view class='input-box'>
         <text>性别：</text>

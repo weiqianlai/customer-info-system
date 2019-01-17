@@ -1,0 +1,23 @@
+<!--pages/regist/regist.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title"></view>
+  </view>
+  <!--页头-->
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd page__bd_spacing">
+      <view class="userRegist">添加队员</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">队员号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入队员手机号" type="text" name="phone_no" />
+          </view>
+        </view>
+        <button class="weui-btn btn1" type="primary" formType="submit">邀请</button>
+      </view>
+    </view>
+  </form>
+</view>

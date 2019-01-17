@@ -15,7 +15,7 @@ Page({
     console.log(phone_no);
     var _this = this;
     wx.request({
-      url: 'http://localhost:8086/wudi/getSpecialPromotiom', //json数据地址
+      url: 'http://localhost:8080/wudi/getSpecialPromotiom', //json数据地址
       method: "GET",
       data: {
         "phone_no": phone_no
@@ -63,8 +63,8 @@ Page({
     })
   },
   onUpdate: function(e) {
-    var id = e.target.dataset.id;
-    console.log("onUpdate" + id);
+    var id = e.currentTarget.dataset.id;
+    console.log(id);
     wx.navigateTo({
       url: '../addcustomer/addcustomer?id=' + id,
     })
@@ -86,11 +86,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function(res) {
-    // var post1 = wx.getStorageSync('lalala', res);
-    // console.log("onShow")
-    // this.setData({
-    //   post: post1
-    // })
   },
 
   /**

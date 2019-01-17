@@ -9,7 +9,16 @@
           <text>操作</text>
        </view>
       <block wx:for="{{post}}" wx:key="{{item}}">
-            <view class='content' data-id="{{index}}" >
+            <view class='content bg-g' wx:if="{{index % 2 == 0}}"
+ data-id="{{index}}"  >
+              <text>{{item.name}}</text>
+              <text>{{item.sex}}</text>
+              <text>{{item.tel_no}}</text>
+              <button class='del'  data-id='{{item.id}}' bindtap='onDel'>删除</button>
+              <button class='update'  data-id='{{item.id}}' bindtap='onUpdate'>修改</button>
+          </view>
+          <view class='content' wx:else
+ data-id="{{index}}"  >
               <text>{{item.name}}</text>
               <text>{{item.sex}}</text>
               <text>{{item.tel_no}}</text>
@@ -25,5 +34,3 @@
 <view class='add'>
     <button  bindtap='addCustomer'>添加客户</button>
 </view>
-
-

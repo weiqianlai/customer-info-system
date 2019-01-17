@@ -7,16 +7,14 @@
         <text class='title-word'>志远教育</text>
         <view class='line-css'></view>
       </view>
-    </view>
-    <view class="weui-grids">
-      <view class="weui-grid" wx:for="{{routers}}" wx:key="name" data-id="{{routers.id}}">
-        <navigator url="{{item.url}}?routersid={{item.id}}">
-          <view class="weui-grid__icon">
-            <image src=" {{item.icon}}" mode="scaleToFill" />
-          </view>
-          <text class="weui-grid__label">{{item.name}}</text>
-        </navigator>
-      </view>
-    </view>
+  </view>
+  <view class="row">
+    <navigator wx:for="{{routers}}" url="{{item.url}}?routersid={{item.id}}" wx:key>
+        <view class="item_size">
+            <image class="img" src="{{item.icon}}"></image>
+            <text class="text">{{item.name}}</text>
+        </view>
+    </navigator>
+  </view>
   </scroll-view>
 </view>

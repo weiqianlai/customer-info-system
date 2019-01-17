@@ -31,12 +31,14 @@
 .label{
   display: inline-flex;
   margin-top: 20rpx;
+  background: rgb(150, 163, 202);
+  color: #fff;
+  border-radius: 1em;
 }
 .label text{
   width: 180rpx;
   text-align: center;
 }
-
 .content{
   width: 750rpx;
   display: inline-flex;
@@ -69,3 +71,6 @@
   background-color:transparent;
 
 } */
+.bg-g{
+  background: #bfebbd;
+}
