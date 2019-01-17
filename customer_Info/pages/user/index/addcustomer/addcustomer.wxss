@@ -18,7 +18,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  padding-left: 30rpx;
+  margin-left: 50rpx;
   margin-top: 20rpx;
   font-size: 32rpx;
   font-family: "Microsoft YaHei";
@@ -84,4 +84,17 @@ radio .wx-radio-input.wx-radio-input-checked::before {
   color: #fff; /* 对勾颜色 */
   background: #2facff;
   border-color: #2facff;
+}
+.input-content{
+  margin-left: 100rpx;
+}
+.input-work-address{
+  margin-left: 35rpx;
+}
+.input-comments{
+
+  margin-top: 10rpx;
+}
+.choose-sex{
+  margin-left: 100rpx;
 }

@@ -1,8 +1,8 @@
 <!--pages/user-info/user-info.wxml-->
 <view class='main-box'>
-  <view class='user-info' wx:for="{{post}}" wx:key="{{item}}">
-    <view class='user-name'>{{item.user_name}}</view>
-    <view class='grade'>我的会员：{{item.vip_grade}}级</view>
+  <view class='user-info' >
+    <view class='user-name'>{{user_info.user_name}}</view>
+    <view class='grade'>我的会员：{{user_info.vip_grade}}级</view>
   </view>
   <view class="li" data-index="1" bindtap='changeToggle'>
     <view class="left">>已跟进信息</view>
@@ -11,9 +11,16 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[1]}}">
-    <block wx:for="{{list01}}" wx:for-item="item" wx:for-index="index" wx:key>
-      <view class="li bg-gray">
-        <view>展开</view>
+    <block wx:for="{{followupList}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text class='tel_no'>{{item.tel_no}}</text>
+      </view>
+      <view class='content' wx:else data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text>{{item.tel_no}}</text>
       </view>
     </block>
   </view>
@@ -24,10 +31,16 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[2]}}">
-    <block wx:for="{{list02}}" wx:for-item="item" wx:for-index="index" wx:key>
-      <view class="li bg-gray">
-        <view>展开4</view>
-        <view class="red">展开4右边</view>
+    <block wx:for="{{pendinglist}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text class='tel_no'>{{item.tel_no}}</text>
+      </view>
+      <view class='content' wx:else data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text>{{item.tel_no}}</text>
       </view>
     </block>
   </view>
@@ -38,10 +51,16 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[3]}}">
-    <block wx:for="{{list03}}" wx:for-item="item" wx:for-index="index" wx:key>
-      <view class="li bg-gray">
-        <view>展开4</view>
-        <view class="red">展开4右边</view>
+    <block wx:for="{{completedlist}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text class='tel_no'>{{item.tel_no}}</text>
+      </view>
+      <view class='content' wx:else data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.sex}}</text>
+        <text>{{item.tel_no}}</text>
       </view>
     </block>
   </view>
@@ -52,10 +71,11 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[4]}}">
-    <block wx:for="{{list04}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class="li bg-gray">
-        <view bindtap='goAddTean'>创建团队</view>
+        <view bindtap='goAddTean'>团队简介：{{myteaminfo.group_info}}</view>
       </view>
-    </block>
+      <view class="li bg-gray" >
+        <button bindtap='goAddTean' class="weui-btn mini-btn" type="primary" >点击创建团队</button>
+      </view>
   </view>
 </view>

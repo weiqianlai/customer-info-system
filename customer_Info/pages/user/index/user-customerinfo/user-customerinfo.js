@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
 
   /**
@@ -15,15 +16,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var phone_no = wx.getStorageSync("phone_no")
     var _this = this;
+    var phone_no = wx.getStorageSync("phone_no");
+    var type = options.type;
+    console.log(phone_no,type);
     wx.request({
-      url: 'http://localhost:8086/wudi/getCustomerByPhoneNo', //json数据地址
+      url: app.host.url+'getCustomerByPhoneNo', //json数据地址
       method: "GET",
       data: {
         "phone_no": phone_no,
-        type: "1001",
-        status: "0"
+        "type": type
       },
       headers: {
         'Content-Type': 'application/json'

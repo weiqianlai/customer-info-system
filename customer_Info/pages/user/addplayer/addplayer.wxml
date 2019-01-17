@@ -13,7 +13,7 @@
             <view class="weui-label">队员号码</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入队员手机号" type="text" name="phone_no" />
+            <input class="weui-input" placeholder="请输入队员手机号" type="text" name="being_phone_no" />
           </view>
         </view>
         <button class="weui-btn btn1" type="primary" formType="submit">邀请</button>

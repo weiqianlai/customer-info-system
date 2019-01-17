@@ -1,33 +1,85 @@
-@import "../../template/customer.wxss";
+/* pages/index/index.wxss */
 .container{
+  width: 100%;
   margin-top: -200rpx;
 }
-
-.main-box{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 .title-box{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+  width: 100rx;
+  margin-top: 10rpx;
 }
-.nav-box{
-  width: 100%;
-  display:flex;
-  flex-direction: column;
-  margin-top: 30rpx;
-  border-bottom: 1rpx blue solid;
-}
-
 .my-team-word{
-  width: 50%;
-  font-size: 36rpx;
-  /* color: #ccc; */
+
+  font-size:36rpx;
   text-align: center;
-  
+}
+.none{
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+  color: #666;
+}
+.add{
+  position: fixed;
+  width: 750rpx;
+  height: 120rpx;
+  bottom: 0;
+  text-align: center;
+}
+.add button{
+  margin: 0 10rpx;
+  border-radius: 14rpx 15rpx;
+  background-color: #1aad16;
+  color: #ffffff;
+}
+.title{
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 38rpx;
+}
+.label{
+  display: inline-flex;
+  margin-top: 20rpx;
+  background: rgb(150, 163, 202);
+  color: #fff;
+  border-radius: 10rpx;
+}
+.label text{
+  width: 180rpx;
+  text-align: center;
+}
+.content{
+  width: 750rpx;
+  display: inline-flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top:10rpx; 
+}
+.content text{
+  width: 170rpx;
+}
+.content button{
+  padding: 0 0.5rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #ffffff;
 }
 .del{
-  margin-left: 65rpx;
+  background-color: red;
+  border: 1rpx solid red;
+  margin-left: 120rpx;
+}
+.update{
+  margin-left: 0rpx;
+  background-color: #1aad16;
+}
+/* .button-hover {
+  color:transparent;
+  background-color:transparent;
+
+} */
+.bg-g{
+  background: #bfebbd;
 }

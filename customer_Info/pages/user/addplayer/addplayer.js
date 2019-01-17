@@ -1,41 +1,15 @@
+const app = getApp()
 Page({
   data: {
 
   },
   formSubmit: function (e) {
-    var that = this;
-    var name = that.data.captain_name;
-    var phone = that.data.captain_phone;
-    var password = that.data.group_info;
-    var enpassword = that.data.group_name;
-    // var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
-    // var namepd = /^[\u4E00-\u9FA5A-Za-z]+$/;
-    // if (!namepd.test(name)) {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "姓名有误"
-    //   })
-    // } else if (!myreg.test(phone)) {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "手机号码错误"
-    //   })
-    // } else if (password.length <= 5) {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "密码至少为六位！"
-    //   })
-    // } else if (password !== enpassword) {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "请确认密码是否相同！"
-    //   })
-    // } else if (name && phone && password && enpassword) {
     var phone_no = wx.getStorageSync('phone_no');
     wx.request({
-      url: "http://localhost:8080/wudi/createGroupinfo",
+      url: app.host.url +'joinGroup',
       data: {
-        'captain_phone': phone,
+        'captain_phone': phone_no,
+        phone_no: e.detail.value.being_phone_no
 
       },
       method: 'POST',

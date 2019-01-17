@@ -12,11 +12,11 @@
       </view>
       <view class='input-box'>
         <text>性别：</text>
-        <radio-group name="sex">
+        <radio-group name="sex" class="choose-sex">
           <label>
-            <radio value="男" />{{item.sex}}</label>
+            <radio value="男" />男</label>
           <label>
-            <radio value="女" />{{item.sex}}</label>
+            <radio value="女" />女</label>
         </radio-group>
       </view>
       <view class='input-box'>
@@ -38,7 +38,7 @@
       </view>
       <view class='input-box'>
         <text>工作地址：</text>
-        <input type="text" class='input-content' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" value='' />
+        <input type="text" class='input-work-address' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" value='' />
       </view>
       <!-- <view class='input-box'>
         <text>录入信息类型：</text>
@@ -46,7 +46,7 @@
       </view> -->
       <view class='input-box'>
         <text>备注：</text>
-        <textarea type="text" class='text-area' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='' maxlength="1200" />  
+        <textarea type="text" class='input-comments' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='' maxlength="1200" />  
       </view>
 
       <view class="btn-area">

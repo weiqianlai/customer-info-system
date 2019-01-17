@@ -23,7 +23,7 @@ background:#888;
 .title-word{
   width: 40%;
   font-size: 36rpx;
-  color: #ccc;
+  color: rgb(43, 36, 36);
   text-align: center;
   line-height: 1%;
 }

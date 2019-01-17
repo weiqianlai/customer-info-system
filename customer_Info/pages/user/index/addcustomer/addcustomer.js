@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
   data:{
     post:[{}]
@@ -6,7 +7,7 @@ Page({
     var id = options.id;
     var _this = this;
     wx.request({
-      url: 'http://localhost:8086/wudi/getupdateSpecialPromotiom', //json数据地址
+      url: app.host.url +'getupdateSpecialPromotiom', //json数据地址
       method: "GET",
       data: {
         id: id
@@ -17,9 +18,9 @@ Page({
       success: function (res) {
         console.log(res.data)
         //将获取到的json数据，存在名字叫list_data的这个数组中
-        _this.setData({
-          post: res.data.data //res.data后面需要加后台传过来的数组名
-        })
+        // _this.setData({
+        //   post: res.data.data //res.data后面需要加后台传过来的数组名
+        // })
 
       }
     })

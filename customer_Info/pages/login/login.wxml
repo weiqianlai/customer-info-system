@@ -25,7 +25,7 @@
         </view>
       </view>
     </view>
-    <button class="weui-btn" type="primary" bindtap='signin'>直接登录</button>
+    <button class="weui-btn" type="warn" bindtap='signin'>直接登录</button>
     <button class="weui-btn" type="primary" bindtap='register'>没有账号，去注册</button>
   </view>
 
@@ -34,7 +34,7 @@
       <view class="weui-footer__links">
         <navigator url="" class="weui-footer__link">首页</navigator>
       </view>
-      <view class="weui-footer__text">法律信息 © 2018-2018 wql</view>
+      <view class="weui-footer__text">Power of 无敌小团队</view>
     </view>
   </view>
   </form>
