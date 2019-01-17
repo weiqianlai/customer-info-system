@@ -1,8 +1,8 @@
 <!--pages/user-info/user-info.wxml-->
 <view class='main-box'>
-  <view class='user-info' wx:for="{{post}}" wx:key>
-    <view class='user-name'>{{post.result}}</view>
-    <view class='grade'>我的会员：{{post.vip_grade}}级</view>
+  <view class='user-info' wx:for="{{post}}" wx:key="{{item}}">
+    <view class='user-name'>{{item.user_name}}</view>
+    <view class='grade'>我的会员：{{item.vip_grade}}级</view>
   </view>
   <view class="li" data-index="1" bindtap='changeToggle'>
     <view class="left">>已跟进信息</view>
@@ -14,18 +14,31 @@
     <block wx:for="{{list01}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class="li bg-gray">
         <view>展开</view>
-
+      </view>
+    </block>
+  </view>
+  <view class="li" data-index="2" bindtap='changeToggle'>
+    <view class="left">>待处理信息</view>
+    <view class="right red">
+      <text class="iconfont {{selectedFlag[2]?'icon-shangjiantou':'icon-xiala'}}"> </text>
+    </view>
+  </view>
+  <view hidden="{{!selectedFlag[2]}}">
+    <block wx:for="{{list02}}" wx:for-item="item" wx:for-index="index" wx:key>
+      <view class="li bg-gray">
+        <view>展开4</view>
+        <view class="red">展开4右边</view>
       </view>
     </block>
   </view>
   <view class="li" data-index="3" bindtap='changeToggle'>
-    <view class="left">>待处理信息</view>
+    <view class="left">>已成交信息</view>
     <view class="right red">
       <text class="iconfont {{selectedFlag[3]?'icon-shangjiantou':'icon-xiala'}}"> </text>
     </view>
   </view>
   <view hidden="{{!selectedFlag[3]}}">
-    <block wx:for="{{list02}}" wx:for-item="item" wx:for-index="index" wx:key>
+    <block wx:for="{{list03}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class="li bg-gray">
         <view>展开4</view>
         <view class="red">展开4右边</view>
@@ -39,7 +52,7 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[4]}}">
-    <block wx:for="{{list03}}" wx:for-item="item" wx:for-index="index" wx:key>
+    <block wx:for="{{list04}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class="li bg-gray">
         <view bindtap='goAddTean'>创建团队</view>
       </view>

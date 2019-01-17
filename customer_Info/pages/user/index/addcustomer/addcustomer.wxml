@@ -1,5 +1,5 @@
 <view class='main-box'>
-  <view class='form-box' wx:for="{{post}}" >
+  <view class='form-box' wx:for="{{post}}" wx:key="{{item}}">
     <form bindsubmit="formSubmit" bindreset="formReset">
       <view class='input-box'>
         <text>姓名：</text>
@@ -14,9 +14,9 @@
         <text>性别：</text>
         <radio-group name="sex">
           <label>
-            <radio value="男" />男</label>
+            <radio value="男" />{{item.sex}}</label>
           <label>
-            <radio value="女" />女</label>
+            <radio value="女" />{{item.sex}}</label>
         </radio-group>
       </view>
       <view class='input-box'>

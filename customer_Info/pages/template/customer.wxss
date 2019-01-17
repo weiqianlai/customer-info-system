@@ -33,7 +33,7 @@
   margin-top: 20rpx;
   background: rgb(150, 163, 202);
   color: #fff;
-  border-radius: 1em;
+  border-radius: 10rpx;
 }
 .label text{
   width: 180rpx;
@@ -49,10 +49,10 @@
   margin-top:10rpx; 
 }
 .content text{
-  width: 180rpx;
+  width: 160rpx;
 }
 .content button{
-  padding: 0 10rpx;
+  padding: 0 0.5rpx;
   line-height: 60rpx;
   font-size: 30rpx;
   color: #ffffff;
@@ -60,7 +60,7 @@
 .del{
   background-color: red;
   border: 1rpx solid red;
-  margin-left: 35rpx;
+  margin-left: 120rpx;
 }
 .update{
   margin-left: 0rpx;

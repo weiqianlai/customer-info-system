@@ -32,7 +32,7 @@ Page({
     //   })
     // } else if (name && phone && password && enpassword) {
       wx.request({
-        url: "http://localhost:8080/wudi/saveGroupinfo",
+        url: "http://localhost:8086/wudi/createGroupinfo",
         data: {
           'captain_name': e.detail.value.captain_name,
           'captain_phone': e.detail.value.captain_phone,

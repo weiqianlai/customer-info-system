@@ -1,4 +1,7 @@
 Page({
+  data:{
+    post:[{}]
+  },
   onLoad: function (options) {
     var id = options.id;
     var _this = this;

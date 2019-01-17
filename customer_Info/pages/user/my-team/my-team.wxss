@@ -1,4 +1,4 @@
-@import "../template/customer.wxss";
+@import "../../template/customer.wxss";
 .container{
   margin-top: -200rpx;
 }

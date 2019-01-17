@@ -2,16 +2,7 @@
   "pages": [
     "pages/login/login",
     "pages/user/index/index",
-    "pages/user/index/special-promotiom/special-promotiom",
-    "pages/user/index/undergraduate/undergraduate",
-    "pages/user/index/part-time-postgraduate/part-time-postgraduate",
-    "pages/user/index/mandarin/mandarin",
-    "pages/user/index/teacher-certification/teacher-certification",
-    "pages/user/index/architect/architect",
-    "pages/user/index/professional/professional",
-    "pages/user/index/medical-science/medical-science",
-    "pages/user/index/foreign-language/foreign-language",
-    "pages/user/index/accounting/accounting",
+    "pages/user/index/user-customerinfo/user-customerinfo",
     "pages/user/index/addcustomer/addcustomer",
     "pages/user-info/user-info",
     "pages/regist/regist",
@@ -19,8 +10,8 @@
     "pages/user/index/court-clerk/court-clerk",
     "pages/user/my-team/my-team",
     "pages/user/addteam/addteam",
-    "pages/user/addplayer/addplayer"
-
+    "pages/user/addplayer/addplayer",
+    "pages/admin/admin-customerinfo/admin-customerinfo"
   ],
   "window": {
     "backgroundTextStyle": "light",

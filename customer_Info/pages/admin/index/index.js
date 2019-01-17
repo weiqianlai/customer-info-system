@@ -7,52 +7,52 @@ Page({
   data: {
     routers: [{
       name: '高升专',
-      url: 'special-promotiom/special-promotiom',
+      url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/gsz.jpg',
       id: "001"
     }, {
       name: '专升本',
-      url: 'undergraduate/undergraduate',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/zsb.jpg',
       id: "002"
     }, {
       name: '非全日制研究生',
-      url: 'part-time-postgraduate/part-time-postgraduate',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/fqrzyjs.jpg',
       id: "003"
     }, {
       name: '普通话培训',
-      url: 'mandarin/mandarin',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/pth.jpg',
       id: "004"
     }, {
       name: '教师资格证',
-      url: 'teacher-certification/teacher-certification',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/jszg.jpg',
       id: "005"
     }, {
       name: '建筑工程',
-      url: 'architect/architect',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/jzgc.jpg',
       id: "006"
     }, {
       name: '职业资格',
-      url: 'professional/professional',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/zyzg.jpg',
       id: "007"
     }, {
       name: '医药卫生',
-      url: 'medical-science/medical-science',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/yyws.jpg',
       id: "008"
     }, {
       name: '外语少儿',
-      url: 'foreign-language/foreign-language',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/wysr.png',
       id: "009"
     }, {
       name: '财会经济',
-      url: 'accounting/accounting',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/ckjj.jpg',
       id: "010"
     }, {
@@ -62,7 +62,7 @@ Page({
       id: "00x"
     }, {
       name: '法院书记员',
-      url: 'court-clerk/court-clerk',
+        url: '../admin-customerinfo/admin-customerinfo',
       icon: '../../../images/nav-icon/fysjy.jpg',
       id: "00x"
     }]

@@ -4,8 +4,8 @@
 }
 .user-info{
   width: 100%;
-  height: 200rpx;
-  padding-top: 100rpx;
+  height: 150rpx;
+  padding-top: 50rpx;
    background: linear-gradient(#CCEEFF,rgb(209, 209, 238));
 }
 .user-name{

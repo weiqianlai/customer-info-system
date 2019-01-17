@@ -5,9 +5,10 @@ Page({
       user_name:"",
       vip_grade:"2"
     }], 
-    list01: [{ item_id: 1 }, { item_id: 11 },{ item_id: 11 },], 
-    list02: [{ item_id: 11 }, { item_id: 11 }],
+    list01: [{ item_id: 1 }],
+    list02: [{ item_id: 11 }],
     list03: [{ item_id: 11 }],
+    list04: [{ item_id: 11 }],
              // 展开折叠 
     selectedFlag: [false, false, false, false], },
     // 展开折叠选择  
@@ -23,21 +24,22 @@ Page({
   onLoad: function (options) {
     var thit = this;
     var post = {};
-    var user_phone_no = (wx.getStorageSync("user_phone_no")||[]); //获取登录时缓存的手机号码以便读取属于这个用户的数据
-    console.log(user_phone_no);
+    var phone_no = wx.getStorageSync('phone_no'); 
+    var user_password = wx.getStorageSync('user_password');//获取登录时缓存的手机号码以便读取属于这个用户的数据
     wx.request({
-      url: 'http://localhost:8086/wudi/test',
+      url: 'http://localhost:8086/wudi/userLogin',
       method:'GET',
       header:{
         'content-type':'application/json'
       },
       data:{
-        user_phone_no: user_phone_no
+        "phone_no": phone_no,
+        "user_password": user_password
       },
       success:function(res) {
         console.log(res.data);
         thit.setData({
-          post: res.data
+          post: res.data.data
         })
       },
       fail:function(res) {

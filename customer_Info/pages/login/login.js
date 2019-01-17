@@ -32,7 +32,7 @@ Page({
       wx.showModal({
         title: "信息提示",
         content: "手机号有误"
-      })  
+      })
     } else if (that.data.user_password == "") {
       wx.showModal({
         title: "信息提示",
@@ -43,12 +43,12 @@ Page({
         title: "信息提示",
         content: "密码至少为六位!"
       })
-    } else{ //TODO
+    } else { //TODO
 
       console.log("手机号：" + phone + "密码：" + pwd)
       //发送ajax请求到服务器-登录
       wx.request({
-        url: 'http://localhost:8080/wudi/userLogin',
+        url: 'http://localhost:8086/wudi/userLogin',
         method: "GET",
         data: {
           phone_no: phone,
@@ -67,7 +67,7 @@ Page({
           var type = JSON.stringify(res.data.type);
           var info = JSON.stringify(res.data.info);
           wx.setStorageSync("phone_no", phone); //缓存用户电话，首页接后便于读取后台数据
-
+          wx.setStorageSync("user_password", pwd);
 
 
           if (msg == 1 && type == 2) {
