@@ -7,7 +7,6 @@
     "pages/user-info/user-info",
     "pages/regist/regist",
     "pages/admin/index/index",
-    "pages/user/index/court-clerk/court-clerk",
     "pages/user/my-team/my-team",
     "pages/user/addteam/addteam",
     "pages/user/addplayer/addplayer",

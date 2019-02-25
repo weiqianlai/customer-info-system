@@ -98,7 +98,7 @@ Page({
           } else {
             wx.showModal({
               title: "信息提示",
-              content: "密码错误"
+              content: info
             })
           }
         },

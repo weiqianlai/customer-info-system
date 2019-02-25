@@ -14,18 +14,18 @@
         <text>性别：</text>
         <radio-group name="sex" class="choose-sex">
           <label>
-            <radio value="男" />男</label>
+            <radio value="1" />男</label>
           <label>
-            <radio value="女" />女</label>
+            <radio value="0" />女</label>
         </radio-group>
       </view>
       <view class='input-box'>
         <text>是否透漏录入人信息：</text>
         <radio-group name="disclose">
           <label>
-            <radio value="是" />是</label>
+            <radio value="1" />是</label>
           <label>
-            <radio value="否" />否</label>
+            <radio value="0" />否</label>
         </radio-group>
       </view>
       <view class='input-box'>

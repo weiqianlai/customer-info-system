@@ -7,8 +7,9 @@ Page({
       vip_grade: ""
     }],
     followupList: [{
-      item_id: 1
-    }],
+      item_id: 11,
+    },
+    {}],
     pendinglist: [{
       item_id: 11
     }],

@@ -26,9 +26,11 @@ Page({
     })
   },
   formSubmit: function (e) {
+    var type = wx.getStorageSync('type');
     var phone_no = wx.getStorageSync('phone_no');//获取缓存的phone_no
+    console.log(type); 
     wx.request({
-      url: 'http://localhost:8086/wudi/saveSpecialPromotiom',
+      url: 'http://localhost:8086/wudi/saveOrUpdateCustomer',
       data: {
         "id": e.detail.value.id,
         'name': e.detail.value.name,
@@ -40,7 +42,8 @@ Page({
         'comments': e.detail.value.comments,
         'phone_no': phone_no,
         'nation': e.detail.value.nation,
-        'type': "gaoshengzhuan"     //全部信息应传到后台
+        'type':1001,
+        'status':1
       },
       method: 'GET',
       header: {
@@ -49,7 +52,7 @@ Page({
       success: function (res) {
         console.log("formSubmit Ok" + res.data)
         wx.redirectTo({
-          url: '../special-promotiom/special-promotiom',
+          url: '../user-customerinfo/user-customerinfo',
         })
       },
       fail: function (res) {
