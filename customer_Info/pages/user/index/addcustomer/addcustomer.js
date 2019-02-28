@@ -21,7 +21,6 @@ Page({
         console.log(post_data);
         _this.setData({
           post: res.data.data //res.data后面需要加后台传过来的数组名
-          //res代表success函数的事件对，data是固定的，imgListData是上面json数据中imgListData
         })
       }
     })
@@ -56,6 +55,7 @@ Page({
         })
       },
     })
+    
   },
 
 }) 

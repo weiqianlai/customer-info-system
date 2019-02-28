@@ -37,7 +37,6 @@ Page({
         //将获取到的json数据，存在名字叫list_data的这个数组中
         _this.setData({
           post: res.data.data //res.data后面需要加后台传过来的数组名
-          //res代表success函数的事件对，data是固定的，imgListData是上面json数据中imgListData
         })
       }
     })
@@ -82,7 +81,8 @@ Page({
   },
   onUpdate: function(e) {
     var id = e.target.dataset.id;
-    console.log("客户信息记录的id:" + id + " index=" + e.target.dataset.index);
+    // console.log("客户信息记录的id:" + id + " index=" + e.target.dataset.index);
+    console.log("user-file"," onUpdate==> 客户信息记录的id=" + id);
     wx.navigateTo({
       url: '../addcustomer/addcustomer?id=' + id,
     })
