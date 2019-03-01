@@ -6,6 +6,7 @@ Page({
   onLoad: function(options) {
     wx.setStorageSync("id", options.id);
     wx.setStorageSync("add-type", options.type);
+    console.log("add-file", " onLoad==> id=" + options.id + " type=" + options.type);
     var _this = this;
     wx.request({
       url: app.host.url + 'getCustomerById', //json数据地址
@@ -28,6 +29,9 @@ Page({
   formSubmit: function(e) {
     var type = wx.getStorageSync("add-type");
     var phone_no = wx.getStorageSync('phone_no'); //获取缓存的phone_no
+    console.log("add-file", " formSubmit show e.detail begin : type=" + type + " phone_no=" + phone_no);
+    console.log(e.detail.value);
+    console.log("add-file", " formSubmit show e.detail end :");
     wx.request({
       url: app.host.url + 'saveOrUpdateCustomer', 
       data: {

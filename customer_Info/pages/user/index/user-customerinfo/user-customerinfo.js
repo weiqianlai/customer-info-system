@@ -81,10 +81,10 @@ Page({
   },
   onUpdate: function(e) {
     var id = e.target.dataset.id;
-    // console.log("客户信息记录的id:" + id + " index=" + e.target.dataset.index);
-    console.log("user-file"," onUpdate==> 客户信息记录的id=" + id);
-    wx.navigateTo({
-      url: '../addcustomer/addcustomer?id=' + id,
+    var type = wx.getStorageSync("user-type");
+    console.log("user-file", " onUpdate==> 客户信息记录的id=" + id + "  type=" + type);
+    wx.redirectTo({
+      url: '../addcustomer/addcustomer?id=' + id + "&&type=" + type,
     })
   },
 
