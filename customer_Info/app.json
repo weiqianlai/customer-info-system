@@ -10,7 +10,8 @@
     "pages/user/my-team/my-team",
     "pages/user/addteam/addteam",
     "pages/user/addplayer/addplayer",
-    "pages/admin/admin-customerinfo/admin-customerinfo"
+    "pages/admin/admin-customerinfo/admin-customerinfo",
+    "pages/admin/admin-customerinfo/customerinfo-detail/customerinfo-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

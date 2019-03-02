@@ -1,1 +1,4 @@
 @import "../../template/customer.wxss";
+.del{
+  margin-left: 130rpx;
+}

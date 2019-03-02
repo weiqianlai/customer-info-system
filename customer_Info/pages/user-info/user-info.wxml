@@ -1,6 +1,6 @@
 <!--pages/user-info/user-info.wxml-->
 <view class='main-box'>
-  <view class='user-info' >
+  <view class='user-info'>
     <view class='user-name'>{{user_info.user_name}}</view>
     <view class='grade'>我的会员：{{user_info.vip_grade}}级</view>
   </view>
@@ -71,11 +71,11 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[4]}}">
-      <view class="li bg-gray">
-        <view bindtap='goAddTean'>团队简介：{{myteaminfo.group_info}}</view>
-      </view>
-      <view class="li bg-gray" >
-        <button bindtap='goAddTean' class="weui-btn mini-btn" type="primary" >点击创建团队</button>
-      </view>
+    <view class="li bg-gray">
+      <view bindtap='goAddTean'>团队简介：{{myteaminfo.group_info}}</view>
+    </view>
+    <view class="li bg-gray">
+      <button bindtap='goAddTean' class="weui-btn mini-btn" type="primary">点击创建团队</button>
+    </view>
   </view>
 </view>
