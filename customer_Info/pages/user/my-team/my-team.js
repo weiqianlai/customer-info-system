@@ -64,6 +64,11 @@ Page({
       url: '../addplayer/addplayer',
     })
   },
+  seePlayer:function(e) {
+      wx.navigateTo({
+        url: 'player-info/player-info',
+      })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

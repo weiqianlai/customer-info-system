@@ -15,8 +15,33 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function (options) {
+    var _this = this;
+    var phone_no = wx.getStorageSync("phone_no");
+    var type = options.type;
+    console.log("user-file onLoad:" + phone_no, "  from options(before set) ==>" + type);
+    wx.setStorageSync("user-type", options.type);
+    console.log("user-file onLoad:" + phone_no, "from options(after set) ==>" + type);
+    wx.request({
+      url: app.host.url + "getCustomerByPhoneNo", //json数据地址
+      method: "GET", 
+      data: {
+        "phone_no": phone_no,
+        "type": type
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        //console.log(res.data)
+        var post_data = JSON.stringify(res.data);
+        //console.log(post_data);
+        //将获取到的json数据，存在名字叫list_data的这个数组中
+        _this.setData({
+          post: res.data.data //res.data后面需要加后台传过来的数组名
+        })
+      }
+    })
   },
   onfollow_up: function(e) {
     var id = e.target.dataset.id;

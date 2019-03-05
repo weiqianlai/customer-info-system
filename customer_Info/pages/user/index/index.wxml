@@ -1,4 +1,3 @@
-<!--pages/user/index/index.wxml-->
 <view class='main-box'>
   <scroll-view class='nav-scroll' scroll-y="true">
     <view class='nav-box'>
@@ -7,14 +6,14 @@
         <text class='title-word'>志远教育</text>
         <view class='line-css'></view>
       </view>
-  </view>
-  <view class="row">
-    <navigator wx:for="{{routers}}" url="{{item.url}}?routersid={{item.id}}" wx:key>
+    </view>
+    <view class="row">
+      <navigator wx:for="{{routers}}" url="{{item.url}}?routersid={{item.id}}" wx:key>
         <view class="item_size">
-            <image class="img" src="{{item.icon}}"></image>
-            <text class="text">{{item.name}}</text>
+          <image class="img" src="{{item.icon}}"></image>
+          <text class="text">{{item.name}}</text>
         </view>
-    </navigator>
-  </view>
+      </navigator>
+    </view>
   </scroll-view>
 </view>

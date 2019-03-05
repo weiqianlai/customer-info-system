@@ -11,7 +11,9 @@
     "pages/user/addteam/addteam",
     "pages/user/addplayer/addplayer",
     "pages/admin/admin-customerinfo/admin-customerinfo",
-    "pages/admin/admin-customerinfo/customerinfo-detail/customerinfo-detail"
+    "pages/admin/admin-customerinfo/customerinfo-detail/customerinfo-detail",
+    "pages/user/my-team/player-info/player-info",
+    "pages/user/my-team/play-cs-info/play-cs-info"
   ],
   "window": {
     "backgroundTextStyle": "light",

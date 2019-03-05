@@ -34,7 +34,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -83,6 +83,13 @@
 					"name": "user-customerinfo",
 					"pathName": "pages/user/index/user-customerinfo/user-customerinfo",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "player-info",
+					"pathName": "pages/user/my-team/player-info/player-info",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

@@ -9,19 +9,17 @@
     <text>操作</text>
   </view>
   <block wx:for="{{post}}" wx:key="{{item}}">
-    <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+    <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}" bindtap='seePlayer'>
       <text>{{item.user_name}}</text>
       <text>{{item.user_sex}}</text>
       <text>{{item.phone_no}}</text>
       <button class='del' data-id='{{item.id}}' bindtap='onDel'>删除</button>
-
     </view>
-    <view class='content' wx:else data-id="{{index}}">
+    <view class='content' wx:else data-id="{{index}}" bindtap='seePlayer'>
       <text>{{item.user_name}}</text>
       <text>{{item.user_sex}}</text>
       <text>{{item.phone_no}}</text>
       <button class='del' data-id='{{item.id}}' bindtap='onDel'>删除</button>
-
     </view>
   </block>
 </view>
