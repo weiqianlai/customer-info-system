@@ -3,11 +3,67 @@ const app = getApp()
 Page({
   data: {
     post: [{
-      user_name: "",
-      vip_grade: ""
-    }],
+      name: "weiqianlai",
+      sex: "男",
+      tel_no:"15012345678"
+    }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      }, {
+        name: "weiqianlai",
+        sex: "男",
+        tel_no: "15012345678"
+      },],
     followupList: [{
-      item_id: 11,
     },
     {}],
     pendinglist: [{

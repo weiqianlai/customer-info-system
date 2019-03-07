@@ -34,6 +34,7 @@
   height: 100rpx;
   line-height: 100rpx;
   border-bottom: 1rpx solid #ccc;
+  border-top: 1rpx solid #ccc;
 }
 
 .bg-gray {
@@ -64,4 +65,7 @@
   border-radius: 1em;
   margin: 0 auto;
   width: 300rpx;
+}
+.content {
+  width: 100%;
 }

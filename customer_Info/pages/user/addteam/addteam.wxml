@@ -16,14 +16,6 @@
             <input class="weui-input" placeholder="请输入您的姓名" type="text" name="captain_name"  />
           </view>
         </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
-            <view class="weui-label">号码</view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入您的手机号" type="number" name="captain_phone"  />
-          </view>
-        </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">
           <view class="weui-cell__hd">
             <view class="weui-label">团队简介</view>

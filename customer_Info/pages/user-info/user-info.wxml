@@ -6,61 +6,52 @@
   </view>
   <view class="li" data-index="1" bindtap='changeToggle'>
     <view class="left">>已跟进信息</view>
-    <view class="right red">
-      <text class="iconfont {{selectedFlag[1]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-    </view>
   </view>
   <view hidden="{{!selectedFlag[1]}}">
-    <block wx:for="{{followupList}}" wx:for-item="item" wx:for-index="index" wx:key>
+    <block wx:for="{{post}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <text>{{item.sex}}</text>
-        <text class='tel_no'>{{item.tel_no}}</text>
+        <view>{{item.name}}</view>
+        <view>{{item.sex}}</view>
+        <view>{{item.tel_no}}</view>
       </view>
       <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <text>{{item.sex}}</text>
-        <text>{{item.tel_no}}</text>
+        <view>{{item.name}}</view>
+        <view>{{item.sex}}</view>
+        <view>{{item.tel_no}}</view>
       </view>
     </block>
   </view>
   <view class="li" data-index="2" bindtap='changeToggle'>
     <view class="left">>待处理信息</view>
-    <view class="right red">
-      <text class="iconfont {{selectedFlag[2]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-    </view>
   </view>
   <view hidden="{{!selectedFlag[2]}}">
     <block wx:for="{{pendinglist}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <text>{{item.sex}}</text>
-        <text class='tel_no'>{{item.tel_no}}</text>
+        <view>{{item.name}}</view>
+        <view>{{item.sex}}</view>
+        <view>{{item.tel_no}}</view>
       </view>
       <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <text>{{item.sex}}</text>
-        <text>{{item.tel_no}}</text>
+        <view>{{item.name}}</view>
+        <view>{{item.sex}}</view>
+        <view>{{item.tel_no}}</view>
       </view>
     </block>
   </view>
   <view class="li" data-index="3" bindtap='changeToggle'>
     <view class="left">>已成交信息</view>
-    <view class="right red">
-      <text class="iconfont {{selectedFlag[3]?'icon-shangjiantou':'icon-xiala'}}"> </text>
-    </view>
   </view>
   <view hidden="{{!selectedFlag[3]}}">
     <block wx:for="{{completedlist}}" wx:for-item="item" wx:for-index="index" wx:key>
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <text>{{item.sex}}</text>
-        <text class='tel_no'>{{item.tel_no}}</text>
+        <view>{{item.name}}</view>
+        <view>{{item.sex}}</view>
+        <view>{{item.tel_no}}</view>
       </view>
       <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <text>{{item.sex}}</text>
-        <text>{{item.tel_no}}</text>
+        <view>{{item.name}}</view>
+        <view>{{item.sex}}</view>
+        <view>{{item.tel_no}}</view>
       </view>
     </block>
   </view>
@@ -71,10 +62,10 @@
     </view>
   </view>
   <view hidden="{{!selectedFlag[4]}}">
-    <view class="bg-gray">
+    <view class="bg-gray" wx:if="{{user_info.vip_grade < 1}}">
       <view>当您的成交量达到一定的数量后，即可拥有创建团队的权限，加油！</view>
     </view>
-    <view class="li bg-gray" wx:if="{{user_info.vip_grade > 1}}">
+    <view class="li bg-gray" wx:if="{{user_info.vip_grade == 1}}">
       <button bindtap='goAddTean' class="weui-btn mini-btn" type="primary">点击创建团队</button>
     </view>
   </view>

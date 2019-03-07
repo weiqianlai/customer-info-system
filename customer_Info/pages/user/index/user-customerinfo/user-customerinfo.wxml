@@ -1,7 +1,5 @@
-<view wx:if="{{post}}" class='container'>
-  <view class='title'>
-    <text>客户列表</text>
-  </view>
+<view wx:if="{{post}}" class='mani-box'>
+<view class='info-box'>
   <view class='label'>
     <text class='name'>姓名</text>
     <text class='sex'>性别</text>
@@ -30,11 +28,11 @@
       <button class='update' data-id='{{item.id}}' bindtap='onUpdate'>修改</button>
     </view>
   </block>
+  </view>
 </view>
 <view wx:else="{{post}}" class='none'>
   <text>暂时没有客户信息！</text>
 </view>
-
 <view class='add'>
   <button bindtap='addCustomer'>添加客户</button>
 </view>
