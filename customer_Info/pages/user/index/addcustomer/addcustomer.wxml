@@ -44,7 +44,7 @@
       <textarea type="text" class='input-comments' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='{{post.comments}}' maxlength="1200" />
     </view>
     <view class="btn-area">
-      <button formType="submit" bindtap='goSP' class='btn'>提 交</button>
+      <button formType="submit" class='btn'>提 交</button>
       <button formType="reset" class='btn'>重 置</button>
     </view>
   </form>

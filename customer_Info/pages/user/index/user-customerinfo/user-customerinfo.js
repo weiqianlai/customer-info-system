@@ -5,39 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var _this = this;
-    var phone_no = wx.getStorageSync("phone_no");
-    var type = options.type;
-    console.log("user-file onLoad:"+phone_no, "  from options(before set) ==>" + type);
+    console.log("user-file onLoad:  from options(before set) ==>" + options.type);
     wx.setStorageSync("user-type",options.type);
-    console.log("user-file onLoad:" +phone_no, "from options(after set) ==>" + type);
-    wx.request({
-      url: app.host.url+"getCustomerByPhoneNo", //json数据地址
-      method: "GET",
-      data: {
-        "phone_no": phone_no,
-        "type":type
-      },
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      success: function(res) {
-        //console.log(res.data)
-        var post_data = JSON.stringify(res.data);
-        //console.log(post_data);
-        //将获取到的json数据，存在名字叫list_data的这个数组中
-        _this.setData({
-          post: res.data.data //res.data后面需要加后台传过来的数组名
-        })
-      }
-    })
   },
   onDel: function(e) {
     var id = e.target.dataset.id; //从绑定的控件列的data-id传过来
@@ -104,7 +79,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function(res) {
-    console.log("user-file onShow==> ");
+    var _this = this;
+    var type = wx.getStorageSync("user-type");
+    var phone_no = wx.getStorageSync("phone_no");
+    console.log("user-file onShow==> phone_no=" + phone_no + " type=" + type);
+    wx.request({
+      url: app.host.url + "getCustomerByPhoneNo",
+      method: "GET",
+      data: {
+        "phone_no": phone_no,
+        "type": type
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        _this.setData({
+          post: res.data.data
+        })
+      }
+    })
   },
 
   /**

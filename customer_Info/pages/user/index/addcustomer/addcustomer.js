@@ -1,7 +1,6 @@
 const app = getApp()
 Page({
-  data:{
-    post:[{}]
+  data: {
   },
   onLoad: function(options) {
     wx.setStorageSync("id", options.id);
@@ -9,7 +8,7 @@ Page({
     console.log("add-file", " onLoad==> id=" + options.id + " type=" + options.type);
     var _this = this;
     wx.request({
-      url: app.host.url + 'getCustomerById', //json数据地址
+      url: app.host.url + 'getCustomerById',
       method: "GET",
       data: {
         id: options.id
@@ -18,11 +17,11 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
-        var post_data = JSON.stringify(res.data);
-        console.log(post_data);
-        _this.setData({
-          post: res.data.data //res.data后面需要加后台传过来的数组名
-        })
+        if (res.data.data) {
+          _this.setData({
+            post: res.data.data
+          })
+        }
       }
     })
   },
@@ -33,7 +32,7 @@ Page({
     console.log(e.detail.value);
     console.log("add-file", " formSubmit show e.detail end :");
     wx.request({
-      url: app.host.url + 'saveOrUpdateCustomer', 
+      url: app.host.url + 'saveOrUpdateCustomer',
       data: {
         "id": e.detail.value.id,
         'name': e.detail.value.name,
@@ -54,12 +53,11 @@ Page({
       },
       success: function(res) {
         console.log("add-file formSubmit ", " (success) type=" + type);
+        wx.setStorageSync("add-back", 1);
         wx.redirectTo({
           url: '../user-customerinfo/user-customerinfo?type=' + type,
         })
       },
     })
-    
   },
-
-}) 
+})
