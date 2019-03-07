@@ -9,7 +9,7 @@
 }
 .my-team-word{
 
-  font-size:36rpx;
+  font-size:28rpx;
   text-align: center;
 }
 .none{
