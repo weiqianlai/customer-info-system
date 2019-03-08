@@ -1,7 +1,7 @@
 <view wx:if="{{post}}" class='main-box'>
   <view class='title-box'>
     <view class='my-team-word'>团队介绍：</view>
-    <view class='my-team-word'>{{}}</view>
+    <view class='my-team-word'>{{item.group_info}}</view>
   </view>
   <view class='label'>
     <text>姓名</text>

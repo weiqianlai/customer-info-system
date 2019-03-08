@@ -12,6 +12,7 @@ Page({
    */
   onLoad: function (options) {
     var phone_no = wx.getStorageSync('phone_no');
+    //var groupinfo = JSON.stringify(options.data.groupinfo.group_info);
     console.log(phone_no);
     var _this = this;
     wx.request({
@@ -27,9 +28,10 @@ Page({
         console.log(res.data);
         //将获取到的json数据，存在名字叫list_data的这个数组中
         _this.setData({
-          post: res.data.data //res.data后面需要加后台传过来的数组名
+          post: res.data.data,
+          //groupinfo: res.data.groupinfo//res.data后面需要加后台传过来的数组名
         })
-
+        //console.log(groupinfo)
       }
     })
   },

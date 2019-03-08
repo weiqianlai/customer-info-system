@@ -126,9 +126,8 @@ Page({
         thit.setData({
           user_info: res.data.user,
           followupList: followupList,
-          pendinglist: pendinglist,
+          customers: res.data.customers,
           completedlist: completedlist,
-          myteaminfo: res.data.groups
         })
       },
       fail: function(res) {

@@ -1,6 +1,7 @@
 .mani-box {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 110rpx;
 }
 .info-box{
   width: 100%;
@@ -14,16 +15,13 @@
   margin-top: 50%;
   color: #666;
 }
-
 .add {
   position: fixed;
   width: 750rpx;
-  bottom: 10rpx;
+  bottom: 0rpx;
 }
 
 .add button {
-  margin: 0 10rpx;
-  border-radius: 14rpx 15rpx;
   background-color: #1aad16;
   color: #fff;
 }

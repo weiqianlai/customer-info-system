@@ -33,7 +33,7 @@ var utils = require('../../utils/utils.js')
      if (utils.checkName(name)) {
        wx.showModal({
          title: "信息提示",
-         content: "姓名有误"
+         content: "姓名不能含有数字"
        })
      } else if (utils.checkPhone(phone)) {
        wx.showModal({

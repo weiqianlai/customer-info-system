@@ -8,7 +8,6 @@
   margin-top: 10rpx;
 }
 .my-team-word{
-
   font-size:28rpx;
   text-align: center;
 }
