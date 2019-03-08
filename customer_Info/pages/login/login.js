@@ -1,61 +1,51 @@
 const app = getApp()
 Page({
-  data: {
-
-  },
+  data: {},
   userPhone_no: function(e) {
     this.setData({
       phone_no: e.detail.value
     })
-
   },
   passwordinput: function(e) {
     this.setData({
       user_password: e.detail.value
     })
   },
-  onLoad: function(options) {},
-  //点击登陆的时候触发的事件
+  onLoad: function(options) {
+
+  },
   signin: function() {
     var that = this;
-    //登陆的时候要传过来的参数
     var phone = that.data.phone_no;
     var pwd = that.data.user_password;
-    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
     console.log(phone, pwd)
     if (phone == "") {
       wx.showModal({
         title: "信息提示",
         content: "手机号不能为空!"
       })
-    } else if (!myreg.test(phone)) {
-      wx.showModal({
-        title: "信息提示",
-        content: "手机号有误"
-      })
-    } else if (that.data.user_password == "") {
+    } else if (pwd == "") {
       wx.showModal({
         title: "信息提示",
         content: "密码不能为空!"
       })
-    } else if (that.data.user_password <= 5) {
+    } else if (pwd < 6) {
       wx.showModal({
         title: "信息提示",
         content: "密码至少为六位!"
       })
     } else { //TODO
-
       console.log("手机号：" + phone + "密码：" + pwd)
       //发送ajax请求到服务器-登录
       wx.request({
-        url: app.host.url +'userLogin',
+        url: app.host.url + 'userLogin',
         method: "GET",
         data: {
           phone_no: phone,
           user_password: pwd,
         },
         header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
+          'content-type': 'application/x-www-form-urlencoded'
         },
         dataType: 'json',
         success: function(res) {
@@ -68,7 +58,6 @@ Page({
           wx.setStorageSync("phone_no", phone); //缓存用户电话，首页接后便于读取后台数据
           wx.setStorageSync("user_password", pwd);
 
-
           if (msg == 1 && type == 2) {
             wx.showToast({
               title: '登录成功',
@@ -76,7 +65,6 @@ Page({
               duration: 3000
             })
             // console.log(status)
-            //跳转到index页面
             wx.switchTab({
               url: '../user/index/index',
             })
@@ -86,14 +74,13 @@ Page({
               icon: 'loading',
               duration: 3000
             })
-            //跳转到index页面
             wx.redirectTo({
               url: '../admin/index/index',
             })
           } else if (msg == 2 && type == 0) {
             wx.showModal({
               title: "信息提示",
-              content: info + ""
+              content: info
             })
           } else {
             wx.showModal({
@@ -104,23 +91,14 @@ Page({
         },
         fail: function(res) {
           wx.showToast({
-
             title: '服务器网络错误,请稍后重试',
-
             icon: 'loading',
-
             duration: 1500
-
           })
-        },
-        complete: function(res) {
-
         },
       })
     }
-
   },
-  //点击注册的时候触发的事件
   register: function() {
     wx.navigateTo({
       url: "../regist/regist"

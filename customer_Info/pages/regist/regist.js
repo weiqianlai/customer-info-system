@@ -1,4 +1,5 @@
 const app = getApp()
+var utils = require('../../utils/utils.js')
  Page({
    data: {
 
@@ -29,19 +30,17 @@ const app = getApp()
      var phone = that.data.phone_no;
      var password = that.data.user_password;
      var enpassword = that.data.ensurePassword;
-     var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
-     var namepd = /^[\u4E00-\u9FA5A-Za-z]+$/;
-     if (!namepd.test(name)) {
+     if (utils.checkName(name)) {
        wx.showModal({
          title: "信息提示",
          content: "姓名有误"
        })
-     } else if (!myreg.test(phone)) {
+     } else if (utils.checkPhone(phone)) {
        wx.showModal({
          title: "信息提示",
          content: "手机号码错误"
        })
-     } else if (password.length <= 5) {
+     } else if (password.length < 6) {
        wx.showModal({
          title: "信息提示",
          content: "密码至少为六位！"
@@ -51,7 +50,7 @@ const app = getApp()
          title: "信息提示",
          content: "请确认密码是否相同！"
        })
-     } else if (name && phone && password && enpassword) {
+     } else if (password && enpassword) {
        wx.request({
          url: app.host.url +'saveUserinfo',
          data: {
@@ -96,13 +95,9 @@ const app = getApp()
          },
          fail: function(res) {
            wx.showToast({
-
              title: '服务器网络错误,请稍后重试',
-
              icon: 'loading',
-
              duration: 1500
-
            })
          },
        })

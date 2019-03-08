@@ -1,8 +1,8 @@
 <view wx:if="{{post}}" class='container'>
-    <view class='title-box'>
-      <view class='my-team-word'>团队介绍：</view>
-      <view class='my-team-word'>{{}}</view>
-    </view>
+  <view class='title-box'>
+    <view class='my-team-word'>团队介绍：</view>
+    <view class='my-team-word'>{{}}</view>
+  </view>
   <view class='label'>
     <text>姓名</text>
     <text>性别</text>
@@ -28,5 +28,5 @@
   <text>暂时没有团队信息！</text>
 </view>
 <view class='add'>
-    <button  bindtap='goAddPlayer' class="weui-btn" type="default" size='mini'>添加队员</button>
+  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini'>添加队员</button>
 </view>
