@@ -30,7 +30,7 @@
   </block>
   </view>
 </view>
-<view wx:else="{{post}}" class='none'>
+<view wx:else="{{ }}" class='none'>
   <text>暂时没有客户信息！</text>
 </view>
 <view class='add'>

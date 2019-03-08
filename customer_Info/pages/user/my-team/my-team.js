@@ -1,4 +1,5 @@
 // pages/user/my-team/my-team.js
+const app = getApp()
 Page({
 
   /**
@@ -12,11 +13,10 @@ Page({
    */
   onLoad: function (options) {
     var phone_no = wx.getStorageSync('phone_no');
-    //var groupinfo = JSON.stringify(options.data.groupinfo.group_info);
     console.log(phone_no);
     var _this = this;
     wx.request({
-      url: 'http://localhost:8086/wudi/getGroupMemberAllInfo', //json数据地址
+      url: app.host.url+'getGroupMemberAllInfo', 
       method: "GET",
       data: {
         "phone_no": phone_no
@@ -26,24 +26,24 @@ Page({
       },
       success: function (res) {
         console.log(res.data);
-        //将获取到的json数据，存在名字叫list_data的这个数组中
+        
         _this.setData({
+          introduce: res.data.groupinfo,
           post: res.data.data,
-          //groupinfo: res.data.groupinfo//res.data后面需要加后台传过来的数组名
-        })
-        //console.log(groupinfo)
-      }
+          user_no: phone_no
+        }) 
+      },
     })
   },
   onDel: function (e) {
-    var id = e.target.dataset.id;
-    console.log("onDel" + id);
+    var phone_no = e.target.dataset.phone_no; 
+    console.log("onDel" + phone_no);
     var that = this;
     wx.request({
-      url: 'http://localhost:8086/wudi/getGroupMemberAllInfo', //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
+      url: app.host.url+'deleteMember', //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
       method: "GET",
       data: {
-        "id": id,
+        "phone_no": phone_no
       },
       headers: {
         'Content-Type': 'application/json'
@@ -83,7 +83,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var phone_no = wx.getStorageSync('phone_no');
+    console.log(phone_no);
+    var _this = this;
+    wx.request({
+      url: app.host.url + 'getGroupAllInfo', //json数据地址
+      method: "GET",
+      data: {
+        "phone_no": phone_no
+      },
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(res.data);
+        _this.setData({
+          user_info: res.data.user
+        })
+      }
+    })
   },
 
   /**
