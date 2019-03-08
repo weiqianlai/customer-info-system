@@ -80,5 +80,6 @@
     <view class="li bg-gray" wx:if="{{user_info.vip_grade == 1 && user_info.groups == 0}}">
       <button bindtap='goAddTean' class="weui-btn mini-btn" type="primary">点击创建团队</button>
     </view>
+    <view wx:if="{{user_info.vip_grade == 1 && user_info.groups != 0}}" class="bg-gray">你已创建属于自己的团队了哦！</view>
   </view>
 </view>

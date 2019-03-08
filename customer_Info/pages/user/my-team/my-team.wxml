@@ -20,6 +20,7 @@
         <text class='cs-phone'>{{item.phone_no}}</text>
         <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.captain_phone==user_info.phone_no}}">删除</button>
         <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.captain_phone==user_info.phone_no}}">查看</button>
+         <button class='xianshi' data-id='{{item.id}}'  wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
       </view>
       <view class='content' wx:else data-id="{{index}}">
         <text>{{item.user_name}}</text>
@@ -29,6 +30,7 @@
         <text class='cs-phone'>{{item.phone_no}}</text>
         <button class='del' data-id='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.captain_phone==user_info.phone_no}}">删除</button>
         <button class='update' data-id='{{item.phone_no}}' bindtap='seePlayer' wx:if="{{introduce.captain_phone==user_info.phone_no}}">查看</button>
+        <button class='xianshi' data-id='{{item.id}}'  wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
       </view>
     </block>
   </view>
@@ -36,6 +38,7 @@
 <view wx:else="{{post}}" class='none'>
   <text>暂时没有团队信息！</text>
 </view>
-<view class='add' wx:if="{{introduce.captain_phone==user_info.phone_no}}">
-  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini'>添加队员</button>
+<view class='add' >
+  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==user_info.phone_no}}">添加队员</button>
+  <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:else="{{introduce.captain_phone!=user_info.phone_no}}">退出队伍</button>
 </view>

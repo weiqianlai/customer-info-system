@@ -71,6 +71,28 @@ Page({
         url: 'player-info/player-info',
       })
   },
+  quit_team:function(e) {
+    var phone_no = wx.getStorageSync('phone_no');
+    wx.request({
+      url: app.host.url + 'quitGroup', 
+      method: "GET",
+      data: {
+        "phone_no": phone_no
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+
+      success: function (e) {
+        var info = JSON.stringify(e.data.info);
+        console.log(info);
+        wx.showModal({
+          title: "信息提示",
+          content: info
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
