@@ -6,12 +6,14 @@ Page({
    * 页面的初始数据
    */
   data: {
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("==onLoad==");
     var phone_no = wx.getStorageSync('phone_no');
     console.log(phone_no);
     var _this = this;
@@ -29,6 +31,8 @@ Page({
         
         _this.setData({
           introduce: res.data.groupinfo,
+          isgroup: res.data.message,
+          phone_no:phone_no,
           post: res.data.data,
           user_no: phone_no
         }) 
@@ -99,31 +103,17 @@ Page({
    */
   onReady: function () {
 
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var phone_no = wx.getStorageSync('phone_no');
-    console.log(phone_no);
-    var _this = this;
-    wx.request({
-      url: app.host.url + 'getGroupAllInfo', //json数据地址
-      method: "GET",
-      data: {
-        "phone_no": phone_no
-      },
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(res.data);
-        _this.setData({
-          user_info: res.data.user
-        })
-      }
-    })
+    var page = getCurrentPages().pop();
+    if (page == undefined || page == null) return;
+    page.onLoad(); 
+
   },
 
   /**
@@ -144,6 +134,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+
 
   },
 
