@@ -29,7 +29,7 @@ Page({
         title: "信息提示",
         content: "密码不能为空!"
       })
-    } else if (pwd < 6) {
+    } else if (pwd.length  < 6) {
       wx.showModal({
         title: "信息提示",
         content: "密码至少为六位!"
