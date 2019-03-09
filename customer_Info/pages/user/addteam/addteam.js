@@ -20,11 +20,11 @@ Page({
     var phone = that.data.captain_phone;
     var password = that.data.group_info;
     var enpassword = that.data.group_name;
+    var captain_phone = wx.getStorageSync('phone_no');
     wx.request({
       url: app.host.url + "createGroupinfo",
       data: {
-        'captain_name': e.detail.value.captain_name,
-        'captain_phone': e.detail.value.captain_phone,
+        'captain_phone': captain_phone,
         'group_info': e.detail.value.group_info,
         'group_name': e.detail.value.group_name,
       },
