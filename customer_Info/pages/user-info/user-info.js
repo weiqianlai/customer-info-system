@@ -2,70 +2,9 @@
 const app = getApp()
 Page({
   data: {
-    post: [{
-      name: "weiqianlai",
-      sex: "男",
-      tel_no:"15012345678"
-    }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      }, {
-        name: "weiqianlai",
-        sex: "男",
-        tel_no: "15012345678"
-      },],
-    followupList: [{
-    },
-    {}],
+    followupList: [{},
+      {}
+    ],
     pendinglist: [{
       item_id: 11
     }],
@@ -105,30 +44,35 @@ Page({
         "user_password": user_password
       },
       success: function(res) {
-        console.log(res.data);
-        var customers = res.data.customers;  //先拿到总的数据
-        var followupList = new Array();       //新定义一个已跟进数组、待处理数组、已成交数组
+        // console.log("res.data");
+        // console.log(res.data);
+        var customers = res.data.customers;
+        // console.log("res.data.customers");
+        // console.log(customers); //先拿到总的数据
+        var followupList = new Array(); //新定义一个已跟进数组、待处理数组、已成交数组
         var pendinglist = new Array();
         var completedlist = new Array();
-        for (var item in customers) {         
-          switch (item.status) {
-            case 0:
-              followupList.push(item);
-              break;
-            case 1:
-              pendinglist.push(item);
-              break;
+        for (var i = 0; i < customers.length; i++) {
+          switch (customers[i].status) {
             case 2:
-              completedlist.push(item);
+              followupList.push(customers[i]);
+              break;
+            case 3:
+              pendinglist.push(customers[i]);
+              break;
+            case 6:
+              completedlist.push(customers[i]);
               break;
           }
         }
         thit.setData({
           user_info: res.data.user,
           followupList: followupList,
-          customers: res.data.customers,
+          pendinglist: pendinglist,
           completedlist: completedlist,
         })
+        console.log("已成交的信息");
+        console.log(completedlist);
       },
       fail: function(res) {
         console.log("啊嗷...获取数据失败了")
@@ -136,13 +80,13 @@ Page({
     })
   },
 
-  onShow: function () {
+  onShow: function() {
     var page = getCurrentPages().pop();
     if (page == undefined || page == null) return;
     page.onLoad();
 
   },
-  
+
   goAddTean: function(event) {
     wx.navigateTo({
       url: '../user/addteam/addteam',

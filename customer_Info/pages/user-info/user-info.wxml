@@ -8,7 +8,7 @@
     <view class="left">>已跟进信息</view>
   </view>
   <view hidden="{{!selectedFlag[1]}}">
-   <block wx:for="{{post}}" wx:key="{{item}}">
+   <block wx:for="{{followupList}}" wx:key="{{item}}">
     <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
       <text>{{item.name}}</text>
       <view class='cs-sex'>
@@ -31,7 +31,7 @@
     <view class="left">>待处理信息</view>
   </view>
   <view hidden="{{!selectedFlag[2]}}">
-   <block wx:for="{{customers}}" wx:key="{{item}}">
+   <block wx:for="{{pendinglist}}" wx:key="{{item}}">
     <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
       <text>{{item.name}}</text>
       <view class='cs-sex'>
@@ -54,18 +54,24 @@
     <view class="left">>已成交信息</view>
   </view>
   <view hidden="{{!selectedFlag[3]}}">
-    <block wx:for="{{completedlist}}" wx:for-item="item" wx:for-index="index" wx:key>
-      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <view>{{item.name}}</view>
-        <view>{{item.sex}}</view>
-        <view>{{item.tel_no}}</view>
+    <block wx:for="{{completedlist}}" wx:key="{{item}}">
+    <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+      <text>{{item.name}}</text>
+      <view class='cs-sex'>
+        <view wx:if="{{item.sex==1}}">男</view>
+        <view wx:elif="{{item.sex==0}}">女</view>
       </view>
-      <view class='content' wx:else data-id="{{index}}">
-        <view>{{item.name}}</view>
-        <view>{{item.sex}}</view>
-        <view>{{item.tel_no}}</view>
+      <text class='cs-phone'>{{item.tel_no}}</text>
+    </view>
+    <view class='content' wx:else data-id="{{index}}">
+      <text>{{item.name}}</text>
+      <view class='cs-sex'>
+        <view wx:if="{{item.sex==1}}">男</view>
+        <view wx:elif="{{item.sex==0}}">女</view>
       </view>
-    </block>
+      <text class='cs-phone'>{{item.tel_no}}</text>
+    </view>
+  </block>
   </view>
   <view class="li" data-index="4" bindtap='changeToggle'>
     <view class="left">>团队</view>
