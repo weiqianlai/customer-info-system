@@ -135,6 +135,14 @@ Page({
       }
     })
   },
+
+  onShow: function () {
+    var page = getCurrentPages().pop();
+    if (page == undefined || page == null) return;
+    page.onLoad();
+
+  },
+  
   goAddTean: function(event) {
     wx.navigateTo({
       url: '../user/addteam/addteam',
