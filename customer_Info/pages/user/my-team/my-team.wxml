@@ -39,6 +39,6 @@
   <text>暂时没有团队信息！</text>
 </view>
 <view class='add' >
-  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==user_info.phone_no}}">添加队员</button>
-  <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:else="{{introduce.captain_phone!=user_info.phone_no}}">退出队伍</button>
+  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone_no}}">添加队员</button>
+  <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:if="{{isgroup=='1'&&introduce.captain_phone!=phone_no}}">退出队伍</button>
 </view>
