@@ -15,7 +15,7 @@ Page({
       item_id: 11
     }],
     // 展开折叠 
-    selectedFlag: [false, false, false, false],
+    selectedFlag: [false, false, false, false,false],
   },
   // 展开折叠选择  
   changeToggle: function(e) {
@@ -44,12 +44,8 @@ Page({
         "user_password": user_password
       },
       success: function(res) {
-        // console.log("res.data");
-        // console.log(res.data);
         var customers = res.data.customers;
-        // console.log("res.data.customers");
-        // console.log(customers); //先拿到总的数据
-        var followupList = new Array(); //新定义一个已跟进数组、待处理数组、已成交数组
+        var followupList = new Array(); 
         var pendinglist = new Array();
         var completedlist = new Array();
         for (var i = 0; i < customers.length; i++) {

@@ -1,10 +1,12 @@
 // pages/user/my-team/player-info/player-info.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    post:[{}]
   },
 
   /**
@@ -17,7 +19,6 @@ Page({
   },
   onfollow_up: function(e) {
     var id = e.target.dataset.id;
-    console.log("user-file", " onUpdate==> 客户信息记录的id=" + id + "  type=" + type);
     wx.redirectTo({
       url: '../play-cs-info/play-cs-info?id=' + id,
     })
@@ -37,7 +38,7 @@ Page({
     var player_phone_no = wx.getStorageSync("player_phone_no");
     console.log("lalal" + player_phone_no);
     wx.request({
-      //url: app.host.url + " ",
+      url: app.host.url + "getCustomersByUser",
       method: "GET",
       data: {
         "phone_no": player_phone_no,

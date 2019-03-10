@@ -88,4 +88,12 @@
     </view>
     <view wx:if="{{user_info.vip_grade == 1 && user_info.groups != 0}}" class="bg-gray">你已创建属于自己的团队了哦！</view>
   </view>
+  <view class="li" data-index="5" bindtap='changeToggle'>
+    <view class="left">>点击查看消息</view>
+  </view>
+  <view hidden="{{!selectedFlag[5]}}">
+    <view class="bg-gray">
+      <view>这里显示用户的消息</view>
+    </view>
+  </view>
 </view>

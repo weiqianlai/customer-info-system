@@ -1,4 +1,5 @@
 // pages/admin/customerinfo/customerinfo.js
+const app = getApp()
 Page({
 
   /**
