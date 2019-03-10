@@ -14,6 +14,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log("user-file onLoad:  from options(before set) ==>" + options.type);
+    wx.setStorageSync("user-type", options.type);
 
   },
   onfollow_up: function(e) {
