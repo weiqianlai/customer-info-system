@@ -6,7 +6,6 @@ Page({
   onLoad: function(options) {
     wx.setStorageSync("id", options.id);
     wx.setStorageSync("add-type", options.type);
-    console.log("add-file", " onLoad==> id=" + options.id + " type=" + options.type);
     var _this = this;
     wx.request({
       url: app.host.url + 'getCustomerById',
@@ -29,9 +28,6 @@ Page({
   formSubmit: function(e) {
     var type = wx.getStorageSync("add-type");
     var phone_no = wx.getStorageSync('phone_no');
-    console.log("add-file", " formSubmit show e.detail begin : type=" + type + " phone_no=" + phone_no);
-    console.log(e.detail.value);
-    console.log("add-file", " formSubmit show e.detail end :");
     if (utils.checkName(e.detail.value.name)) {
       wx.showModal({
         title: "信息提示",
@@ -79,7 +75,9 @@ Page({
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         success: function(res) {
-          console.log("add-file formSubmit ", " (success) type=" + type);
+          console.log(res.data);
+          // if() {
+          // }
           wx.redirectTo({
             url: '../user-customerinfo/user-customerinfo?type=' + type,
           })

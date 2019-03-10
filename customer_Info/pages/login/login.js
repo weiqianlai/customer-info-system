@@ -50,25 +50,22 @@ Page({
         dataType: 'json',
         success: function(res) {
           console.log(res.data)
-          // console.log("返回的结果"+JSON.stringify(res.data.msg))
-          // console.log("返回的结果" + JSON.stringify(res.data.status))
           var msg = JSON.stringify(res.data.code);
           var type = JSON.stringify(res.data.type);
           var info = JSON.stringify(res.data.info);
           wx.setStorageSync("phone_no", phone); //缓存用户电话，首页接后便于读取后台数据
           wx.setStorageSync("user_password", pwd);
 
-          if (msg == 1 && type == 2) {
+          if (msg == 1 && type == 1) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
               duration: 3000
             })
-            // console.log(status)
             wx.switchTab({
               url: '../user/index/index',
             })
-          } else if (msg == 1 && type == 1) {
+          } else if (msg == 1 && type == 2) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',

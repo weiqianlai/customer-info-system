@@ -40,7 +40,7 @@ Page({
   },
   onDel: function (e) {
     var phone_no = e.target.dataset.phone_no; //从绑定的控件列的data-id传过来
-    var cacaptain_phone = wx.getStorageSync('phone_no');
+    var captain_phone = wx.getStorageSync('phone_no');
     var that = this;
     wx.showModal({
       title: "警告",
@@ -54,7 +54,7 @@ Page({
             url: app.host.url + "deleteMember", //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
             method: "GET",
             data: {
-              "cacaptain_phone": cacaptain_phone,
+              "captain_phone": captain_phone,
               "phone_no": phone_no
             },
             headers: {
@@ -84,11 +84,10 @@ Page({
     })
   },
   seePlayer:function(e) {
-     var phone_no = e.target.dataset.phone_no;
+     var player_phone_no = e.target.dataset.phone_no;
       wx.navigateTo({
-        url: 'player-info/player-info?phone_no' + phone_no,
+        url: 'player-info/player-info?player_phone_no=' + player_phone_no,
       })
-    console.log("队员号码" + phone_no);
   },
   quit_team:function(e) {
     var phone_no = wx.getStorageSync('phone_no');

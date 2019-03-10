@@ -1,4 +1,4 @@
-<view wx:if="{{post}}" class='container'>
+<view wx:if="{{post}}" class='main-box'>
   <view class='title'>
     <text>客户列表</text>
   </view>

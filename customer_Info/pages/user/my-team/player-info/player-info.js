@@ -5,17 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    post: [{
-
-    }]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log("user-file onLoad:  from options(before set) ==>" + options.type);
-    wx.setStorageSync("user-type", options.type);
+    console.log("上个页面传过来的队员号码" + options.player_phone_no);
+    wx.setStorageSync("player_phone_no", options.player_phone_no);
 
   },
   onfollow_up: function(e) {
@@ -36,7 +33,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    var _this = this;
+    var player_phone_no = wx.getStorageSync("player_phone_no");
+    console.log("lalal" + player_phone_no);
+    wx.request({
+      //url: app.host.url + " ",
+      method: "GET",
+      data: {
+        "phone_no": player_phone_no,
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        _this.setData({
+          post: res.data.data
+        })
+      }
+    })
   },
 
   /**
