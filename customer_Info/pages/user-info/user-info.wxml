@@ -93,7 +93,7 @@
   </view>
   <view hidden="{{!selectedFlag[5]}}">
     <view class="bg-gray">
-      <view>这里显示用户的消息</view>
+      <view>{{user_msg.infos}}</view>
     </view>
   </view>
 </view>

@@ -11,13 +11,13 @@
       <text>{{item.name}}</text>
       <text>{{item.sex}}</text>
       <text>{{item.tel_no}}</text>
-      <button class='del' data-id='{{item.id}}' bindtap='onfollow_up'>跟进</button>
+      <button class='del' data-id='{{item.id}}' data-type='{{item.type}}'  data-playerNo='{{item.phone_no}}' bindtap='onfollow_up'>跟进</button>
     </view>
     <view class='content' wx:else data-id="{{index}}">
       <text>{{item.name}}</text>
       <text>{{item.sex}}</text>
       <text>{{item.tel_no}}</text>
-      <button class='update' data-id='{{item.id}}' bindtap='onfollow_up'>跟进</button>
+      <button class='del' data-id='{{item.id}}' bindtap='onfollow_up'>跟进</button>
     </view>
   </block>
   </view>

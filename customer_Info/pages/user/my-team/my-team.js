@@ -5,19 +5,16 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {  
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log("==onLoad==");
+  onLoad: function(options) {
     var phone_no = wx.getStorageSync('phone_no');
-    console.log(phone_no);
     var _this = this;
     wx.request({
-      url: app.host.url+'getGroupMemberAllInfo', 
+      url: app.host.url + 'getGroupMemberAllInfo',
       method: "GET",
       data: {
         "phone_no": phone_no
@@ -25,20 +22,17 @@ Page({
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      success: function (res) {
-        console.log(res.data);
+      success: function(res) {
         _this.setData({
           introduce: res.data.groupinfo,
           isgroup: res.data.message,
-          phone_no:phone_no,
+          phone_no: phone_no,
           post: res.data.data,
-          //user_no: phone_no
         })
-        //console.log("ppp" + isgroup); 
       },
     })
   },
-  onDel: function (e) {
+  onDel: function(e) {
     var phone_no = e.target.dataset.phone_no; //从绑定的控件列的data-id传过来
     var captain_phone = wx.getStorageSync('phone_no');
     var that = this;
@@ -48,7 +42,7 @@ Page({
       showCancel: true,
       cancelText: '否',
       confirmText: '是',
-      success: function (res) {
+      success: function(res) {
         if (res.confirm) {
           wx.request({
             url: app.host.url + "deleteMember", //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
@@ -60,14 +54,14 @@ Page({
             headers: {
               'Content-Type': 'application/json'
             },
-            success: function (res) {
+            success: function(res) {
               var newList = that.data.post;
               for (var i = 0; i < newList.length; i++) {
                 if (newList[i].phone_no == phone_no) {
                   newList.splice(i, 1);
                 }
               }
-              that.setData({  //主动刷新
+              that.setData({ //主动刷新
                 post: newList
               })
             },
@@ -78,21 +72,21 @@ Page({
       }
     })
   },
-  goAddPlayer:function(event) {
+  goAddPlayer: function(event) {
     wx.navigateTo({
       url: '../addplayer/addplayer',
     })
   },
-  seePlayer:function(e) {
-     var player_phone_no = e.target.dataset.phone_no;
-      wx.navigateTo({
-        url: 'player-info/player-info?player_phone_no=' + player_phone_no,
-      })
+  seePlayer: function(e) {
+    var player_phone_no = e.target.dataset.phone_no;
+    wx.navigateTo({
+      url: 'player-info/player-info?player_phone_no=' + player_phone_no,
+    })
   },
-  quit_team:function(e) {
+  quit_team: function(e) {
     var phone_no = wx.getStorageSync('phone_no');
     wx.request({
-      url: app.host.url + 'quitGroup', 
+      url: app.host.url + 'quitGroup',
       method: "GET",
       data: {
         "phone_no": phone_no
@@ -101,9 +95,8 @@ Page({
         'Content-Type': 'application/json'
       },
 
-      success: function (e) {
+      success: function(e) {
         var info = JSON.stringify(e.data.info);
-        console.log(info);
         wx.showModal({
           title: "信息提示",
           content: info
@@ -115,7 +108,7 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
 
   },
@@ -123,31 +116,31 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     var page = getCurrentPages().pop();
     if (page == undefined || page == null) return;
-    page.onLoad(); 
+    page.onLoad();
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
 
   },
@@ -155,14 +148,14 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

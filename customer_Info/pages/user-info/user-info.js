@@ -15,7 +15,7 @@ Page({
       item_id: 11
     }],
     // 展开折叠 
-    selectedFlag: [false, false, false, false,false],
+    selectedFlag: [false, false, false, false, false],
   },
   // 展开折叠选择  
   changeToggle: function(e) {
@@ -44,8 +44,9 @@ Page({
         "user_password": user_password
       },
       success: function(res) {
+        console.log(res.data);
         var customers = res.data.customers;
-        var followupList = new Array(); 
+        var followupList = new Array();
         var pendinglist = new Array();
         var completedlist = new Array();
         for (var i = 0; i < customers.length; i++) {
@@ -66,9 +67,8 @@ Page({
           followupList: followupList,
           pendinglist: pendinglist,
           completedlist: completedlist,
+          user_msg: res.data.infos,
         })
-        console.log("已成交的信息");
-        console.log(completedlist);
       },
       fail: function(res) {
         console.log("啊嗷...获取数据失败了")

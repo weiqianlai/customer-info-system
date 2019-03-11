@@ -6,21 +6,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    post:[{}]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log("上个页面传过来的队员号码" + options.player_phone_no);
     wx.setStorageSync("player_phone_no", options.player_phone_no);
 
   },
   onfollow_up: function(e) {
     var id = e.target.dataset.id;
+    var type = e.target.dataset.type;
+    var playerno = e.target.dataset.playerno;
     wx.redirectTo({
-      url: '../play-cs-info/play-cs-info?id=' + id,
+      url: '../play-cs-info/play-cs-info?id=' + id + '&type=' + type + '&playerno=' + playerno,
     })
   },
   /**
@@ -47,6 +47,7 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
+        console.log(res.data);
         _this.setData({
           post: res.data.data
         })

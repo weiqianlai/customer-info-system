@@ -1,44 +1,50 @@
- <view class='main-box'>
+<view class='main-box'>
   <form bindsubmit="formSubmit" bindreset="formReset">
     <view class='input-box'>
-      <text>姓名：{{post.name}}</text>
+      <text>姓名：</text>
+      <input style='display:none' data-value='{{id}}' name="id" value='{{post.id}}'></input>
+      <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入客户姓名" type="text" data-value='{{name}}' name="name" confirm-type="done" value='{{post.name}}'>{{post.name}}</input>
     </view>
     <view class='input-box'>
-      <text>电话：{{post.tel_no}}</text>
+      <text>电话：</text>
+      <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}'>{{post.tel_no}}</input>
     </view>
     <view class='input-box'>
       <text>性别：</text>
       <radio-group name="sex" class="choose-sex">
         <label>
-          <radio value="1" checked="{{post.sex==1}}" />男</label>
+          <radio value="1" checked="{{post.sex==1}}"/>男</label>
         <label>
-          <radio value="0" checked="{{post.sex==0}}" />女</label>
+          <radio value="0" checked="{{post.sex==0}}"/>女</label>
       </radio-group>
     </view>
     <view class='input-box'>
       <text>是否透漏录入人信息：</text>
       <radio-group name="disclose">
         <label>
-          <radio value="1" checked="{{post.disclose==1}}" />是</label>
+          <radio value="1" checked="{{post.disclose==1}}"/>是</label>
         <label>
-          <radio value="0" checked="{{post.disclose==0}}" />否</label>
+          <radio value="0" checked="{{post.disclose==0}}"/>否</label>
       </radio-group>
     </view>
     <view class='input-box'>
-      <text>年龄：{{post.age}}</text>
+      <text>年龄：</text>
+      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="age" placeholder="请输入客户年龄" value='{{post.age}}' />
     </view>
     <view class='input-box'>
-      <text>民族：{{post.nation}}</text>
+      <text>民族：</text>
+      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户年龄" value='{{post.nation}}' />
     </view>
     <view class='input-box'>
-      <text>工作地址：{{post.work_address}}</text>
+      <text>工作地址：</text>
+      <input type="text" class='input-work-address' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" value='{{post.work_address}}' />
     </view>
     <view class='input-box'>
       <text>备注：</text>
       <textarea type="text" class='input-comments' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='{{post.comments}}' maxlength="1200" />
     </view>
     <view class="btn-area">
-      <button formType="submit" bindtap='goSP' class='btn'>提 交</button>
+      <button formType="submit" class='btn'>提 交</button>
       <button formType="reset" class='btn'>重 置</button>
     </view>
   </form>

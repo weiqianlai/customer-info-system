@@ -1,4 +1,5 @@
 <view wx:if="{{post}}" class='main-box'>
+<view class='info-box'>
   <view class='label'>
     <text>姓名</text>
     <text>性别</text>
@@ -25,6 +26,7 @@
       <button class='del' data-id='{{item.id}}' bindtap='onfollow_up'>跟进</button>
     </view>
   </block>
+</view>
 </view>
 <view wx:else="{{post}}" class='none'>
   <text>暂时没有客户信息！</text>
