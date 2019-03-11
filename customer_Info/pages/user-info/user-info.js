@@ -69,6 +69,7 @@ Page({
           completedlist: completedlist,
           user_msg: res.data.infos,
         })
+        console.log("已成交",completedlist);
       },
       fail: function(res) {
         console.log("啊嗷...获取数据失败了")
