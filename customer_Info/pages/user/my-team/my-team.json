@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "团队信息",
-  "navigationBarBackgroundColor": "#CCEEFF"
+  "navigationBarBackgroundColor": "#CCEEFF",
+
+
+      "enablePullDownRefresh": true
 }

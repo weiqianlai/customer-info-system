@@ -35,6 +35,7 @@ Page({
    */
   onShow: function() {
     var _this = this;
+    var status= 1;
     var player_phone_no = wx.getStorageSync("player_phone_no");
     console.log("lalal" + player_phone_no);
     wx.request({
@@ -42,6 +43,7 @@ Page({
       method: "GET",
       data: {
         "phone_no": player_phone_no,
+        "status":1
       },
       headers: {
         'Content-Type': 'application/json'

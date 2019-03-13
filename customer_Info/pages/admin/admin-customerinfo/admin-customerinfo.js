@@ -44,7 +44,7 @@ Page({
     var type = wx.getStorageSync("user-type");
     console.log("user-file", " onUpdate==> 客户信息记录的id=" + id + "  type=" + type);
     wx.redirectTo({
-      url: 'customerinfo-detail/customerinfo-detail?id=' + id + "&&type=" + type,
+      url: '../customerinfo-detail/customerinfo-detail?id=' + id + "&&type=" + type,
     })
   },
 

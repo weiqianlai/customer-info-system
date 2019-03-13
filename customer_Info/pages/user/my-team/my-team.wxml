@@ -1,9 +1,11 @@
 <view wx:if="{{post}}" class='main-box'>
   <view class='info-box'>
     <view class='title-box'>
-      <view class='my-team-word'>团队名称：{{introduce.captain_name}}</view>
-      <view class='my-team-word'>简介：</view>
-      <view class='my-team-word'>{{introduce.group_info}}</view>
+      <view class='my-team-word'>团队名称：{{introduce.group_name}}</view>
+      <view class='my-team-word'>队长名称：{{introduce.captain_name}}</view>
+       <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view>
+      <view class='my-team-word'>简介：{{introduce.group_info}}</view>
+      <view class='my-team-word'>建队时间：{{introduce.create_time}}</view>
     </view>
     <view class='label'>
       <text>姓名</text>

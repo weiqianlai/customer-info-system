@@ -84,6 +84,7 @@ Page({
     })
   },
   quit_team: function(e) {
+    var that = this;
     var phone_no = wx.getStorageSync('phone_no');
     wx.request({
       url: app.host.url + 'quitGroup',
@@ -96,15 +97,20 @@ Page({
       },
 
       success: function(e) {
+        var newlist = new Array();
+        var introduce =  new Array();
         var info = JSON.stringify(e.data.info);
         wx.showModal({
           title: "信息提示",
           content: info
         })
+        that.setData({ //主动刷新
+          post: newlist,
+          introduce: introduce
+        })
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -120,7 +126,7 @@ Page({
     var page = getCurrentPages().pop();
     if (page == undefined || page == null) return;
     page.onLoad();
-
+    console.log("shux");
   },
 
   /**

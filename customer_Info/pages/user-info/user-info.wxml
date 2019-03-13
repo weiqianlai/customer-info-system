@@ -93,7 +93,7 @@
   </view>
   <view hidden="{{!selectedFlag[5]}}">
     <view class="bg-gray">
-      <view>{{user_msg.infos}}</view>
+      <view>{{user_msg.info}}</view>
     </view>
   </view>
 </view>

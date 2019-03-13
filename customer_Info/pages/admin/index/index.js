@@ -58,7 +58,7 @@ Page({
     }, {
       name: '欢迎您的加入',
       url: '',
-      icon: ' ',
+      icon: '../../../images/nav-icon/logo.png',
       id: "00x"
     }, {
       name: '法院书记员',

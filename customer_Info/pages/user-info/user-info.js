@@ -44,7 +44,7 @@ Page({
         "user_password": user_password
       },
       success: function(res) {
-        console.log(res.data);
+        //var infos = res.data.infos;
         var customers = res.data.customers;
         var followupList = new Array();
         var pendinglist = new Array();
@@ -67,9 +67,8 @@ Page({
           followupList: followupList,
           pendinglist: pendinglist,
           completedlist: completedlist,
-          user_msg: res.data.infos,
+          user_msg: res.data.infos
         })
-        console.log("已成交",completedlist);
       },
       fail: function(res) {
         console.log("啊嗷...获取数据失败了")
