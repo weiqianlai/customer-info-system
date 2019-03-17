@@ -3,11 +3,11 @@
     <view class='input-box'>
       <text>姓名：</text>
       <input style='display:none' data-value='{{id}}' name="id" value='{{post.id}}'></input>
-      <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入客户姓名" type="text" data-value='{{name}}' name="name" confirm-type="done" value='{{post.name}}'>{{post.name}}</input>
+      <input class='input-content' placeholder-class="placeholderStyle" placeholder="请输入客户姓名" type="text" data-value='{{name}}' name="name" confirm-type="done" value='{{post.name}}' disabled='disabled'>{{post.name}}</input>
     </view>
     <view class='input-box'>
       <text>电话：</text>
-      <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}'>{{post.tel_no}}</input>
+      <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}' disabled='disabled'>{{post.tel_no}}</input>
     </view>
     <view class='input-box'>
       <text>性别：</text>
@@ -29,15 +29,15 @@
     </view>
     <view class='input-box'>
       <text>年龄：</text>
-      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="age" placeholder="请输入客户年龄" value='{{post.age}}' />
+      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="age" placeholder="请输入客户年龄" data-value='{{age}}' value='{{post.age}}' disabled='disabled'>{{post.age}}</input>
     </view>
     <view class='input-box'>
       <text>民族：</text>
-      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户年龄" value='{{post.nation}}' />
+      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户年龄" data-value='{{nation}}' value='{{post.nation}}' disabled='disabled'>{{post.nation}}</input>
     </view>
     <view class='input-box'>
       <text>工作地址：</text>
-      <input type="text" class='input-work-address' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" value='{{post.work_address}}' />
+      <input type="text" class='input-work-address' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" data-value='{{work_address}}' value='{{post.work_address}}' disabled='disabled'>{{post.work_address}}</input>
     </view>
     <view class='input-box'>
       <text>备注：</text>

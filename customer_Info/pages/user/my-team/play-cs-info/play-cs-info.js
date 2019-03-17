@@ -19,7 +19,7 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res.data);
+        console.log("拿数据",res.data);
         if (res.data.data) {
           _this.setData({
             post: res.data.data
@@ -30,6 +30,7 @@ Page({
   },
   formSubmit: function (e) {
     var type = wx.getStorageSync("type");
+    console.log("aaa",type);
     var playerno = wx.getStorageSync('playerno');
       wx.request({
         url: app.host.url + 'saveOrUpdateCustomer',

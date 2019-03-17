@@ -33,12 +33,12 @@ Page({
         title: "信息提示",
         content: "姓名有误"
       })
-    } else if (utils.checkPhone(e.detail.value.tel_no)) {
+    } else if (e.detail.value.tel_no) {
       wx.showModal({
         title: "信息提示",
         content: "手机号有误"
       })
-    } else if (utils.checkAge(e.detail.value.age)) {
+    } else if (e.detail.value.age) {
       wx.showModal({
         title: "信息提示",
         content: "年龄有误"

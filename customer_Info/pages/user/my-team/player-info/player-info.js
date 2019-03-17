@@ -18,6 +18,7 @@ Page({
   onfollow_up: function(e) {
     var id = e.target.dataset.id;
     var type = e.target.dataset.type;
+    console.log("第一次拿", type)
     var playerno = e.target.dataset.playerno;
     wx.redirectTo({
       url: '../play-cs-info/play-cs-info?id=' + id + '&type=' + type + '&playerno=' + playerno,
