@@ -1,4 +1,7 @@
-<view wx:if="{{post}}" class='mani-box'>
+<view wx:if="{{post==0}}" class='none'>
+  <text>暂时没有客户信息！</text>
+</view>
+<view wx:else="{{post}}" class='mani-box'>
 <view class='info-box'>
   <view class='label'>
     <text class='name'>姓名</text>
@@ -29,9 +32,6 @@
     </view>
   </block>
   </view>
-</view>
-<view wx:else="{{ }}" class='none'>
-  <text>暂时没有客户信息！</text>
 </view>
 <view class='add'>
   <button bindtap='addCustomer'>添加客户</button>

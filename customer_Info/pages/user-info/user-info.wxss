@@ -1,4 +1,4 @@
-@import "../template/customer.wxss";
+/* @import "../template/customer.wxss"; */
 
 .main-box {
   width: 100%;
@@ -66,6 +66,23 @@
   margin: 0 auto;
   width: 300rpx;
 }
+
 .content {
   width: 100%;
+}
+
+.content {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 10rpx;
+}
+.content text {
+  width: 260rpx;
+}
+.bg-g {
+  background: #bfebbd;
 }

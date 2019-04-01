@@ -6,7 +6,7 @@
        <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view>
       <view class='my-team-word'>简介：{{introduce.group_info}}</view>
       <view class='my-team-word'>建队时间：{{introduce.create_time}}</view>
-    </view>
+    </view>   
     <view class='label'>
       <text>姓名</text>
       <text>性别</text>
@@ -42,5 +42,6 @@
 </view>
 <view class='add' >
   <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone_no}}">添加队员</button>
+  <button bindtap='goTeam_deal' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone_no}}">查看团队成交信息</button>
   <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:if="{{isgroup=='1'&&introduce.captain_phone!=phone_no}}">退出队伍</button>
 </view>

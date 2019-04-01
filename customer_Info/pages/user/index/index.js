@@ -57,7 +57,7 @@ Page({
       id: "010"
     }, {
       name: '欢迎您的加入',
-      url: '../index/index',
+        url: '../../company-profile/company-profile',
         icon: '../../../images/nav-icon/logo.png',
       id: "00x"
     }, {

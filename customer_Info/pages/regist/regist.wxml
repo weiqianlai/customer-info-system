@@ -18,13 +18,13 @@
         </view>
         <view class="weui-cell weui-cell_input">
           <view class="weui-label sex_choose">性别</view>
-           <view class="weui-cell__bd">
-          <radio-group name="user_sex" bindinput='getUserSex'>
-            <label>
-              <radio value="0"  checked/>男</label>
-            <label>
-              <radio value="1" />女</label>
-          </radio-group>
+          <view class="weui-cell__bd">
+            <radio-group name="user_sex" bindinput='getUserSex'>
+              <label>
+                <radio value="0" checked/>男</label>
+              <label>
+                <radio value="1" />女</label>
+            </radio-group>
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -50,6 +50,31 @@
           <view class="weui-cell__bd">
             <input class="weui-input" type="password" bindinput='getEnsurePassword' name="ensurePassword" placeholder="请输入确认密码" />
           </view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-label sex_choose"></view>
+        <view class="weui-cell__bd xieyi_box">
+          <radio-group name="xieyi" bindinput='getUserSex'>
+            <label>
+              <radio value="1" checked="{{xieyi==1}}"/>
+            </label>
+            <text class="xieyi" bindtap="powerDrawer" data-statu="open">请认真阅读本协议</text>
+          </radio-group>
+        </view>
+        <!--button-->
+        <!--mask-->
+        <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>
+        <!--content-->
+        <!--使用animation属性指定需要执行的动画-->
+        <view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+
+          <!--drawer content-->
+          <view class="drawer_title">个人隐私安全协议书</view>
+          <view class="drawer_content">
+            本小程序尊重并保护所有使用服务用户的个人隐私权。为了给您提供更准确、更有个性化的服务，小程序会按照本隐私权政策的规定使用和披露您的个人信息。但本小程序将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策另有规定外，在未征得您事先许可的情况下，本应用不会将这些信息对外披露或向第三方提供。本小程序会不时更新本隐私权政策。 您在同意本小程序服务使用协议之时，即视为您已经同意本隐私权政策全部内容。
+          </view>
+          <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
         </view>
       </view>
       <button class="weui-btn btn1" type="primary" formType="submit">注册</button>

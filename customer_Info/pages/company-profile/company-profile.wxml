@@ -1,0 +1,40 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="black-cover"></view>
+    <image class="logo" src="../../images/nav-icon/logo.png"></image>
+    <image class="title" src="../../images/nav-icon/logo.png"></image>
+  </view>
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">志远教育</text>
+        <!-- <text class="version-text">v0.0.9</text>
+        <text class="version-text">公测</text> -->
+      </view>
+      <!-- <view bindtap="toggleLog">
+        <text class="version-log-link" wx:if="{{!showLog}}">更新日志</text>
+        <text class="version-log-link">简介</text> 
+      </view> -->
+    </view>
+    <view class="describe" wx:if="{{!showLog}}">
+        <text class="desc-title">简介</text>
+        <!-- <view class="desc-list">
+          <text class="desc-list-item">官网：https://we.cqu.pt、http://we.cqupt.edu.cn</text>
+          <text class="desc-list-item">Github：https://github.com/lanshan-studio/wecqupt</text>
+        </view> -->
+        <text class="desc-content">本公司致力于华中师范大学、贵州医科大学、遵义医科大学、山东大学和国家开放大学等国家985/211工程重点院校、教育部直属高校的高中起点专科、专科起点本科的学历教育服务，尽一切可能让广大学生简单入学，过程轻松，毕业顺利。本公司也提供了普通话培训，教师资格证笔试培训，初级会计师培训等相关业务。</text>
+        <text class="desc-content">欢迎广大师生朋友来电咨询：0855-2180166,18585590227、15085672014（吴老师）</text>
+       
+    </view>
+    
+  </view>
+  <!-- <view class="footer">
+    <view class="footer-lanshan">
+        <image src="/images/more/lanshan.png"></image>
+        <text>蓝山工作室</text>
+    </view>
+    <text>信息中心/信息化办 · 教育信息化创新创业协会</text>
+    <text>Copyright @ 2016 All Rights Reserved</text>
+  </view> -->
+</view>

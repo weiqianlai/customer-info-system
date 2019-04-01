@@ -17,9 +17,11 @@
 .add{
   position: fixed;
   width: 750rpx;
-  height: 120rpx;
+  height: 150rpx;
   bottom: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .label{
   margin: 0 auto;

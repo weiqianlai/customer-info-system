@@ -1,0 +1,24 @@
+<view wx:if="{{post}}" class='mani-box'>
+<view class='info-box'>
+  <view class='label'>
+    <text class='name'>学生姓名</text>
+    <text class='sex'>来自队员</text>
+    <text class='sex'>成交时间</text>
+  </view>
+  <block wx:for="{{post}}" wx:key="{{item}}">
+    <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+      <text>{{item.name}}</text>
+      <text>{{item.player_name}}</text>
+      <text class='cs-phone'>{{item.deal_time}}</text>
+    </view>
+    <view class='content' wx:else data-id="{{index}}">
+     <text>{{item.name}}</text>
+      <text>{{item.player_name}}</text>
+      <text class='cs-phone'>{{item.deal_time}}</text>
+    </view>
+  </block>
+  </view>
+</view>
+<view wx:else="{{ }}" class='none'>
+  <text>暂时没有成交信息！</text>
+</view>
