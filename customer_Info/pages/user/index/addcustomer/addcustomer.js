@@ -27,13 +27,13 @@ Page({
   },
   formSubmit: function(e) {
     var type = wx.getStorageSync("add-type");
-    var phone_no = wx.getStorageSync('phone_no');
+    var phone = wx.getStorageSync('phone');
     if (utils.checkName(e.detail.value.name)) {
       wx.showModal({
         title: "信息提示",
         content: "姓名有误"
       })
-    } else if (utils.checkPhone(e.detail.value.tel_no)) {
+    } else if (utils.checkPhone(e.detail.value.tel)) {
       wx.showModal({
         title: "信息提示",
         content: "手机号有误"
@@ -59,15 +59,16 @@ Page({
         data: {
           "id": e.detail.value.id,
           'name': e.detail.value.name,
-          'tel_no': e.detail.value.tel_no,
+          'tel': e.detail.value.tel,
           'sex': e.detail.value.sex,
           'disclose': e.detail.value.disclose,
+          'addr': e.detail.value.addr,
           'age': e.detail.value.age,
-          'work_address': e.detail.value.work_address,
-          'comments': e.detail.value.comments,
-          'phone_no': phone_no,
+          'user_id': phone,
           'nation': e.detail.value.nation,
+          'remark': e.detail.value.remark,
           'type': type,
+          'otherinfo': "aaa",
           'status': 1
         },
         method: 'GET',

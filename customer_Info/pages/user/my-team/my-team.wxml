@@ -3,10 +3,10 @@
     <view class='title-box'>
       <view class='my-team-word'>团队名称：{{introduce.group_name}}</view>
       <view class='my-team-word'>队长名称：{{introduce.captain_name}}</view>
-       <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view>
+      <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view>
       <view class='my-team-word'>简介：{{introduce.group_info}}</view>
       <view class='my-team-word'>建队时间：{{introduce.create_time}}</view>
-    </view>   
+    </view>
     <view class='label'>
       <text>姓名</text>
       <text>性别</text>
@@ -22,7 +22,7 @@
         <text class='cs-phone'>{{item.phone_no}}</text>
         <button class='del' data-phone_no='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.captain_phone==phone_no}}">删除</button>
         <button class='update' data-phone_no='{{item.phone_no}}' bindtap='seePlayer' wx:if="{{introduce.captain_phone==phone_no}}">查看</button>
-         <button class='xianshi' wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
+        <button class='xianshi' wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
       </view>
       <view class='content' wx:else data-id="{{index}}">
         <text>{{item.user_name}}</text>
@@ -32,7 +32,7 @@
         <text class='cs-phone'>{{item.phone_no}}</text>
         <button class='del' data-phone_no='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.captain_phone==phone_no}}">删除</button>
         <button class='update' data-phone_no='{{item.phone_no}}' bindtap='seePlayer' wx:if="{{introduce.captain_phone==phone_no}}">查看</button>
-        <button class='xianshi'  wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
+        <button class='xianshi' wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
       </view>
     </block>
   </view>
@@ -40,8 +40,8 @@
 <view wx:else="{{post}}" class='none'>
   <text>暂时没有团队信息！</text>
 </view>
-<view class='add' >
-  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone_no}}">添加队员</button>
-  <button bindtap='goTeam_deal' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone_no}}">查看团队成交信息</button>
-  <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:if="{{isgroup=='1'&&introduce.captain_phone!=phone_no}}">退出队伍</button>
+<view class='add'>
+  <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone}}">添加队员</button>
+  <button bindtap='goTeam_deal' class="weui-btn" type="default" size='mini' wx:if="{{introduce.captain_phone==phone}}">查看团队成交信息</button>
+  <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:if="{{isgroup=='1'&&introduce.captain_phone!=phone}}">退出队伍</button>
 </view>

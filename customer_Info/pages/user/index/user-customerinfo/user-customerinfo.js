@@ -78,18 +78,19 @@ Page({
   onShow: function(res) {
     var _this = this;
     var type = wx.getStorageSync("user-type");
-    var phone_no = wx.getStorageSync("phone_no");
+    var phone = wx.getStorageSync("phone");
     wx.request({
       url: app.host.url + "getCustomerByPhoneNo",
       method: "GET",
       data: {
-        "phone_no": phone_no,
-        "type": type
+        "user_id": phone,
+        "type": type   
       },
       headers: {
         'Content-Type': 'application/json'
       },
       success: function (res) {
+        console.log(res.data);
         _this.setData({
           post: res.data.data
         })

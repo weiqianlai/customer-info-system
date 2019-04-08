@@ -11,25 +11,34 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var phone_no = wx.getStorageSync('phone_no');
+    var phone = wx.getStorageSync('phone');
     var _this = this;
     wx.request({
       url: app.host.url + 'getGroupMemberAllInfo',
       method: "GET",
       data: {
-        "phone_no": phone_no
+        "phone": phone
       },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
+        var player_list = res.data.data;
+        var user_no = wx.getStorageSync('phone');
+        console.log(user_no);
+        for (var i = 0; i < player_list.length; i++){
+          if (player_list[i].phone_no == user_no) {
+            player_list.splice(i, 1)
+          }
+        }
+        console.log(player_list);
         _this.setData({
           introduce: res.data.groupinfo,
           isgroup: res.data.message,
-          phone_no: phone_no,
+          phone: phone,
           post: res.data.data,
         })
-      },
+      }
     })
   },
   onDel: function(e) {
@@ -131,7 +140,7 @@ Page({
     var page = getCurrentPages().pop();
     if (page == undefined || page == null) return;
     page.onLoad();
-    console.log("shux");
+    //console.log("shux");
   },
 
   /**

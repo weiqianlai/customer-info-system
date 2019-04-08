@@ -1,6 +1,6 @@
 //app.js
 App({
   host:{
-    url:"https://www.qmjy.ink/wudi/"
+    url:"http://127.0.0.1:8086/wudi/"
   }
 })

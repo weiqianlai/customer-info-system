@@ -31,43 +31,44 @@ Page({
   },
   onLoad: function(options) {
     var thit = this;
-    var phone_no = wx.getStorageSync('phone_no');
-    var user_password = wx.getStorageSync('user_password'); //获取登录时缓存的手机号码以便读取属于这个用户的数据
+    var phone = wx.getStorageSync('phone');
+    var password = wx.getStorageSync('password'); //获取登录时缓存的手机号码以便读取属于这个用户的数据
     wx.request({
-      url: app.host.url + 'getGroupAllInfo',
+      url: app.host.url + 'getUserAllInfo',
       method: 'GET',
       header: {
         'content-type': 'application/json'
       },
       data: {
-        "phone_no": phone_no,
-        "user_password": user_password
+        "phone": phone,
+        "password": password
       },
       success: function(res) {
+        console.log(res.data);
         //var infos = res.data.infos;
-        var customers = res.data.customers;
-        var followupList = new Array();
-        var pendinglist = new Array();
-        var completedlist = new Array();
-        for (var i = 0; i < customers.length; i++) {
-          switch (customers[i].status) {
-            case 2:
-              followupList.push(customers[i]);
-              break;
-            case 3:
-              pendinglist.push(customers[i]);
-              break;
-            case 6:
-              completedlist.push(customers[i]);
-              break;
-          }
-        }
+        // var customers = res.data.customers;
+        // var followupList = new Array();
+        // var pendinglist = new Array();
+        // var completedlist = new Array();
+        // for (var i = 0; i < customers.length; i++) {
+        //   switch (customers[i].status) {
+        //     case 2:
+        //       followupList.push(customers[i]);
+        //       break;
+        //     case 3:
+        //       pendinglist.push(customers[i]);
+        //       break;
+        //     case 6:
+        //       completedlist.push(customers[i]);
+        //       break;
+        //   }
+        // }
         thit.setData({
           user_info: res.data.user,
-          followupList: followupList,
-          pendinglist: pendinglist,
-          completedlist: completedlist,
-          user_msg: res.data.infos
+          // followupList: followupList,
+          // pendinglist: pendinglist,
+          // completedlist: completedlist,
+          // user_msg: res.data.infos
         })
       },
       fail: function(res) {

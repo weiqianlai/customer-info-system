@@ -33,7 +33,7 @@
     </view>
     <view class='input-box'>
       <text>民族：</text>
-      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户年龄" data-value='{{nation}}' value='{{post.nation}}' disabled='disabled'>{{post.nation}}</input>
+      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户民族" data-value='{{nation}}' value='{{post.nation}}' disabled='disabled'>{{post.nation}}</input>
     </view>
     <view class='input-box'>
       <text>工作地址：</text>

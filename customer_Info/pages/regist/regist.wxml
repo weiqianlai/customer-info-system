@@ -13,17 +13,17 @@
             <view class="weui-label">姓名</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入您的姓名" type="text" name="user_name" bindinput='getUserName' />
+            <input class="weui-input" placeholder="请输入您的姓名" type="text" name="username" bindinput='getUserName' />
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
           <view class="weui-label sex_choose">性别</view>
           <view class="weui-cell__bd">
-            <radio-group name="user_sex" bindinput='getUserSex'>
+            <radio-group name="sex" bindinput='getUserSex'>
               <label>
-                <radio value="0" checked/>男</label>
+                <radio value="1" checked/>男</label>
               <label>
-                <radio value="1" />女</label>
+                <radio value="0" />女</label>
             </radio-group>
           </view>
         </view>
@@ -32,7 +32,7 @@
             <view class="weui-label">号码</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请输入您的手机号" type="text" name="phone_no" bindinput='getPhoneNo' />
+            <input class="weui-input" placeholder="请输入您的手机号" type="text" name="phone" bindinput='getPhoneNo' />
           </view>
         </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">
@@ -40,7 +40,7 @@
             <view class="weui-label">登录密码</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="password" placeholder="请输入至少六位密码" name="user_password" bindinput='getUserPassword' />
+            <input class="weui-input" type="password" placeholder="请输入至少六位密码" name="password" bindinput='getUserPassword' />
           </view>
         </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">

@@ -16,7 +16,7 @@
         <view wx:if="{{item.sex==1}}">男</view>
         <view wx:elif="{{item.sex==0}}">女</view>
       </view>
-      <text class='cs-phone'>{{item.tel_no}}</text>
+      <text class='cs-phone'>{{item.tel}}</text>
       <button class='del' data-id='{{item.id}}' bindtap='onDel'>删除</button>
       <button class='update' data-id='{{item.id}}' bindtap='onUpdate'>修改</button>
     </view>
@@ -26,7 +26,7 @@
         <view wx:if="{{item.sex==1}}">男</view>
         <view wx:elif="{{item.sex==0}}">女</view>
       </view>
-      <text class='cs-phone'>{{item.tel_no}}</text>
+      <text class='cs-phone'>{{item.tel}}</text>
       <button class='del' data-id='{{item.id}}' bindtap='onDel'>删除</button>
       <button class='update' data-id='{{item.id}}' bindtap='onUpdate'>修改</button>
     </view>

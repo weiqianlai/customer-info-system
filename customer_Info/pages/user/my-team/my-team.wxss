@@ -1,5 +1,8 @@
 /* pages/index/index.wxss */
 @import "../../template/customer.wxss";
+page{
+  background-color: #F5FFE8;
+}
 .title-box{
   width: 100rx;
   margin-top: 10rpx;

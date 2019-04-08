@@ -60,17 +60,17 @@ Page({
 
   getUserName: function(e) {
     this.setData({
-      user_name: e.detail.value
+      username: e.detail.value
     })
   },
   getPhoneNo: function(e) {
     this.setData({
-      phone_no: e.detail.value
+      phone: e.detail.value
     })
   },
   getUserPassword: function(e) {
     this.setData({
-      user_password: e.detail.value
+      password: e.detail.value
     })
   },
   getEnsurePassword: function(e) {
@@ -80,9 +80,9 @@ Page({
   },
   formSubmit: function(e) {
     var that = this;
-    var name = that.data.user_name;
-    var phone = that.data.phone_no;
-    var password = that.data.user_password;
+    var name = that.data.username;
+    var phone = that.data.phone;
+    var password = that.data.password;
     var enpassword = that.data.ensurePassword;
     if (utils.checkName(name)) {
       wx.showModal({
@@ -113,10 +113,10 @@ Page({
       wx.request({
         url: app.host.url + 'saveUserinfo',
         data: {
-          'user_name': e.detail.value.user_name,
-          'user_sex': e.detail.value.user_sex,
-          'phone_no': e.detail.value.phone_no,
-          'user_password': e.detail.value.user_password,
+          'username': e.detail.value.username,
+          'sex': e.detail.value.sex,
+          'phone': e.detail.value.phone,
+          'password': e.detail.value.password,
         },
         method: 'POST',
         header: {
