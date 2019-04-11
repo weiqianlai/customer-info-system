@@ -25,7 +25,7 @@ Page({
       success: function(res) {
         if (res.confirm) {
           wx.request({
-            url: app.host.url + "delCustomerById", //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
+            url: app.host.url + "delCustomerInfo", //再次获取后台数据传输id,感觉这个方法不完美，后期再改进
             method: "GET",
             data: {
               "id": id,
@@ -55,7 +55,7 @@ Page({
     var id = e.target.dataset.id;
     var type = wx.getStorageSync("user-type");
     wx.redirectTo({
-      url: '../addcustomer/addcustomer?id=' + id + "&&type=" + type,
+      url: '../updateinfo/updateinfo?id=' + id + "&&type=" + type,
     })
   },
 
@@ -80,11 +80,11 @@ Page({
     var type = wx.getStorageSync("user-type");
     var phone = wx.getStorageSync("phone");
     wx.request({
-      url: app.host.url + "getCustomerByPhoneNo",
+      url: app.host.url + "queryCustomerList", 
       method: "GET",
       data: {
-        "user_id": phone,
-        "type": type   
+        "user_id": phone, 
+        "type": type
       },
       headers: {
         'Content-Type': 'application/json'

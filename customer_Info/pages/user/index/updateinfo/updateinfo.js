@@ -3,7 +3,7 @@ var utils = require('../../../../utils/utils.js')
 Page({
   data: {
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     wx.setStorageSync("id", options.id);
     wx.setStorageSync("add-type", options.type);
     var _this = this;
@@ -16,7 +16,7 @@ Page({
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      success: function(res) {
+      success: function (res) {
         if (res.data.data) {
           _this.setData({
             post: res.data.data
@@ -25,7 +25,7 @@ Page({
       }
     })
   },
-  formSubmit: function(e) {
+  formSubmit: function (e) {
     var type = wx.getStorageSync("add-type");
     var phone = wx.getStorageSync('phone');
     if (utils.checkName(e.detail.value.name)) {
@@ -38,12 +38,12 @@ Page({
         title: "信息提示",
         content: "手机号有误"
       })
-    } else if (utils.checkAge(e.detail.value.age)){
+    } else if (utils.checkAge(e.detail.value.age)) {
       wx.showModal({
         title: "信息提示",
         content: "年龄有误"
       })
-    }else if (!e.detail.value.sex) {
+    } else if (!e.detail.value.sex) {
       wx.showModal({
         title: "信息提示",
         content: "性别必选"
@@ -55,7 +55,7 @@ Page({
       })
     } else {
       wx.request({
-        url: app.host.url + 'addCustomerInfo',
+        url: app.host.url + 'updateCustomerInfo',
         data: {
           "id": e.detail.value.id,
           'name': e.detail.value.name,
@@ -69,13 +69,13 @@ Page({
           'remark': e.detail.value.remark,
           'type': type,
           'otherinfo': "aaa",
-          'status': 1
+          'status': 2
         },
         method: 'GET',
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
-        success: function(res) {
+        success: function (res) {
           console.log(res.data);
           wx.redirectTo({
             url: '../user-customerinfo/user-customerinfo?type=' + type,

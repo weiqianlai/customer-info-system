@@ -111,7 +111,7 @@ Page({
       })
       }else if (password && enpassword) {
       wx.request({
-        url: app.host.url + 'saveUserinfo',
+        url: app.host.url + 'userRegister',
         data: {
           'username': e.detail.value.username,
           'sex': e.detail.value.sex,
@@ -126,31 +126,24 @@ Page({
           console.log(res.data)
           var info = JSON.stringify(res.data.info)
           var msg = JSON.stringify(res.data.code)
-          if (msg == 2) {
+          if (msg == 0) {
             wx.showModal({
               title: "信息提示",
-              content: info + "",
+              content:"注册成功",
               icon: 'loading',
               duration: 2000
             })
             wx.redirectTo({
               url: '../login/login?phone_no=&user_password',
             })
-          } else if (msg == 1) {
+          } else if (msg == 2) {
             wx.showModal({
               title: "信息提示",
-              content: info + "",
+              content: "用户已存在",
               icon: ' ',
               duration: 1500
             })
-          } else if (msg == 0) {
-            wx.showModal({
-              title: "信息提示",
-              content: info + "",
-              icon: ' ',
-              duration: 1500
-            })
-          }
+          } 
         },
         fail: function(res) {
           wx.showToast({

@@ -1,3 +1,6 @@
+page{
+  background-color: #F5FFE8;
+}
 .mani-box {
   width: 100%;
   overflow: hidden;

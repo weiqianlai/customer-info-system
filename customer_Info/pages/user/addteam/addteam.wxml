@@ -9,14 +9,14 @@
       <view class="userRegist">创建团队</view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_input">
-         
+
         </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">
           <view class="weui-cell__hd">
             <view class="weui-label">团队简介</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="text" placeholder="请输入团队简介" name="group_info"  />
+            <input class="weui-input" type="text" placeholder="请输入团队简介" name="remark" />
           </view>
         </view>
         <view class="weui-cell weui-cell_input weui-cell_vcode">
@@ -24,7 +24,7 @@
             <view class="weui-label">团队名</view>
           </view>
           <view class="weui-cell__bd">
-            <input class="weui-input" type="text"  name="group_name" placeholder="请输入团队名" />
+            <input class="weui-input" type="text" name="name" placeholder="请输入团队名" />
           </view>
         </view>
       </view>

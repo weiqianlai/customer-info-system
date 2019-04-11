@@ -4,6 +4,7 @@
     "pages/user/index/index",
     "pages/user/index/user-customerinfo/user-customerinfo",
     "pages/user/index/addcustomer/addcustomer",
+    "pages/user/index/updateinfo/updateinfo",
     "pages/user-info/user-info",
     "pages/regist/regist",
     "pages/admin/index/index",
@@ -55,5 +56,6 @@
     "connectSocket": 20000,
     "uploadFile": 20000,
     "downloadFile": 20000
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

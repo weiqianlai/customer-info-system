@@ -20,60 +20,68 @@ Page({
   // 展开折叠选择  
   changeToggle: function(e) {
     var index = e.currentTarget.dataset.index;
+    var user_id = wx.getStorageSync("phone");
     if (this.data.selectedFlag[index]) {
       this.data.selectedFlag[index] = false;
     } else {
       this.data.selectedFlag[index] = true;
     }
+
     this.setData({
       selectedFlag: this.data.selectedFlag
     })
   },
-  onLoad: function(options) {
-    var thit = this;
-    var phone = wx.getStorageSync('phone');
-    var password = wx.getStorageSync('password'); //获取登录时缓存的手机号码以便读取属于这个用户的数据
+  chatMsg:function() {
+    var index = e.currentTarget.dataset.index;
+    var user_id = wx.getStorageSync("phone");
+    if (this.data.selectedFlag[index]) {
+      this.data.selectedFlag[index] = false;
+    } else {
+      this.data.selectedFlag[index] = true;
+    }
     wx.request({
-      url: app.host.url + 'getUserAllInfo',
+      url: app.host.url + 'getNewsList',
       method: 'GET',
       header: {
         'content-type': 'application/json'
       },
       data: {
-        "phone": phone,
-        "password": password
+        "user_id": user_id,
       },
-      success: function(res) {
+      success: function (res) {
         console.log(res.data);
-        //var infos = res.data.infos;
-        // var customers = res.data.customers;
-        // var followupList = new Array();
-        // var pendinglist = new Array();
-        // var completedlist = new Array();
-        // for (var i = 0; i < customers.length; i++) {
-        //   switch (customers[i].status) {
-        //     case 2:
-        //       followupList.push(customers[i]);
-        //       break;
-        //     case 3:
-        //       pendinglist.push(customers[i]);
-        //       break;
-        //     case 6:
-        //       completedlist.push(customers[i]);
-        //       break;
-        //   }
-        // }
         thit.setData({
-          user_info: res.data.user,
-          // followupList: followupList,
-          // pendinglist: pendinglist,
-          // completedlist: completedlist,
-          // user_msg: res.data.infos
+          user_msg: res.data
         })
       },
-      fail: function(res) {
+      fail: function (res) {
         console.log("啊嗷...获取数据失败了")
       }
+    })
+  },
+  
+  onLoad: function(options) {
+    var thit = this;
+    var user_id =  wx.getStorageSync("phone"); //缓存用户电话，首页接后便于读取后台数据
+    var pwd =  wx.getStorageSync("password");
+    wx.request({
+      url: app.host.url + 'userLogin',
+      method: "GET",
+      data: {
+        "phone": user_id,
+        "password": pwd,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data);
+        var info = res.data.data;
+    thit.setData({
+      user_info: info
+    })
+  }
     })
   },
 

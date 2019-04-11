@@ -50,15 +50,14 @@ Page({
         dataType: 'json',
         success: function(res) {
           console.log(res.data)
-          var abs = "001";
           var msg = res.data.code;
-          // var type = JSON.stringify(res.data.role_id);  
-          var type = res.data.role_id;          
+          var per = res.data.permission;          
           var info = res.data.info;
           wx.setStorageSync("phone", phone); //缓存用户电话，首页接后便于读取后台数据
           wx.setStorageSync("password", pwd);
+          wx.setStorageSync("userinfo", res.data)
 
-          if (msg == 1 && type == "001") {
+          if (msg == 0 && per == 1 ) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
@@ -67,7 +66,7 @@ Page({
             wx.switchTab({
               url: '../user/index/index',
             })
-          } else if (msg == 1 && type == "002" || "003") {
+          } else if (msg == 0 && per == 2 || per == 3) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
@@ -76,17 +75,25 @@ Page({
             wx.redirectTo({
               url: '../admin/index/index',
             })
-          } else if (msg == 2 && type == 0) {
-            wx.showModal({
-              title: "信息提示",
-              content: info
+          } else if (msg ==  1) {
+            wx.showToast({
+              title: '信息提示',
+              icon: '用户不存在',
+              duration: 3000
             })
-          } else {
-            wx.showModal({
-              title: "信息提示",
-              content: info
+          } else if(msg == 2){
+            wx.showToast({
+              title: '信息提示',
+              icon: '密码错误',
+              duration: 3000
             })
-          }
+          } else if (msg == -1) {
+            wx.showToast({
+              title: '信息提示',
+              icon: '用户未审核',
+              duration: 3000
+            })
+          } 
         },
         fail: function(res) {
           wx.showToast({

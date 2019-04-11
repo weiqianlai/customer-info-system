@@ -4,12 +4,12 @@ Page({
 
   },
   formSubmit: function (e) {
-    var phone_no = wx.getStorageSync('phone_no');
+    var phone = wx.getStorageSync('phone');
     wx.request({
       url: app.host.url +'joinGroup',
       data: {
-        'captain_phone': phone_no,
-        phone_no: e.detail.value.being_phone_no
+        'captain_phone': phone,
+         phone_no: e.detail.value.being_phone_no
 
       },
       method: 'POST',

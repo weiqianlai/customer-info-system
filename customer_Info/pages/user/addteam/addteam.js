@@ -16,17 +16,16 @@ Page({
   },
   formSubmit: function (e) {
     var that = this;
-    var name = that.data.captain_name;
-    var phone = that.data.captain_phone;
-    var password = that.data.group_info;
-    var enpassword = that.data.group_name;
-    var captain_phone = wx.getStorageSync('phone_no');
+    var remark = e.detail.value.remark;
+    var name = e.detail.value.name;
+    var captain_phone = wx.getStorageSync('phone');
+    console.log(remark, name, captain_phone);
     wx.request({
-      url: app.host.url + "createGroupinfo",
+      url: app.host.url + "createTeam",
       data: {
-        'captain_phone': captain_phone,
-        'group_info': e.detail.value.group_info,
-        'group_name': e.detail.value.group_name,
+        'user_id': captain_phone,
+        'remark': remark,
+        'name': name
       },
       method: 'POST',
       header: {
@@ -36,20 +35,34 @@ Page({
         console.log(res.data)
         var info = JSON.stringify(res.data.info)
         var msg = JSON.stringify(res.data.code)
-        if (msg == 1) {
+        if (msg == 0) {
           wx.showModal({
             title: "信息提示",
-            content: info + "",
+            content: "恭喜注册",
             icon: 'loading',
             duration: 2000
           })
           wx.switchTab({
             url: "../my-team/my-team",
           })
-        } else {
+        } else if(msg == -1){
           wx.showModal({
             title: "信息提示",
-            content: info + "",
+            content: "创建失败",
+            icon: 'loading',
+            duration: 1500
+          })
+        } else if(msg == 1){
+          wx.showModal({
+            title: "信息提示",
+            content: "团队名已存在",
+            icon: 'loading',
+            duration: 1500
+          })
+        } else if(msg == 2) {
+          wx.showModal({
+            title: "信息提示",
+            content: "您已存在团队",
             icon: 'loading',
             duration: 1500
           })
