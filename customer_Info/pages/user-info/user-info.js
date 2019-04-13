@@ -20,7 +20,7 @@ Page({
   // 展开折叠选择  
   changeToggle: function(e) {
     var index = e.currentTarget.dataset.index;
-    var user_id = wx.getStorageSync("phone");
+    var user_id = wx.getStorageSync("user_id");
     if (this.data.selectedFlag[index]) {
       this.data.selectedFlag[index] = false;
     } else {
@@ -31,9 +31,10 @@ Page({
       selectedFlag: this.data.selectedFlag
     })
   },
-  chatMsg:function() {
+  chatMsg:function(e) {
+    var thit = this;
     var index = e.currentTarget.dataset.index;
-    var user_id = wx.getStorageSync("phone");
+    var user_id = wx.getStorageSync("user_id");
     if (this.data.selectedFlag[index]) {
       this.data.selectedFlag[index] = false;
     } else {
@@ -41,50 +42,33 @@ Page({
     }
     wx.request({
       url: app.host.url + 'getNewsList',
-      method: 'GET',
-      header: {
-        'content-type': 'application/json'
-      },
+      method: "GET",
       data: {
         "user_id": user_id,
       },
-      success: function (res) {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      success: function(res) {
         console.log(res.data);
         thit.setData({
-          user_msg: res.data
+          selectedFlag: thit.data.selectedFlag,
+
         })
       },
-      fail: function (res) {
-        console.log("啊嗷...获取数据失败了")
-      }
+      fail: function(res) {},
     })
   },
   
+  
   onLoad: function(options) {
     var thit = this;
-    var user_id =  wx.getStorageSync("phone"); //缓存用户电话，首页接后便于读取后台数据
-    var pwd =  wx.getStorageSync("password");
-    wx.request({
-      url: app.host.url + 'userLogin',
-      method: "GET",
-      data: {
-        "phone": user_id,
-        "password": pwd,
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      dataType: 'json',
-      success: function (res) {
-        console.log(res.data);
-        var info = res.data.data;
+    var userdata = wx.getStorageSync("userinfo");
+    
     thit.setData({
-      user_info: info
-    })
-  }
+      user_info: userdata
     })
   },
-
   onShow: function() {
     var page = getCurrentPages().pop();
     if (page == undefined || page == null) return;

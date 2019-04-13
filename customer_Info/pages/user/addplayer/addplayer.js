@@ -6,13 +6,12 @@ Page({
   formSubmit: function (e) {
     var phone = wx.getStorageSync('phone');
     wx.request({
-      url: app.host.url +'joinGroup',
+      url: app.host.url +'addTeamer',
       data: {
-        'captain_phone': phone,
-         phone_no: e.detail.value.being_phone_no
-
+        'team_id': phone,
+        'user_id': e.detail.value.being_phone_no
       },
-      method: 'POST',
+      method: 'GET',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
@@ -20,10 +19,10 @@ Page({
         console.log(res.data)
         var info = JSON.stringify(res.data.info)
         var msg = JSON.stringify(res.data.code)
-        if (msg == 1) {
+        if (msg == 0) {
           wx.showModal({
             title: "信息提示",
-            content: info + "",
+            content: "邀请成功",
             icon: 'loading',
             duration: 2000
           })
@@ -33,7 +32,7 @@ Page({
         } else {
           wx.showModal({
             title: "信息提示",
-            content: info + "",
+            content:"邀请失败",
             icon: 'loading',
             duration: 1500
           })

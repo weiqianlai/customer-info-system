@@ -1,10 +1,10 @@
 <view wx:if="{{post}}" class='main-box'>
   <view class='info-box'>
     <view class='title-box'>
-      <view class='my-team-word'>团队名称：{{introduce.group_name}}</view>
-      <view class='my-team-word'>队长名称：{{introduce.captain_name}}</view>
-      <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view>
-      <view class='my-team-word'>简介：{{introduce.group_info}}</view>
+      <view class='my-team-word'>团队名称：{{introduce.name}}</view>
+      <!-- <view class='my-team-word'>队长名称：{{introduce.captain_name}}</view>
+      <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view> -->
+      <view class='my-team-word'>简介：{{introduce.remark}}</view>
       <view class='my-team-word'>建队时间：{{introduce.create_time}}</view>
     </view>
     <view class='label'>
@@ -15,21 +15,23 @@
     </view>
     <block wx:for="{{post}}" wx:key="{{item}}">
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.user_name}}</text>
+        <text>{{item.username}}</text>
         <view class='cs-sex'>
-          <view>{{item.user_sex}}</view>
-        </view>
-        <text class='cs-phone'>{{item.phone_no}}</text>
+        <view wx:if="{{item.sex==1}}">男</view>
+        <view wx:elif="{{item.sex==0}}">女</view>
+      </view>
+        <text class='cs-phone'>{{item.phone}}</text>
         <button class='del' data-phone_no='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.captain_phone==phone_no}}">删除</button>
         <button class='update' data-phone_no='{{item.phone_no}}' bindtap='seePlayer' wx:if="{{introduce.captain_phone==phone_no}}">查看</button>
         <button class='xianshi' wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>
       </view>
       <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.user_name}}</text>
+        <text>{{item.username}}</text>
         <view class='cs-sex'>
-          <view>{{item.user_sex}}</view>
-        </view>
-        <text class='cs-phone'>{{item.phone_no}}</text>
+        <view wx:if="{{item.sex==1}}">男</view>
+        <view wx:elif="{{item.sex==0}}">女</view>
+      </view>
+        <text class='cs-phone'>{{item.phone}}</text>
         <button class='del' data-phone_no='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.captain_phone==phone_no}}">删除</button>
         <button class='update' data-phone_no='{{item.phone_no}}' bindtap='seePlayer' wx:if="{{introduce.captain_phone==phone_no}}">查看</button>
         <button class='xianshi' wx:if="{{introduce.captain_phone!=user_info.phone_no}}"></button>

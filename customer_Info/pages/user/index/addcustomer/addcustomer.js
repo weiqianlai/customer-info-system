@@ -27,7 +27,8 @@ Page({
   },
   formSubmit: function(e) {
     var type = wx.getStorageSync("add-type");
-    var phone = wx.getStorageSync('phone');
+    var user_id = wx.getStorageSync('user_id');
+    var age = e.detail.value.age;
     if (utils.checkName(e.detail.value.name)) {
       wx.showModal({
         title: "信息提示",
@@ -38,12 +39,7 @@ Page({
         title: "信息提示",
         content: "手机号有误"
       })
-    } else if (utils.checkAge(e.detail.value.age)){
-      wx.showModal({
-        title: "信息提示",
-        content: "年龄有误"
-      })
-    }else if (!e.detail.value.sex) {
+    } else if (!e.detail.value.sex) {
       wx.showModal({
         title: "信息提示",
         content: "性别必选"
@@ -63,8 +59,8 @@ Page({
           'sex': e.detail.value.sex,
           'disclose': e.detail.value.disclose,
           'addr': e.detail.value.addr,
-          'age': e.detail.value.age,
-          'user_id': phone,
+          'age': age,
+          'user_id': user_id,
           'nation': e.detail.value.nation,
           'remark': e.detail.value.remark,
           'type': type,

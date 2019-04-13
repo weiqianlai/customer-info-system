@@ -78,12 +78,12 @@ Page({
   onShow: function(res) {
     var _this = this;
     var type = wx.getStorageSync("user-type");
-    var phone = wx.getStorageSync("phone");
+    var user_id = wx.getStorageSync("user_id");
     wx.request({
       url: app.host.url + "queryCustomerList", 
       method: "GET",
       data: {
-        "user_id": phone, 
+        "user_id": user_id, 
         "type": type
       },
       headers: {

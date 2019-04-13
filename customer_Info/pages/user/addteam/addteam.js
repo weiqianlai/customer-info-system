@@ -18,12 +18,12 @@ Page({
     var that = this;
     var remark = e.detail.value.remark;
     var name = e.detail.value.name;
-    var captain_phone = wx.getStorageSync('phone');
-    console.log(remark, name, captain_phone);
+    var captain_id = wx.getStorageSync('user_id');
+    console.log(remark, name, captain_id);
     wx.request({
       url: app.host.url + "createTeam",
       data: {
-        'user_id': captain_phone,
+        'user_id': captain_id,
         'remark': remark,
         'name': name
       },

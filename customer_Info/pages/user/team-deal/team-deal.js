@@ -1,39 +1,42 @@
 // pages/user/team-deal/team-deal.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      post:[
-        {name:"剑圣",
-         player_name:"剑豪",
-         deal_time:"2019.03.02" },
-         {
-           name: "瞎子",
-           player_name: "蛮王",
-           deal_time: "2019.03.27"
-         }
-        ]
+      // post:[
+      //   {name:"剑圣",
+      //    player_name:"剑豪",
+      //    deal_time:"2019.03.02" },
+      //    {
+      //      name: "瞎子",
+      //      player_name: "蛮王",
+      //      deal_time: "2019.03.27"
+      //    }
+      //   ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var thit = this;
     var captain_phone = options.phone_no;
+    var user_id = wx.getStorageSync("user_id");
     wx.request({
-      //url: app.host.url + " ",
+      url: app.host.url + "queryTeamCustomerList",
       method: "GET",
       data: {
-        "captain_phone": captain_phone,
+        "user_id": user_id
       },
       headers: {
         'Content-Type': 'application/json'
       },
       success: function (res) {
         console.log(res.data);
-        _this.setData({
+        thit.setData({
           post: res.data.data
         })
       }

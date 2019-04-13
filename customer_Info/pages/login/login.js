@@ -29,11 +29,11 @@ Page({
         title: "信息提示",
         content: "密码不能为空!"
       })
-    // } else if (pwd.length) {
-    //   wx.showModal({
-    //     title: "信息提示",
-    //     content: "密码至少为六位!"
-    //   })
+    } else if (pwd.length < 5) {
+      wx.showModal({
+        title: "信息提示",
+        content: "密码至少为六位!"
+      })
     } else { //TODO
       console.log("手机号：" + phone + "密码：" + pwd)
       //发送ajax请求到服务器-登录
@@ -51,13 +51,13 @@ Page({
         success: function(res) {
           console.log(res.data)
           var msg = res.data.code;
-          var per = res.data.permission;          
-          var info = res.data.info;
-          wx.setStorageSync("phone", phone); //缓存用户电话，首页接后便于读取后台数据
-          wx.setStorageSync("password", pwd);
-          wx.setStorageSync("userinfo", res.data)
+          var per = res.data.permission;
+          console.log("aa"+per);         
+          wx.setStorageSync("user_id", res.data.data.id); //缓存用户id，首页接后便于读取后台数据
+          wx.setStorageSync("team_id", res.data.data.id );
+          wx.setStorageSync("userinfo", res.data.data);
 
-          if (msg == 0 && per == 1 ) {
+          if (msg == 0 && per == { "c101": 1, "c100": 1, "c103": 1, "c102": 1, "c104": 0 } ) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',

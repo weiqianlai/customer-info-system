@@ -11,32 +11,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var phone = wx.getStorageSync('phone');
+    var user_id = wx.getStorageSync('user_id');
     var _this = this;
+    var team = "";
     wx.request({
-      url: app.host.url + 'getGroupMemberAllInfo',
+      url: app.host.url + 'getTeamInfo',
       method: "GET",
       data: {
-        "phone": phone
+        "user_id": user_id,
+        //"team_id": team
       },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
-        var player_list = res.data.data;
-        var user_no = wx.getStorageSync('phone');
-        console.log(user_no);
-        for (var i = 0; i < player_list.length; i++){
-          if (player_list[i].phone_no == user_no) {
-            player_list.splice(i, 1)
-          }
-        }
+        var player_list = res.data.result;
+        var info =res.data.data;
         console.log(player_list);
+        var user_no = wx.getStorageSync('user_id');
+        for (var i = 0; i < player_list.length; i++){
+          if (player_list[i].user_id == user_id) {
+             player_list.splice(i, 1)
+           }
+         }
+       console.log(player_list);
         _this.setData({
-          introduce: res.data.groupinfo,
-          isgroup: res.data.message,
-          phone: phone,
-          post: res.data.data,
+          post: player_list,
+          introduce: info
         })
       }
     })

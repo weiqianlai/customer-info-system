@@ -130,17 +130,15 @@ Page({
             wx.showModal({
               title: "信息提示",
               content:"注册成功",
-              icon: 'loading',
               duration: 2000
             })
             wx.redirectTo({
               url: '../login/login?phone_no=&user_password',
             })
-          } else if (msg == 2) {
+          } else if (msg == -1) {
             wx.showModal({
               title: "信息提示",
               content: "用户已存在",
-              icon: ' ',
               duration: 1500
             })
           } 
