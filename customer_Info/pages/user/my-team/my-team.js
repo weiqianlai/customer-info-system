@@ -25,19 +25,19 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function(res) {
+        console.log(res.data);
         var player_list = res.data.result;
-        var info =res.data.data;
-        console.log(player_list);
+        var info = res.data.team;
         var user_no = wx.getStorageSync('user_id');
         for (var i = 0; i < player_list.length; i++){
           if (player_list[i].user_id == user_id) {
              player_list.splice(i, 1)
            }
          }
-       console.log(player_list);
         _this.setData({
           post: player_list,
-          introduce: info
+          introduce: info,
+          user_no: user_no,
         })
       }
     })

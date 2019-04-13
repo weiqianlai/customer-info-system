@@ -4,19 +4,20 @@ Page({
 
   },
   formSubmit: function (e) {
-    var phone = wx.getStorageSync('phone');
+    var user_id = wx.getStorageSync('user_id');
+    console.log(user_id, e.detail.value.being_phone_no)
     wx.request({
       url: app.host.url +'addTeamer',
       data: {
-        'team_id': phone,
-        'user_id': e.detail.value.being_phone_no
+        "user_id": user_id,
+        "phone": e.detail.value.being_phone_no
       },
       method: 'GET',
       header: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res.data)
+        console.log(res.ata)
         var info = JSON.stringify(res.data.info)
         var msg = JSON.stringify(res.data.code)
         if (msg == 0) {

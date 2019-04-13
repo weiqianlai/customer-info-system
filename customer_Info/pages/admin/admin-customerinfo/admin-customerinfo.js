@@ -13,16 +13,13 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    var phone_no = wx.getStorageSync("phone_no");
     var type = options.type;
-    console.log("user-file onLoad:" + phone_no, "  from options(before set) ==>" + type);
+   
     wx.setStorageSync("user-type", options.type);
-    console.log("user-file onLoad:" + phone_no, "from options(after set) ==>" + type);
     wx.request({
-      url: app.host.url + "getCustomerByPhoneNo", //json数据地址
+      url: app.host.url + "queryAllList", //json数据地址
       method: "GET", 
       data: {
-        "phone_no": phone_no,
         "type": type
       },
       headers: {

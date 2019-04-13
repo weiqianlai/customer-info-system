@@ -34,7 +34,7 @@ Page({
       headers: {
         'Content-Type': 'application/json'
       },
-      success: function (res) {
+      success: function (res) { 
         console.log(res.data);
         thit.setData({
           post: res.data.data

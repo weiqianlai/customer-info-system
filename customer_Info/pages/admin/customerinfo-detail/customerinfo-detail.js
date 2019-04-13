@@ -8,7 +8,7 @@ Page({
     wx.setStorageSync("add-type", options.type);
     var _this = this;
     wx.request({
-      url: app.host.url + 'getCustomerById',
+      url: app.host.url + 'queryCustomerInfo',
       method: "GET",
       data: {
         id: options.id
@@ -33,7 +33,7 @@ Page({
         title: "信息提示",
         content: "姓名有误"
       })
-    } else if (!e.detail.value.tel_no) {
+    } else if (!e.detail.value.tel) {
       wx.showModal({
         title: "信息提示",
         content: "手机号有误"
@@ -55,7 +55,7 @@ Page({
       })
     } else {
       wx.request({
-        url: app.host.url + 'saveOrUpdateCustomer',
+        url: app.host.url + 'updateCustomerInfo',
         data: {
           "id": e.detail.value.id,
           'name': e.detail.value.name,

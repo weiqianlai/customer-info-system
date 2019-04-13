@@ -52,12 +52,19 @@ Page({
           console.log(res.data)
           var msg = res.data.code;
           var per = res.data.permission;
+          var sta = res.data.data.status;
           console.log("aa"+per);         
           wx.setStorageSync("user_id", res.data.data.id); //缓存用户id，首页接后便于读取后台数据
           wx.setStorageSync("team_id", res.data.data.id );
           wx.setStorageSync("userinfo", res.data.data);
+          if (sta == 0) {
+            wx.showModal({
+              title: '信息提示',
+              content: '用户未审核',
+            })
+          }
 
-          if (msg == 0 && per == { "c101": 1, "c100": 1, "c103": 1, "c102": 1, "c104": 0 } ) {
+            else  if (msg == 0 && per == 1 && sta == 1) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
@@ -85,12 +92,6 @@ Page({
             wx.showToast({
               title: '信息提示',
               icon: '密码错误',
-              duration: 3000
-            })
-          } else if (msg == -1) {
-            wx.showToast({
-              title: '信息提示',
-              icon: '用户未审核',
               duration: 3000
             })
           } 

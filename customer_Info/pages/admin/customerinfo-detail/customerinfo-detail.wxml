@@ -7,7 +7,7 @@
     </view>
     <view class='input-box'>
       <text>电话：</text>
-      <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel_no}}' name="tel_no" placeholder="请输入电话号码" maxlength="11" value='{{post.tel_no}}' disabled='disabled'>{{post.tel_no}}</input>
+      <input tel_no type="number" class='input-content' placeholder-class="placeholderStyle" data-value='{{tel}}' name="tel" placeholder="请输入电话号码" maxlength="11" value='{{post.tel}}' disabled='disabled'>{{post.tel}}</input>
     </view>
     <view class='input-box'>
       <text>性别：</text>
@@ -33,15 +33,15 @@
     </view>
     <view class='input-box'>
       <text>民族：</text>
-      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="请输入客户民族" data-value='{{nation}}' value='{{post.nation}}' disabled='disabled'>{{post.nation}}</input>
+      <input type="text" class='input-content' placeholder-class="placeholderStyle" name="nation" placeholder="" data-value='{{nation}}' value='{{post.nation}}' disabled='disabled'>{{post.nation}}</input>
     </view>
     <view class='input-box'>
       <text>工作地址：</text>
-      <input type="text" class='input-work-address' placeholder-class="placeholderStyle" name="work_address" placeholder="请输入客户工作地址" data-value='{{work_address}}' value='{{post.work_address}}' disabled='disabled'>{{post.work_address}}</input>
+      <input type="text" class='input-work-address' placeholder-class="placeholderStyle" name="addr" placeholder="" data-value='{{addr}}' value='{{addr}}' disabled='disabled'>{{post.addr}}</input>
     </view>
     <view class='input-box'>
       <text>备注：</text>
-      <textarea type="text" class='input-comments' placeholder-class="text-areaStyle" name="comments" placeholder="请输入1000字以内" value='{{post.comments}}' maxlength="1200" />
+      <textarea type="text" class='input-comments' placeholder-class="text-areaStyle" name="remark" placeholder="请输入1000字以内" value='{{post.remark}}' maxlength="1200" />
     </view>
     <view class="btn-area">
       <button formType="submit" class='btn'>提 交</button>
