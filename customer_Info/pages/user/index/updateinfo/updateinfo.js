@@ -5,7 +5,10 @@ Page({
   },
   onLoad: function (options) {
     wx.setStorageSync("id", options.id);
+    var info_id = options.id;
+    console.log(info_id);
     wx.setStorageSync("add-type", options.type);
+
     var _this = this;
     wx.request({
       url: app.host.url + 'queryCustomerInfo',
@@ -17,17 +20,16 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        if (res.data.data) {
+        console.log(res.data);
           _this.setData({
             post: res.data.data
-          })
-        }
+          })  
       }
     })
   },
   formSubmit: function (e) {
     var type = wx.getStorageSync("add-type");
-    var phone = wx.getStorageSync('phone');
+    var user_id = wx.getStorageSync('user_id');
     if (utils.checkName(e.detail.value.name)) {
       wx.showModal({
         title: "信息提示",
@@ -64,12 +66,12 @@ Page({
           'disclose': e.detail.value.disclose,
           'addr': e.detail.value.addr,
           'age': e.detail.value.age,
-          'user_id': phone,
+          'user_id': user_id,
           'nation': e.detail.value.nation,
           'remark': e.detail.value.remark,
           'type': type,
           'otherinfo': "aaa",
-          'status': 2
+          'status': 1
         },
         method: 'GET',
         header: {

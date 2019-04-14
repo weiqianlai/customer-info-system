@@ -90,7 +90,7 @@ Page({
         'Content-Type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data);
+        console.log(res.data); 
         _this.setData({
           post: res.data.data
         })

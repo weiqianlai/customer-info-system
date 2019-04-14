@@ -90,7 +90,7 @@ Page({
   seePlayer: function(e) {
     var player_phone_no = e.target.dataset.phone_no;
     wx.navigateTo({
-      url: 'player-info/player-info?player_phone_no=' + player_phone_no,
+      url: 'player-info/player-info?user_id=' + user_id,
     })
   },
   quit_team: function(e) {

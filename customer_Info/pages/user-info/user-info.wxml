@@ -4,11 +4,11 @@
     <view class='user-name'>{{user_info.username}}</view>
     <view class='grade'>我的会员：{{user_info.level}}级</view>
   </view>
-   <view class="li" data-index="2" bindtap='changeToggle'>
+   <view class="li" data-index="2" bindtap='Padding'>
     <view class="left">>待处理信息</view>
   </view>
   <view hidden="{{!selectedFlag[2]}}">
-    <block wx:for="{{pendinglist}}" wx:key="{{item}}">
+    <block wx:for="{{padding}}" wx:key="{{item}}">
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
         <text>{{item.name}}</text>
         <view class='cs-sex'>
@@ -41,15 +41,15 @@
           <view wx:if="{{item.type==1010}}">财会经济</view>
           <view wx:if="{{item.type==1011}}">法院书记</view>
         </view>
-        <text class='cs-phone'>{{item.tel_no}}</text>
+        <text class='cs-phone'>{{item.tel}}</text>
       </view>
     </block>
   </view>
-  <view class="li" data-index="1" bindtap='changeToggle'>
+  <view class="li" data-index="1" bindtap='Following'>
     <view class="left">>已跟进信息</view>
   </view>
   <view hidden="{{!selectedFlag[1]}}">
-    <block wx:for="{{followupList}}" wx:key="{{item}}">
+    <block wx:for="{{following}}" wx:key="{{item}}">
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
         <text>{{item.name}}</text>
         <view class='cs-sex'>
@@ -86,11 +86,11 @@
       </view>
     </block>
   </view>
-  <view class="li" data-index="3" bindtap='changeToggle'>
+  <view class="li" data-index="3" bindtap='Completed'>
     <view class="left">>已成交信息</view>
   </view>
   <view hidden="{{!selectedFlag[3]}}">
-    <block wx:for="{{completedlist}}" wx:key="{{item}}">
+    <block wx:for="{{completed}}" wx:key="{{item}}">
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
         <text>{{item.name}}</text>
         <view class='cs-sex'>

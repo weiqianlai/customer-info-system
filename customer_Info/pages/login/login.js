@@ -62,9 +62,7 @@ Page({
               title: '信息提示',
               content: '用户未审核',
             })
-          }
-
-            else  if (msg == 0 && per == 1 && sta == 1) {
+          }else  if (msg == 0 && per == 1 && sta == 1) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
