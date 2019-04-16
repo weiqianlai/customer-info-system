@@ -2,8 +2,6 @@
   <view class='info-box'>
     <view class='title-box'>
       <view class='my-team-word'>团队名称：{{introduce.name}}</view>
-      <!-- <view class='my-team-word'>队长名称：{{introduce.captain_name}}</view>
-      <view class='my-team-word'>队长电话：{{introduce.captain_phone}}</view> -->
       <view class='my-team-word'>简介：{{introduce.remark}}</view>
       <view class='my-team-word'>建队时间：{{introduce.create_time}}</view>
     </view>
@@ -21,8 +19,8 @@
           <view wx:elif="{{item.sex==0}}">女</view>
         </view>
         <text class='cs-phone'>{{item.phone}}</text>
-        <button class='del' data-phone_no='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
-        <button class='update' data-phone_no='{{item.phone_no}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
+        <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
+        <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
         <button class='xianshi' wx:if="{{introduce.user_id!= user_no.user_no}}"></button>
       </view>
       <view class='content' wx:else data-id="{{index}}">
@@ -32,8 +30,8 @@
           <view wx:elif="{{item.sex==0}}">女</view>
         </view>
         <text class='cs-phone'>{{item.phone}}</text>
-        <button class='del' data-phone_no='{{item.phone_no}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
-        <button class='update' data-user-id='{{item.user_id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
+        <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
+        <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
         <button class='xianshi' wx:if="{{introduce.user_id!= user_no.user_no}}"></button>
       </view>
     </block>

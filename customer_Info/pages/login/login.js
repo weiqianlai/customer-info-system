@@ -18,6 +18,7 @@ Page({
     var that = this;
     var phone = that.data.phone;
     var pwd = that.data.password;
+    
     console.log(phone, pwd)
     if (phone == "") {
       wx.showModal({
@@ -49,20 +50,22 @@ Page({
         },
         dataType: 'json',
         success: function(res) {
-          console.log(res.data)
+          console.log(res.data);
+          wx.setStorageSync("phone", phone);
+          wx.setStorageSync("pwd", pwd);
+          console.log(phone, pwd);
           var msg = res.data.code;
-          var per = res.data.permission;
-          var sta = res.data.data.status;
-          console.log("aa"+per);         
+          var per =(res.data.data.permission);
+          var sta = res.data.data.status;   
+          var user_id = res.data.data.id;
           wx.setStorageSync("user_id", res.data.data.id); //缓存用户id，首页接后便于读取后台数据
-          wx.setStorageSync("team_id", res.data.data.id );
-          wx.setStorageSync("userinfo", res.data.data);
+          console.log("login"+user_id);
           if (sta == 0) {
             wx.showModal({
               title: '信息提示',
               content: '用户未审核',
             })
-          }else  if (msg == 0 && per == 1 && sta == 1) {
+          } else if (msg == 0 && per == "{\"c101\":0,\"c100\":0,\"c103\":0,\"c102\":0,\"c104\":0}" && sta == 1) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
@@ -71,7 +74,7 @@ Page({
             wx.switchTab({
               url: '../user/index/index',
             })
-          } else if (msg == 0 && per == 2 || per == 3) {
+          } else if (msg == 0 && per == "{\"c101\":1,\"c100\":1,\"c103\":1,\"c102\":1,\"c104\":1}" && sta == 1) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',

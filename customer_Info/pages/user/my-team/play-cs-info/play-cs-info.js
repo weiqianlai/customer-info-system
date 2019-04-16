@@ -1,25 +1,26 @@
 const app = getApp()
+var utils = require('../../../../utils/utils.js')
 Page({
   data: {
   },
   onLoad: function (options) {
     wx.setStorageSync("id", options.id);
-    var playerno = options.playerno;
-    wx.setStorageSync("type", options.type);
-    wx.setStorageSync("playerno", options.playerno);
+    wx.setStorageSync("add-type", options.type);
+    console.log("huahua" + options.type);
     var _this = this;
     wx.request({
-      url: app.host.url + 'getCustomerById',
+      url: app.host.url + 'queryCustomerInfo',
       method: "GET",
       data: {
-        id: options.id,
-        type:options.type
+        id: options.id
       },
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log("拿数据",res.data);
+        var player_id = res.data.data.user_id;
+        wx.setStorageSync("player_id", player_id)
+        console.log("lalaa",player_id);
         if (res.data.data) {
           _this.setData({
             post: res.data.data
@@ -29,36 +30,60 @@ Page({
     })
   },
   formSubmit: function (e) {
-    var type = wx.getStorageSync("type");
-    console.log("aaa",type);
-    var playerno = wx.getStorageSync('playerno');
+    var type = wx.getStorageSync("add-type");
+    var phone_no = wx.getStorageSync('phone_no');
+    if (utils.checkName(e.detail.value.name)) {
+      wx.showModal({
+        title: "信息提示",
+        content: "姓名有误"
+      })
+    } else if (!e.detail.value.tel) {
+      wx.showModal({
+        title: "信息提示",
+        content: "手机号有误"
+      })
+    } else if (!e.detail.value.age) {
+      wx.showModal({
+        title: "信息提示",
+        content: "年龄有误"
+      })
+    } else if (!e.detail.value.sex) {
+      wx.showModal({
+        title: "信息提示",
+        content: "性别必选"
+      })
+    } else if (!e.detail.value.disclose) {
+      wx.showModal({
+        title: "信息提示",
+        content: "是否透漏信息必选"
+      })
+    } else {
       wx.request({
-        url: app.host.url + 'saveOrUpdateCustomer',
+        url: app.host.url + 'updateCustomerInfo',
         data: {
           "id": e.detail.value.id,
           'name': e.detail.value.name,
-          'tel_no': e.detail.value.tel_no,
+          'tel': e.detail.value.tel,
           'sex': e.detail.value.sex,
           'disclose': e.detail.value.disclose,
           'age': e.detail.value.age,
-          'work_address': e.detail.value.work_address,
-          'comments': e.detail.value.comments,
-          'phone_no': playerno,
+          'addr': e.detail.value.addr,
+          'remark': e.detail.value.remark,
           'nation': e.detail.value.nation,
           'type': type,
-          'status': 1
+          'status': 2
         },
         method: 'GET',
         header: {
           'Content-Type': 'application/x-www-form-urlencoded'
         },
         success: function (res) {
-          console.log(res.data);
-          var player_phone_no = wx.getStorageSync("player_phone_no");
+          var user_id = wx.getStorageSync("player_id");
           wx.redirectTo({
-            url: '../player-info/player-info?player_phone_no=' + player_phone_no,
+            url: '../player-info/player-info?user_id=' + user_id,
           })
         },
       })
+    }
   },
 })

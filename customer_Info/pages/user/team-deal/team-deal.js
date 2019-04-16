@@ -37,7 +37,7 @@ Page({
       success: function (res) { 
         console.log(res.data);
         thit.setData({
-          post: res.data.data
+          post: res.data.list
         })
       }
     })

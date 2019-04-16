@@ -71,7 +71,7 @@ Page({
           'remark': e.detail.value.remark,
           'type': type,
           'otherinfo': "aaa",
-          'status': 1
+          'status': 2
         },
         method: 'GET',
         header: {

@@ -5,12 +5,16 @@ Page({
   },
   formSubmit: function (e) {
     var user_id = wx.getStorageSync('user_id');
-    console.log(user_id, e.detail.value.being_phone_no)
+    console.log(user_id, e.detail.value.being_phone_no);
+    var team_id = wx.getStorageSync("team_id");
+    console.log(team_id)
     wx.request({
       url: app.host.url +'addTeamer',
       data: {
         "user_id": user_id,
-        "phone": e.detail.value.being_phone_no
+        "phone": e.detail.value.being_phone_no,
+        "team_id": team_id
+
       },
       method: 'GET',
       header: {

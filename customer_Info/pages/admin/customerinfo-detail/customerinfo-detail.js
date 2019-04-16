@@ -59,16 +59,15 @@ Page({
         data: {
           "id": e.detail.value.id,
           'name': e.detail.value.name,
-          'tel_no': e.detail.value.tel_no,
+          'tel': e.detail.value.tel,
           'sex': e.detail.value.sex,
           'disclose': e.detail.value.disclose,
           'age': e.detail.value.age,
-          'work_address': e.detail.value.work_address,
-          'comments': e.detail.value.comments,
-          'phone_no': phone_no,
+          'addr': e.detail.value.addr,
+          'remark': e.detail.value.remark,
           'nation': e.detail.value.nation,
           'type': type,
-          'status': 1
+          'status': 2
         },
         method: 'GET',
         header: {

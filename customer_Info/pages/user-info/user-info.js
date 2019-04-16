@@ -53,7 +53,7 @@ Page({
         console.log(res.data);
         thit.setData({
           selectedFlag: thit.data.selectedFlag,
-
+          msginfo: res.data.list
         })
       },
       fail: function(res) {},
@@ -69,7 +69,7 @@ Page({
       this.data.selectedFlag[index] = true;
     }
     wx.request({
-      url: app.host.url + 'userGetCust',
+      url: app.host.url + 'queryCustomerList',
       method: "GET",
       data: {
         "user_id": user_id,
@@ -98,7 +98,7 @@ Page({
       this.data.selectedFlag[index] = true;
     }
     wx.request({
-      url: app.host.url + 'userGetCust',
+      url: app.host.url + 'queryCustomerList',
       method: "GET",
       data: {
         "user_id": user_id,
@@ -127,7 +127,7 @@ Page({
       this.data.selectedFlag[index] = true;
     }
     wx.request({
-      url: app.host.url + 'userGetCust',
+      url: app.host.url + 'queryCustomerList',
       method: "GET",
       data: {
         "user_id": user_id,
@@ -151,11 +151,26 @@ Page({
   
   onLoad: function(options) {
     var thit = this;
-    var userdata = wx.getStorageSync("userinfo");
+    var phone = wx.getStorageSync("phone");
+    var pwd = wx.getStorageSync("pwd");
+    wx.request({
+      url: app.host.url + 'userLogin',
+      method: "GET",
+      data: {
+        phone: phone,
+        password: pwd,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success:function(res) {
+        console.log(res.data);
         thit.setData({
-          user_info: userdata
+          user_info: res.data.data
         })
-      
+      }
+    })
   },
   onShow: function() {
     var page = getCurrentPages().pop();

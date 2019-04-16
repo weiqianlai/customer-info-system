@@ -8,13 +8,13 @@
   <block wx:for="{{post}}" wx:key="{{item}}">
     <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
       <text>{{item.name}}</text>
-      <text>{{item.player_name}}</text>
-      <text class='cs-phone'>{{item.deal_time}}</text>
+      <text>{{item.username}}</text>
+      <text class='cs-phone'>{{item.create_time}}</text>
     </view>
     <view class='content' wx:else data-id="{{index}}">
      <text>{{item.name}}</text>
-      <text>{{item.player_name}}</text>
-      <text class='cs-phone'>{{item.deal_time}}</text>
+      <text>{{item.username}}</text>
+      <text class='cs-phone'>{{item.create_time}}</text>
     </view>
   </block>
   </view>

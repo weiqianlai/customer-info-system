@@ -146,8 +146,8 @@
     <view class="left">>点击查看消息</view>
   </view>
   <view hidden="{{!selectedFlag[5]}}">
-    <view class="bg-gray">
-      <view>{{}}hh</view>
+    <view class="bg-gray"  wx:for="{{msginfo}}" wx:key>
+      <view>{{item.content}}</view>
     </view>
   </view>
 </view>

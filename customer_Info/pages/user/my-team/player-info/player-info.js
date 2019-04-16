@@ -12,16 +12,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.setStorageSync("player_phone_no", options.player_phone_no);
-
+    var _this = this;
+    var user_id = options.user_id;
+    wx.request({
+      url: app.host.url + "queryCustomerList",
+      method: "GET",
+      data: {
+        "user_id": user_id,
+        "status": -2
+      },
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res.data);
+        _this.setData({
+          post: res.data.data
+        })
+      }
+    })
   },
   onfollow_up: function(e) {
     var id = e.target.dataset.id;
-    var type = e.target.dataset.type;
-    console.log("第一次拿", type)
     var playerno = e.target.dataset.playerno;
+    var type = e.target.dataset.type;
+    console.log("hahah"+type)
     wx.redirectTo({
-      url: '../play-cs-info/play-cs-info?id=' + id + '&type=' + type + '&playerno=' + playerno,
+      url: '../play-cs-info/play-cs-info?id=' + id + '&&type=' + type,
     })
   },
   /**
@@ -34,28 +51,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-    var _this = this;
-    var status= 1;
-    var player_phone_no = wx.getStorageSync("player_phone_no");
-    console.log("lalal" + player_phone_no);
-    wx.request({
-      url: app.host.url + "getCustomersByUser",
-      method: "GET",
-      data: {
-        "phone_no": player_phone_no,
-        "status":1
-      },
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res.data);
-        _this.setData({
-          post: res.data.data
-        })
-      }
-    })
+  onShow: function(options) {
+   
   },
 
   /**

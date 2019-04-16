@@ -35,6 +35,7 @@ Page({
             },
             success: function (res) {
               var newList = that.data.post;
+              console.log("liebiao"+newList);
               for (var i = 0; i < newList.length; i++) {
                 if (newList[i].id == id) {
                   newList.splice(i, 1);
@@ -84,7 +85,8 @@ Page({
       method: "GET",
       data: {
         "user_id": user_id, 
-        "type": type
+        "type": type,
+        "status":-2
       },
       headers: {
         'Content-Type': 'application/json'
