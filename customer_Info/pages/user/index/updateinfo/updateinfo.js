@@ -40,11 +40,6 @@ Page({
         title: "信息提示",
         content: "手机号有误"
       })
-    } else if (utils.checkAge(e.detail.value.age)) {
-      wx.showModal({
-        title: "信息提示",
-        content: "年龄有误"
-      })
     } else if (!e.detail.value.sex) {
       wx.showModal({
         title: "信息提示",

@@ -74,7 +74,7 @@ Page({
             wx.switchTab({
               url: '../user/index/index',
             })
-          } else if (msg == 0 && per == "{\"c101\":1,\"c100\":1,\"c103\":1,\"c102\":1,\"c104\":1}" && sta == 1) {
+          } else if (msg == 0 && per == "{\"c101\":0,\"c100\":1,\"c103\":1,\"c102\":1,\"c104\":1}" && sta == 1) {
             wx.showToast({
               title: '登录成功',
               icon: 'loading',
@@ -83,19 +83,13 @@ Page({
             wx.redirectTo({
               url: '../admin/index/index',
             })
-          } else if (msg ==  1) {
+          } else {
             wx.showToast({
-              title: '信息提示',
-              icon: '用户不存在',
+              title: '登录失败',
+              icon: 'loading',
               duration: 3000
             })
-          } else if(msg == 2){
-            wx.showToast({
-              title: '信息提示',
-              icon: '密码错误',
-              duration: 3000
-            })
-          } 
+          }
         },
         fail: function(res) {
           wx.showToast({
