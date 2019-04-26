@@ -14,7 +14,7 @@ Page({
   onLoad: function(options) {
 
   },
-  signin: function() {
+  signin: function(options) {
     var that = this;
     var phone = that.data.phone;
     var pwd = that.data.password;
@@ -55,7 +55,12 @@ Page({
           wx.setStorageSync("pwd", pwd);
           console.log(phone, pwd);
           var msg = res.data.code;
-          var per =(res.data.data.permission);
+          var per =res.data.data.permission;     
+          let obj = JSON.parse(per);
+          var c = obj.c101;
+          console.log(c);
+          // var newobj = JSON.parse(options.obj);
+          // console.log(newobj);
           var sta = res.data.data.status;   
           var user_id = res.data.data.id;
           wx.setStorageSync("user_id", res.data.data.id); //缓存用户id，首页接后便于读取后台数据

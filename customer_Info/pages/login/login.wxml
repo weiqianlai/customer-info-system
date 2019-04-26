@@ -6,7 +6,7 @@
   <!--页头-->
   <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="page__bd page__bd_spacing">
-    <view class="userLogin">学生信息管理系统</view>
+    <view class="userLogin">信息管理系统</view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">

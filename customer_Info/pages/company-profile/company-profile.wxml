@@ -2,8 +2,8 @@
 <view class="container">
   <view class="header">
     <view class="black-cover"></view>
-    <image class="logo" src="../../images/nav-icon/logo.png"></image>
-    <image class="title" src="../../images/nav-icon/logo.png"></image>
+    <image class="logo" src="../../images/nav-icon/newlogo.jpg"></image>
+    <image class="title" src="../../images/nav-icon/newlogo.jpg"></image>
   </view>
   <view class="content">
     <view class="version">
