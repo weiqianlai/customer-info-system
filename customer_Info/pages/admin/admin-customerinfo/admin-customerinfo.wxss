@@ -2,3 +2,15 @@
 .del{
   margin-left: 130rpx;
 }
+.yigen{
+  font-size: 26rpx;
+  background-color: rgb(73, 73, 185);
+  border-radius: 15%;
+  color: wheat;
+}
+.cs-sex{
+  margin-left: 60rpx;
+}
+.cs-phone{
+  margin-left: 50rpx;
+}

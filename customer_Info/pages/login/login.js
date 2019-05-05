@@ -63,6 +63,8 @@ Page({
           // console.log(newobj);
           var sta = res.data.data.status;   
           var user_id = res.data.data.id;
+          var code = res.data.code;
+          
           wx.setStorageSync("user_id", res.data.data.id); //缓存用户id，首页接后便于读取后台数据
           console.log("login"+user_id);
           if (sta == 0) {

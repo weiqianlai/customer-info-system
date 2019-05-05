@@ -21,7 +21,7 @@ Page({
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
-        console.log(res.ata)
+        console.log(res.data)
         var info = JSON.stringify(res.data.info)
         var msg = JSON.stringify(res.data.code)
         if (msg == 0) {
@@ -34,10 +34,10 @@ Page({
           wx.switchTab({
             url: "../my-team/my-team",
           })
-        } else {
+        } else if(msg == -1){
           wx.showModal({
             title: "信息提示",
-            content:"邀请失败",
+            content:"该用户已有团队",
             icon: 'loading',
             duration: 1500
           })

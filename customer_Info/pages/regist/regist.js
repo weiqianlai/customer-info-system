@@ -135,7 +135,7 @@ Page({
             wx.redirectTo({
               url: '../login/login?phone_no=&user_password',
             })
-          } else if (msg == -1) {
+          } else if (msg == 1) {
             wx.showModal({
               title: "信息提示",
               content: "用户已存在",

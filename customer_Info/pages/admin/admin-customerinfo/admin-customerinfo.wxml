@@ -5,7 +5,7 @@
   <view class='info-box'>
     <view class='label'>
       <text>姓名</text>
-      <text>性别</text>
+      <text>状态</text>
       <text>电话</text>
       <text>操作</text>
     </view>
@@ -13,8 +13,8 @@
       <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
         <text>{{item.name}}</text>
         <view class='cs-sex'>
-          <view wx:if="{{item.sex==1}}">男</view>
-          <view wx:elif="{{item.sex==0}}">女</view>
+          <view class='yigen' wx:if="{{item.status==1}}">待处理</view>
+          <view  class='yigen' wx:elif="{{item.status==2}}">已跟进</view>
         </view>
         <text class='cs-phone'>{{item.tel}}</text>
         <button class='del' data-id='{{item.id}}' bindtap='onfollow_up'>跟进</button>
@@ -22,8 +22,8 @@
       <view class='content' wx:else data-id="{{index}}">
         <text>{{item.name}}</text>
         <view class='cs-sex'>
-          <view wx:if="{{item.sex==1}}">男</view>
-          <view wx:elif="{{item.sex==0}}">女</view>
+          <view class='yigen' wx:if="{{item.status==1}}">待处理</view>
+          <view  class='yigen' wx:elif="{{item.status==2}}">已跟进</view>
         </view>
         <text class='cs-phone'>{{item.tel}}</text>
         <button class='del' data-id='{{item.id}}' bindtap='onfollow_up'>跟进</button>
