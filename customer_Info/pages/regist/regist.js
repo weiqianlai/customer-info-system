@@ -94,7 +94,8 @@ Page({
         title: "信息提示",
         content: "手机号码错误"
       })
-    } else if (password.length < 6) {
+    } else 
+    if (password.length < 6) {
       wx.showModal({
         title: "信息提示",
         content: "密码至少为六位！"

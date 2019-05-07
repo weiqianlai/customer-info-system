@@ -4,45 +4,30 @@
     <view class='user-name'>{{user_info.username}}</view>
     <view class='grade'>我的会员：{{user_info.level}}级</view>
   </view>
-   <view class="li" data-index="2" bindtap='Padding'>
+  <view class="li" data-index="2" bindtap='Padding'>
     <view class="left">>待处理信息</view>
   </view>
   <view hidden="{{!selectedFlag[2]}}">
     <block wx:for="{{padding}}" wx:key="{{item}}">
-      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.type==1001}}">高升专</view>
-          <view wx:if="{{item.type==1002}}">专升本</view>
-          <view wx:if="{{item.type==1003}}">研究生</view>
-          <view wx:if="{{item.type==1004}}">普通话</view>
-          <view wx:if="{{item.type==1005}}">教资证</view>
-          <view wx:if="{{item.type==1006}}">建筑工程</view>
-          <view wx:if="{{item.type==1007}}">职业资格</view>
-          <view wx:if="{{item.type==1008}}">医药卫生</view>
-          <view wx:if="{{item.type==1009}}">外语少儿</view>
-          <view wx:if="{{item.type==1010}}">财会经济</view>
-          <view wx:if="{{item.type==1011}}">法院书记</view>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+        <view class='content'  data-id="{{index}}">
+          <view class='cs-name'>{{item.name}}</view>
+          <view class='cs-sex'>
+            <view wx:if="{{item.type==1001}}">高升专</view>
+            <view wx:if="{{item.type==1002}}">专升本</view>
+            <view wx:if="{{item.type==1003}}">研究生</view>
+            <view wx:if="{{item.type==1004}}">普通话</view>
+            <view wx:if="{{item.type==1005}}">教资证</view>
+            <view wx:if="{{item.type==1006}}">建筑工程</view>
+            <view wx:if="{{item.type==1007}}">职业资格</view>
+            <view wx:if="{{item.type==1008}}">医药卫生</view>
+            <view wx:if="{{item.type==1009}}">外语少儿</view>
+            <view wx:if="{{item.type==1010}}">财会经济</view>
+            <view wx:if="{{item.type==1011}}">法院书记</view>
+          </view>
+          <text class='cs-remark'>{{item.remark}}</text>
         </view>
-        <text class='cs-phone'>{{item.tel}}</text>
-      </view>
-      <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.type==1001}}">高升专</view>
-          <view wx:if="{{item.type==1002}}">专升本</view>
-          <view wx:if="{{item.type==1003}}">研究生</view>
-          <view wx:if="{{item.type==1004}}">普通话</view>
-          <view wx:if="{{item.type==1005}}">教资证</view>
-          <view wx:if="{{item.type==1006}}">建筑工程</view>
-          <view wx:if="{{item.type==1007}}">职业资格</view>
-          <view wx:if="{{item.type==1008}}">医药卫生</view>
-          <view wx:if="{{item.type==1009}}">外语少儿</view>
-          <view wx:if="{{item.type==1010}}">财会经济</view>
-          <view wx:if="{{item.type==1011}}">法院书记</view>
-        </view>
-        <text class='cs-phone'>{{item.tel}}</text>
-      </view>
+      </scroll-view>
     </block>
   </view>
   <view class="li" data-index="1" bindtap='Following'>
@@ -50,40 +35,25 @@
   </view>
   <view hidden="{{!selectedFlag[1]}}">
     <block wx:for="{{following}}" wx:key="{{item}}">
-      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.type==1001}}">高升专</view>
-          <view wx:if="{{item.type==1002}}">专升本</view>
-          <view wx:if="{{item.type==1003}}">研究生</view>
-          <view wx:if="{{item.type==1004}}">普通话</view>
-          <view wx:if="{{item.type==1005}}">教资证</view>
-          <view wx:if="{{item.type==1006}}">建筑工程</view>
-          <view wx:if="{{item.type==1007}}">职业资格</view>
-          <view wx:if="{{item.type==1008}}">医药卫生</view>
-          <view wx:if="{{item.type==1009}}">外语少儿</view>
-          <view wx:if="{{item.type==1010}}">财会经济</view>
-          <view wx:if="{{item.type==1011}}">法院书记</view>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+        <view class='content'  data-id="{{index}}">
+          <view class='cs-name'>{{item.name}}</view>
+          <view class='cs-sex'>
+            <view wx:if="{{item.type==1001}}">高升专</view>
+            <view wx:if="{{item.type==1002}}">专升本</view>
+            <view wx:if="{{item.type==1003}}">研究生</view>
+            <view wx:if="{{item.type==1004}}">普通话</view>
+            <view wx:if="{{item.type==1005}}">教资证</view>
+            <view wx:if="{{item.type==1006}}">建筑工程</view>
+            <view wx:if="{{item.type==1007}}">职业资格</view>
+            <view wx:if="{{item.type==1008}}">医药卫生</view>
+            <view wx:if="{{item.type==1009}}">外语少儿</view>
+            <view wx:if="{{item.type==1010}}">财会经济</view>
+            <view wx:if="{{item.type==1011}}">法院书记</view>
+          </view>
+          <text class='cs-remark'>{{item.remark}}</text>
         </view>
-        <text class='cs-phone'>{{item.tel}}</text>
-      </view>
-      <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.type==1001}}">高升专</view>
-          <view wx:if="{{item.type==1002}}">专升本</view>
-          <view wx:if="{{item.type==1003}}">研究生</view>
-          <view wx:if="{{item.type==1004}}">普通话</view>
-          <view wx:if="{{item.type==1005}}">教资证</view>
-          <view wx:if="{{item.type==1006}}">建筑工程</view>
-          <view wx:if="{{item.type==1007}}">职业资格</view>
-          <view wx:if="{{item.type==1008}}">医药卫生</view>
-          <view wx:if="{{item.type==1009}}">外语少儿</view>
-          <view wx:if="{{item.type==1010}}">财会经济</view>
-          <view wx:if="{{item.type==1011}}">法院书记</view>
-        </view>
-        <text class='cs-phone'>{{item.tel}}</text>
-      </view>
+      </scroll-view>
     </block>
   </view>
   <view class="li" data-index="3" bindtap='Completed'>
@@ -91,40 +61,25 @@
   </view>
   <view hidden="{{!selectedFlag[3]}}">
     <block wx:for="{{completed}}" wx:key="{{item}}">
-      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.type==1001}}">高升专</view>
-          <view wx:if="{{item.type==1002}}">专升本</view>
-          <view wx:if="{{item.type==1003}}">研究生</view>
-          <view wx:if="{{item.type==1004}}">普通话</view>
-          <view wx:if="{{item.type==1005}}">教资证</view>
-          <view wx:if="{{item.type==1006}}">建筑工程</view>
-          <view wx:if="{{item.type==1007}}">职业资格</view>
-          <view wx:if="{{item.type==1008}}">医药卫生</view>
-          <view wx:if="{{item.type==1009}}">外语少儿</view>
-          <view wx:if="{{item.type==1010}}">财会经济</view>
-          <view wx:if="{{item.type==1011}}">法院书记</view>
+      <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
+        <view class='content'  data-id="{{index}}">
+          <view class='cs-name'>{{item.name}}</view>
+          <view class='cs-sex'>
+            <view wx:if="{{item.type==1001}}">高升专</view>
+            <view wx:if="{{item.type==1002}}">专升本</view>
+            <view wx:if="{{item.type==1003}}">研究生</view>
+            <view wx:if="{{item.type==1004}}">普通话</view>
+            <view wx:if="{{item.type==1005}}">教资证</view>
+            <view wx:if="{{item.type==1006}}">建筑工程</view>
+            <view wx:if="{{item.type==1007}}">职业资格</view>
+            <view wx:if="{{item.type==1008}}">医药卫生</view>
+            <view wx:if="{{item.type==1009}}">外语少儿</view>
+            <view wx:if="{{item.type==1010}}">财会经济</view>
+            <view wx:if="{{item.type==1011}}">法院书记</view>
+          </view>
+          <text class='cs-remark'>{{item.remark}}</text>
         </view>
-        <text class='cs-phone'>{{item.tel}}</text>
-      </view>
-      <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.name}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.type==1001}}">高升专</view>
-          <view wx:if="{{item.type==1002}}">专升本</view>
-          <view wx:if="{{item.type==1003}}">研究生</view>
-          <view wx:if="{{item.type==1004}}">普通话</view>
-          <view wx:if="{{item.type==1005}}">教资证</view>
-          <view wx:if="{{item.type==1006}}">建筑工程</view>
-          <view wx:if="{{item.type==1007}}">职业资格</view>
-          <view wx:if="{{item.type==1008}}">医药卫生</view>
-          <view wx:if="{{item.type==1009}}">外语少儿</view>
-          <view wx:if="{{item.type==1010}}">财会经济</view>
-          <view wx:if="{{item.type==1011}}">法院书记</view>
-        </view>
-        <text class='cs-phone'>{{item.tel}}</text>
-      </view>
+      </scroll-view>
     </block>
   </view>
   <view class="li" data-index="4" bindtap='changeToggle'>
@@ -146,7 +101,7 @@
     <view class="left">>点击查看消息</view>
   </view>
   <view hidden="{{!selectedFlag[5]}}">
-    <view class="bg-gray"  wx:for="{{msginfo}}" wx:key>
+    <view class="bg-gray" wx:for="{{msginfo}}" wx:key>
       <view>{{item.content}}</view>
     </view>
   </view>

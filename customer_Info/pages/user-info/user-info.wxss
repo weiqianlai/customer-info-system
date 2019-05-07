@@ -1,7 +1,9 @@
 /* @import "../template/customer.wxss"; */
-page{
-  background-color: #F5FFE8;
+
+page {
+  background-color: #f5ffe8;
 }
+
 .main-box {
   width: 100%;
   height: 100%;
@@ -11,7 +13,7 @@ page{
   width: 100%;
   height: 150rpx;
   padding-top: 50rpx;
-  background: #D3FF93;
+  background: #d3ff93;
 }
 
 .user-name {
@@ -82,9 +84,25 @@ page{
   text-align: center;
   margin-top: 10rpx;
 }
+
 .content text {
   width: 260rpx;
 }
+
 .bg-g {
   background: #bfebbd;
+}
+
+/* .cs-name {
+  text-align: center;
+} */
+
+/* .cs-remark{
+  width: 500rpx;
+} */
+
+.content {
+  border-bottom: 1rpx black solid;
+  margin-top: 15rpx;
+  padding-bottom: 10rpx;
 }

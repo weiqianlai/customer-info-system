@@ -73,9 +73,17 @@ Page({
         },
         success: function(res) {
           console.log(res.data);
+          var code = res.data.code;
+          if (code==-1){
+            wx.showModal({
+              title: "信息提示",
+              content: "已存在该手机号"
+            })
+          }else{
           wx.redirectTo({
             url: '../user-customerinfo/user-customerinfo?type=' + type,
           })
+        }
         },
       })
     }

@@ -11,34 +11,36 @@
       <text>电话</text>
       <text>操作</text>
     </view>
-    <block wx:for="{{post}}" wx:key="{{item}}">
-      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-        <text>{{item.username}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.sex==1}}">男</view>
-          <view wx:elif="{{item.sex==0}}">女</view>
+    <view class='play-info-box'>
+      <block wx:for="{{post}}" wx:key="{{item}}">
+        <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+          <text>{{item.username}}</text>
+          <view class='cs-sex'>
+            <view wx:if="{{item.sex==1}}">男</view>
+            <view wx:elif="{{item.sex==0}}">女</view>
+          </view>
+          <text class='cs-phone'>{{item.phone}}</text>
+          <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
+          <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
+          <button class='xianshi' wx:if="{{introduce.user_id!= user_no.user_no}}"></button>
         </view>
-        <text class='cs-phone'>{{item.phone}}</text>
-        <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
-        <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
-        <button class='xianshi' wx:if="{{introduce.user_id!= user_no.user_no}}"></button>
-      </view>
-      <view class='content' wx:else data-id="{{index}}">
-        <text>{{item.username}}</text>
-        <view class='cs-sex'>
-          <view wx:if="{{item.sex==1}}">男</view>
-          <view wx:elif="{{item.sex==0}}">女</view>
+        <view class='content' wx:else data-id="{{index}}">
+          <text>{{item.username}}</text>
+          <view class='cs-sex'>
+            <view wx:if="{{item.sex==1}}">男</view>
+            <view wx:elif="{{item.sex==0}}">女</view>
+          </view>
+          <text class='cs-phone'>{{item.phone}}</text>
+          <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
+          <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
+          <button class='xianshi' wx:if="{{introduce.user_id!= user_no.user_no}}"></button>
         </view>
-        <text class='cs-phone'>{{item.phone}}</text>
-        <button class='del' data-id='{{item.id}}' bindtap='onDel' wx:if="{{introduce.user_id== user_no}}">删除</button>
-        <button class='update' data-id='{{item.id}}' bindtap='seePlayer' wx:if="{{introduce.user_id== user_no}}">查看</button>
-        <button class='xianshi' wx:if="{{introduce.user_id!= user_no.user_no}}"></button>
-      </view>
-    </block>
+      </block>
+    </view>
     <view class='add'>
-      <button bindtap='goAddPlayer' class="weui-btn" type="default" size='mini' wx:if="{{introduce.user_id== user_no}}">添加队员</button>
-      <button bindtap='quit_team' class="weui-btn" type="default" size='mini' wx:if="{{introduce.user_id!=user_no}}">退出队伍</button>
-      <button bindtap='goTeam_deal' class="weui-btn" type="default" size='mini' wx:if="{{introduce.user_id== user_no}}">查看团队成交信息</button>
+      <button bindtap='goAddPlayer' class="botton-z" type="default" wx:if="{{introduce.user_id== user_no}}">添加队员</button>
+      <button bindtap='quit_team' class="weui-btn" type="default"  wx:if="{{introduce.user_id!=user_no}}">退出队伍</button>
+      <button bindtap='goTeam_deal' class="botton-z" type="default" wx:if="{{introduce.user_id== user_no}}">查看团队成交信息</button>
     </view>
   </view>
 </view>

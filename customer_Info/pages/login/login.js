@@ -18,7 +18,7 @@ Page({
     var that = this;
     var phone = that.data.phone;
     var pwd = that.data.password;
-    
+
     console.log(phone, pwd)
     if (phone == "") {
       wx.showModal({
@@ -55,18 +55,17 @@ Page({
           wx.setStorageSync("pwd", pwd);
           console.log(phone, pwd);
           var msg = res.data.code;
-          var per =res.data.data.permission;     
+          var per = res.data.data.permission;
           let obj = JSON.parse(per);
           var c = obj.c101;
           console.log(c);
           // var newobj = JSON.parse(options.obj);
           // console.log(newobj);
-          var sta = res.data.data.status;   
+          var sta = res.data.data.status;
           var user_id = res.data.data.id;
           var code = res.data.code;
-          
           wx.setStorageSync("user_id", res.data.data.id); //缓存用户id，首页接后便于读取后台数据
-          console.log("login"+user_id);
+          console.log("login" + user_id);
           if (sta == 0) {
             wx.showModal({
               title: '信息提示',

@@ -1,22 +1,28 @@
 <view wx:if="{{post}}" class='mani-box'>
-<view class='info-box'>
-  <view class='label'>
-    <text class='name'>学生姓名</text>
-    <text class='sex'>来自队员</text>
-    <text class='sex'>成交时间</text>
-  </view>
-  <block wx:for="{{post}}" wx:key="{{item}}">
-    <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
-      <text>{{item.name}}</text>
-      <text>{{item.username}}</text>
-      <text class='cs-phone'>{{item.create_time}}</text>
+  <view class='info-box'>
+    <view class='label'>
+      <text class='name'>学生姓名</text>
+      <text class='sex'>来自队员</text>
+      <text class='sex'>状态</text>
     </view>
-    <view class='content' wx:else data-id="{{index}}">
-     <text>{{item.name}}</text>
-      <text>{{item.username}}</text>
-      <text class='cs-phone'>{{item.create_time}}</text>
-    </view>
-  </block>
+    <block wx:for="{{post}}" wx:key="{{item}}">
+      <view class='content bg-g' wx:if="{{index % 2 == 0}}" data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.username}}</text>
+        <text class='cs-phone'>
+          <text class='yigen-a' wx:if="{{item.status==1}}">待处理</text>
+          <text class='yigen' wx:elif="{{item.status==2}}">已跟进</text>
+        </text>
+      </view>
+      <view class='content' wx:else data-id="{{index}}">
+        <text>{{item.name}}</text>
+        <text>{{item.username}}</text>
+         <text class='cs-phone'>
+          <text class='yigen-a' wx:if="{{item.status==1}}">待处理</text>
+          <text class='yigen' wx:elif="{{item.status==2}}">已跟进</text>
+        </text>
+      </view>
+    </block>
   </view>
 </view>
 <view wx:else="{{ }}" class='none'>

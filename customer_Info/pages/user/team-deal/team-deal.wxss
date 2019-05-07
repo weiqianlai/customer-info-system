@@ -50,7 +50,7 @@
 }
 
 .content text {
-  width: 250rpx;
+  width: 160rpx;
 }
 
 .content button {
@@ -86,5 +86,17 @@
 }
 
 .cs-phone {
-  margin-left: 78rpx;
+  text-align: center;
+}
+.yigen{
+  font-size: 26rpx;
+  background-color: rgb(73, 73, 185);
+  border-radius: 15%;
+  color: wheat;
+}
+.yigen-a{
+  font-size: 26rpx;
+  background-color: rgb(214, 57, 64);
+  border-radius: 15%;
+  color: wheat;
 }
