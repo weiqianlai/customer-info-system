@@ -15,6 +15,8 @@ Page({
   },
   onDel: function(e) {
     var id = e.target.dataset.id; //从绑定的控件列的data-id传过来
+    var user_id = e.target.dataset.user_id;
+    console.log("user_id"+user_id);
     var that = this;
     wx.showModal({
       title: "警告",

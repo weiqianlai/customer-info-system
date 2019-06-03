@@ -19,11 +19,12 @@ page {
 .user-name {
   width: 100%;
   text-align: center;
+  padding-bottom: 20rpx;
 }
 
 .grade {
   width: 100%;
-  margin-top: 20rpx;
+  margin-top: 0rpx;
   text-align: center;
   font-size: 20rpx;
 }
@@ -105,4 +106,17 @@ page {
   border-bottom: 1rpx black solid;
   margin-top: 15rpx;
   padding-bottom: 10rpx;
+}
+.integra-box{
+  width: 80%;
+  padding-left: 250rpx;
+  margin: 0 auto;
+  padding-top: 30rpx;
+}
+.my-inte{
+  font-size: 32rpx;
+}
+.total{
+  font-size: 40rpx;
+  color: red;
 }

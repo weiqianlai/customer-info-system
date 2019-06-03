@@ -1,0 +1,47 @@
+.book-content {
+  margin: 0 auto;
+}
+
+.book-list {
+  display: flex;
+  width: 87%;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+  background-color: #fff;
+  border-bottom: 1rpx red solid;
+}
+
+.book-info-style {
+  background-color: white;
+  margin-left: 10rpx;
+  font-size: 26rpx;
+  width: 90%;
+}
+
+.book-info-style view {
+  display: block;
+  font-size: 30rpx;
+  margin-bottom: 8rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 8rpx;
+}
+.go-img{
+   width: 13%;
+   margin-top: 15rpx;
+}
+.go-img image{
+  width: 80rpx;
+  height: 80rpx;
+}
+.none{
+  display: flex;
+  justify-content: center;
+  margin-top: 50%;
+  color: #666;
+}

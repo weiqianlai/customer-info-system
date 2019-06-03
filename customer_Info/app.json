@@ -8,6 +8,7 @@
     "pages/user-info/user-info",
     "pages/regist/regist",
     "pages/admin/index/index",
+    "pages/user/team-list/team-list",
     "pages/user/my-team/my-team",
     "pages/user/addteam/addteam",
     "pages/user/addplayer/addplayer",
@@ -38,10 +39,10 @@
         "selectedIconPath": "/images/icon/shouye1.png"
       },
       {
-        "pagePath": "pages/user/my-team/my-team",
+        "pagePath": "pages/user/team-list/team-list",
         "text": "我的团队",
-        "iconPath": "/images/icon/wode.png",
-        "selectedIconPath": "/images/icon/wode1.png"
+        "iconPath": "/images/icon/my-team.png",
+        "selectedIconPath": "/images/icon/my-team1.png"
       },
       {
         "pagePath": "pages/user-info/user-info",

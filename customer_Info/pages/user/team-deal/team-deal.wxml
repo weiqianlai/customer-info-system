@@ -1,7 +1,7 @@
 <view wx:if="{{post}}" class='mani-box'>
   <view class='info-box'>
     <view class='label'>
-      <text class='name'>学生姓名</text>
+      <text class='name'>姓名</text>
       <text class='sex'>来自队员</text>
       <text class='sex'>状态</text>
     </view>
@@ -11,15 +11,17 @@
         <text>{{item.username}}</text>
         <text class='cs-phone'>
           <text class='yigen-a' wx:if="{{item.status==1}}">待处理</text>
-          <text class='yigen' wx:elif="{{item.status==2}}">已跟进</text>
+        <text class='yigen' wx:elif="{{item.status==2}}">已跟进</text>
+        <text class='yigen-b' wx:elif="{{item.status==6}}">已成交</text>
         </text>
       </view>
       <view class='content' wx:else data-id="{{index}}">
         <text>{{item.name}}</text>
         <text>{{item.username}}</text>
-         <text class='cs-phone'>
+        <text class='cs-phone'>
           <text class='yigen-a' wx:if="{{item.status==1}}">待处理</text>
-          <text class='yigen' wx:elif="{{item.status==2}}">已跟进</text>
+        <text class='yigen' wx:elif="{{item.status==2}}">已跟进</text>
+        <text class='yigen-b' wx:elif="{{item.status==6}}">已成交</text>
         </text>
       </view>
     </block>

@@ -100,3 +100,9 @@
   border-radius: 15%;
   color: wheat;
 }
+.yigen-b{
+   font-size: 26rpx;
+  background-color: rgb(100, 88, 89);
+  border-radius: 15%;
+  color: wheat;
+}

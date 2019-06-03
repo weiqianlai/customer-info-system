@@ -1,0 +1,15 @@
+<!--pages/user/team-list/team-list.wxml-->
+<view class="book-content">
+  <view class="book-list" wx:if="{{post}}" bindtap='goMyTeame'>
+    <view class="book-info-style">
+      <view>团队名称: {{post.name}}</view>
+      <view>建队时间: {{post.create_time}}\n</view>
+    </view>
+    <view class='go-img'>
+      <image src='../../../images/icon/go-team.png'></image>
+    </view>
+  </view>
+  <view wx:else="{{post}}" class='none'>
+    <text>暂时没有团队信息！</text>
+  </view>
+</view>

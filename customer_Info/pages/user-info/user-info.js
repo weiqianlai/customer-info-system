@@ -167,7 +167,8 @@ Page({
       success:function(res) {
         console.log(res.data);
         thit.setData({
-          user_info: res.data.data
+          user_info: res.data.data,
+          integras: res.data.integra
         })
       }
     })
