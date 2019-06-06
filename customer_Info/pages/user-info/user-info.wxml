@@ -10,7 +10,7 @@
   <view hidden="{{!selectedFlag[2]}}">
     <block wx:for="{{padding}}" wx:key="{{item}}">
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-        <view class='content'  data-id="{{index}}">
+        <view class='content' data-id="{{index}}">
           <view class='cs-name'>{{item.name}}</view>
           <view class='cs-sex'>
             <view wx:if="{{item.type==1001}}">高升专</view>
@@ -36,7 +36,7 @@
   <view hidden="{{!selectedFlag[1]}}">
     <block wx:for="{{following}}" wx:key="{{item}}">
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-        <view class='content'  data-id="{{index}}">
+        <view class='content' data-id="{{index}}">
           <view class='cs-name'>{{item.name}}</view>
           <view class='cs-sex'>
             <view wx:if="{{item.type==1001}}">高升专</view>
@@ -62,7 +62,7 @@
   <view hidden="{{!selectedFlag[3]}}">
     <block wx:for="{{completed}}" wx:key="{{item}}">
       <scroll-view scroll-x="true" style=" white-space: nowrap; display: flex">
-        <view class='content'  data-id="{{index}}">
+        <view class='content' data-id="{{index}}">
           <view class='cs-name'>{{item.name}}</view>
           <view class='cs-sex'>
             <view wx:if="{{item.type==1001}}">高升专</view>
@@ -92,11 +92,11 @@
     <view class="bg-gray" wx:if="{{user_info.level == 0}}">
       <view>当您的成交量达到一定的数量后，即可拥有创建团队的权限，加油！</view>
     </view>
-    <view class="li bg-gray" wx:if="{{user_info.level == 1}}">
+    <view class="li bg-gray" wx:if="{{user_info.level == 1||2}}">
       <button bindtap='goAddTean' class="weui-btn mini-btn" type="primary">点击创建团队</button>
     </view>
     <view class="li bg-gray" wx:if="{{user_info.level == 1||2}}">
-      <button bindtap='goJoinTean' class="weui-btn mini-btn" type="primary">点击加入团队</button>
+      <button bindtap="submit" class="weui-btn mini-btn" type="primary">点击加入团队</button>
     </view>
     <view wx:if="{{user_info.vip_grade == 1 && user_info.groups != 0}}" class="bg-gray">你已创建属于自己的团队了哦！</view>
   </view>
@@ -112,4 +112,25 @@
     <text class='my-inte'>我的积分：</text>
     <text class='total'>{{integras.total}}</text>
   </view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" bindtap="go"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="page__bd page__bd_spacing">
+      <view class="userRegist">加入管理团队</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
+            <view class="weui-label">队长号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" type="text" placeholder="请输入队长号码" name="remark" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <button class="weui-btn btn1" type="primary" formType="submit">加入管理</button>
+  </form>
 </view>

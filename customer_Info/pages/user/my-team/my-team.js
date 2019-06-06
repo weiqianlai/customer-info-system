@@ -10,8 +10,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    var user_id = wx.getStorageSync('user_id');
+  onLoad: function(options) { 
     var _this = this;
     wx.request({
       url: app.host.url + 'getTeamDetailInfo',
@@ -24,6 +23,7 @@ Page({
       },
       success: function(res) {
         var player_list = res.data.list;
+        console.log(player_list);
         var info = res.data.data;
         var user_no = wx.getStorageSync('user_id');
         wx.setStorageSync("team_id", res.data.data.id);

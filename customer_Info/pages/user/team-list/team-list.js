@@ -6,17 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    introduce:[{
-      name:"hahah",
-      create_time:"2019-5-33"
-    }, {
-        name: "hahah",
-        create_time: "2019-5-33"
-      }, {
-        name: "hahah",
-        create_time: "2019-5-33"
-      }]
-
   },
 
   /**
